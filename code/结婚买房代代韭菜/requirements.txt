@@ -1,0 +1,10 @@
+jieba
+tqdm
+langchain
+pdfplumber==0.9.0
+sentence_transformers
+faiss-cpu
+modelscope
+accelerate
+bs4
+pypinyin
