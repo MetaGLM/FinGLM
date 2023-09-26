@@ -164,7 +164,7 @@
 ## 🏆 开源项目
 
 ### 0. FinGLM_all 
-[[PPT]](.slides/安硕硕眼探企分享及FinGLM开源发布.pdf) [[视频]](https://www.bilibili.com/video/BV1ip4y1F7Gw/)[[代码]](./code/finglm_all)
+[[PPT]](./slides/安硕硕眼探企分享及FinGLM开源发布.pdf) [[视频]](https://www.bilibili.com/video/BV1ip4y1F7Gw/)[[代码]](./code/finglm_all)
 
 本项目为安硕硕眼探企团队，根据自己的项目以及其他几队的项目整合而成。后续我们也将围绕此项目进行持续迭代升级。
 
