@@ -144,7 +144,7 @@
     - [ ] 馒头科技
     - [ ] 南哪都队
     - [x] [Chatglm反卷总局](./code/Chatglm反卷总局)
-    - [ ] nsddd
+    - [x] nsddd
     - [ ] 龙盈战队
     - [x] [结婚买房代代韭菜](./code/结婚买房代代韭菜)
     - [x] [安硕硕眼探企](.code/finglm_all)
