@@ -5,7 +5,8 @@
 </p>
 <p align="center">
   <a href="https://tianchi.aliyun.com/competition/entrance/532126">赛题链接</a> |
-  <a href="https://tianchi.aliyun.com/specials/promotion/SMP2023ChatGLMChallenge">赛题宣传页</a>
+  <a href="https://tianchi.aliyun.com/specials/promotion/SMP2023ChatGLMChallenge">赛题宣传页</a> |
+  <a href="https://modelscope.cn/models/finglm/FinGLM">魔搭社区</a>
 </p>
 
 📃 **FinGLM**:  致力于构建一个开放的、公益的、持久的金融大模型项目，利用开源开放来促进「AI+金融」。
