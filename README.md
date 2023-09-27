@@ -225,7 +225,7 @@
 
 ### 8. 饺子研究院 
 
-[PPT] [[视频]](https://www.bilibili.com/video/BV12z4y1V7S3/?spm_id_from=333.999.0.0&vd_source=df16438efe36af5724526b8869fb54c1) [代码]
+[[PPT]](./slides/吃辣子.pdf) [[视频]](https://www.bilibili.com/video/BV12z4y1V7S3/?spm_id_from=333.999.0.0&vd_source=df16438efe36af5724526b8869fb54c1) [代码]
 
 ![jiaozi](./img/jiaozi.jpg)
 
