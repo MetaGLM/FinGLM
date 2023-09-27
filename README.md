@@ -105,7 +105,7 @@
 * 后续我们也将根据项目需求，持续迭代更新数据。
 
 **3) 方案/代码/模型开源**
-* 经同意，[结婚买房代代韭菜](./code/结婚买房代代韭菜)、[Chatglm反卷总局](./code/Chatglm反卷总局)、nsddd、馒头科技、南哪都队、龙盈战队、[安硕硕眼探企]((./code/finglm_all))等团队的方案、代码、模型完全开源，纳入FinGLM项目。
+* 经同意，[结婚买房代代韭菜](./code/结婚买房代代韭菜)、[Chatglm反卷总局](./code/Chatglm反卷总局)、[nsddd](./code/nsddd)、馒头科技、南哪都队、龙盈战队、[安硕硕眼探企](./code/finglm_all)等团队的方案、代码、模型完全开源，纳入FinGLM项目。
 * 我们将长期维护优化 [FinGLM 项目](./code/finglm_all)，提供便捷解决方案。
 
 **4) 开放交流**
@@ -185,6 +185,7 @@
 
 [[PPT]](./slides/馒头科技.pdf) [[视频]](https://www.bilibili.com/video/BV18h4y187UU/) [代码]
 ![mantou](./img/mantou.jpg)
+
 ### 2. 南哪都队
 
 [[PPT]](./slides/南哪都队.pdf) [[视频]](https://www.bilibili.com/video/BV1Gm4y1V7LD/) [代码]
@@ -199,7 +200,7 @@
 
 ### 4. nsddd 
 
-[[PPT]](./slides/nsddd.pdf) [[视频]](https://www.bilibili.com/video/BV15u4y147Xx) [代码]
+[[PPT]](./slides/nsddd.pdf) [[视频]](https://www.bilibili.com/video/BV15u4y147Xx) [代码](./code/nsddd)
 
 ![nsddd](./img/nsddd.jpg)
 
@@ -209,7 +210,8 @@
 [[PPT]](./slides/龙盈战队.pdf) [[视频]](https://www.bilibili.com/video/BV1Ju4y167ew) [代码]
 
 ![longying](./img/longying.jpg)
-### 6. 结婚买房代代韭菜 
+
+### 6. 结婚买房代代韭菜
 
 [[PPT]](./slides/结婚买房代代韭菜.pdf) [[视频]](https://www.bilibili.com/video/BV1rm4y1G7uj) [[代码]](./code/结婚买房代代韭菜)
 
