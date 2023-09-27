@@ -1,0 +1,1488 @@
+这是统计问题
+-----------------
+2019-2021年哪些家上市公司货币总额均位列前十？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份 IN ('2019', '2020', '2021') AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 GROUP BY 公司名称 HAVING AVG(货币资金) IN (SELECT AVG(货币资金) FROM fin_report WHERE 年份 IN ('2019', '2020', '2021') AND 货币资金 IS NOT NULL GROUP BY 公司名称 ORDER BY AVG(货币资金) DESC LIMIT 10);
+LOG:SQL_result:
+[('上海建工集团股份有限公司',),('上海汽车集团股份有限公司',),('东方财富信息股份有限公司',),('中航工业产融控股股份有限公司',),('中远海运控股股份有限公司',),('华域汽车系统股份有限公司',),('厦门建发股份有限公司',),('宁德时代新能源科技股份有限公司',),('广州汽车集团股份有限公司',),('新城控股集团股份有限公司',)]
+这是统计问题
+-----------------
+2021年货币资金最高的前3家上市公司为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 3;
+LOG:SQL_result:
+[('北京同仁堂股份有限公司', '9926307096.61'),('杭州钢铁股份有限公司', '9909373765.85'),('火星人厨具股份有限公司', '990727430.82')]
+这是统计问题
+-----------------
+2019-2021年哪些上市公司货币总额均位列前十？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份 IN ('2019', '2020', '2021') AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 GROUP BY 公司名称 HAVING AVG(货币资金) IN (SELECT AVG(货币资金) FROM fin_report WHERE 年份 IN ('2019', '2020', '2021') AND 货币资金 IS NOT NULL GROUP BY 公司名称 ORDER BY AVG(货币资金) DESC LIMIT 10);
+LOG:SQL_result:
+[('上海建工集团股份有限公司',),('上海汽车集团股份有限公司',),('东方财富信息股份有限公司',),('中航工业产融控股股份有限公司',),('中远海运控股股份有限公司',),('华域汽车系统股份有限公司',),('厦门建发股份有限公司',),('宁德时代新能源科技股份有限公司',),('广州汽车集团股份有限公司',),('新城控股集团股份有限公司',)]
+这是统计问题
+-----------------
+2019-2021年哪家上市公司货币总额均位列前十？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份 IN ('2019', '2020', '2021') AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 GROUP BY 公司名称 HAVING AVG(货币资金) IN (SELECT AVG(货币资金) FROM fin_report WHERE 年份 IN ('2019', '2020', '2021') AND 货币资金 IS NOT NULL GROUP BY 公司名称 ORDER BY AVG(货币资金) DESC LIMIT 10);
+LOG:SQL_result:
+[('上海建工集团股份有限公司',),('上海汽车集团股份有限公司',),('东方财富信息股份有限公司',),('中航工业产融控股股份有限公司',),('中远海运控股股份有限公司',),('华域汽车系统股份有限公司',),('厦门建发股份有限公司',),('宁德时代新能源科技股份有限公司',),('广州汽车集团股份有限公司',),('新城控股集团股份有限公司',)]
+这是统计问题
+-----------------
+哪家上市公司2019年-2021年货币总额均位列前十？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份 IN ('2019', '2020', '2021') AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 GROUP BY 公司名称 HAVING AVG(货币资金) IN (SELECT AVG(货币资金) FROM fin_report WHERE 年份 IN ('2019', '2020', '2021') AND 货币资金 IS NOT NULL GROUP BY 公司名称 ORDER BY AVG(货币资金) DESC LIMIT 10);
+LOG:SQL_result:
+[('上海建工集团股份有限公司',),('上海汽车集团股份有限公司',),('东方财富信息股份有限公司',),('中航工业产融控股股份有限公司',),('中远海运控股股份有限公司',),('华域汽车系统股份有限公司',),('厦门建发股份有限公司',),('宁德时代新能源科技股份有限公司',),('广州汽车集团股份有限公司',),('新城控股集团股份有限公司',)]
+这是统计问题
+-----------------
+2019年资产总额最高的前四家上市公司是哪些家？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 4;
+LOG:SQL_result:
+[('无锡隆盛科技股份有限公司', '997099270.05'),('四川科新机电股份有限公司', '993677728.48'),('康龙化成北京新药技术股份有限公司', '9935038258.59'),('钢研纳克检测技术股份有限公司', '993351049.15')]
+这是统计问题
+-----------------
+哪家上市公司2019年货币总额最低？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2019' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 ASC LIMIT 1;
+LOG:SQL_result:
+[('中青旅控股股份有限公司', '1003059183.80')]
+这是统计问题
+-----------------
+根据2020年的年报数据，智谱AI的审计意见如何。
+这是统计问题
+-----------------
+哪家上市公司2020年货币总额最低？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2020' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 ASC LIMIT 1;
+LOG:SQL_result:
+[('沈阳金山能源股份有限公司', '1003978714.41')]
+这是统计问题
+-----------------
+2020年总资产最高的前5家是哪些上市公司？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 5;
+LOG:SQL_result:
+[('北京科拓恒通生物技术股份有限公司', '999245812.07'),('上海健麾信息技术股份有限公司', '997404072.75'),('宁波迦南智能电气股份有限公司', '996401897.63'),('北京康斯特仪表科技股份有限公司', '995487765.54'),('中伟新材料股份有限公司', '9864111074.13')]
+这是统计问题
+-----------------
+哪家上市公司2021年货币总额最低？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 ASC LIMIT 1;
+LOG:SQL_result:
+[('国泰新点软件股份有限公司', '1004342357.89')]
+这是统计问题
+-----------------
+2021年哪七个上市公司的资产总金额最高？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 7;
+LOG:SQL_result:
+[('中科院成都信息技术股份有限公司', '985590857.17'),('新疆百花村医药集团股份有限公司', '982313014.89'),('辽宁成大生物股份有限公司', '9792731456.06'),('苏州迈为科技股份有限公司', '9775882062.03'),('深圳市北鼎晶辉科技股份有限公司', '977059023.49'),('德州联合石油科技股份有限公司', '973078531.25'),('深圳科创新源新材料股份有限公司', '962680374.08')]
+这是统计问题
+-----------------
+哪家上市公司2019年总负债最低？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 ASC LIMIT 1;
+LOG:SQL_result:
+[('中信出版集团股份有限公司', '1001540468.71')]
+这是统计问题
+-----------------
+哪家上市公司2020年总负债最低？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 ASC LIMIT 1;
+LOG:SQL_result:
+[('北京左江科技股份有限公司', '100005222.55')]
+这是统计问题
+-----------------
+哪家上市公司2021年总负债最低？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 ASC LIMIT 1;
+LOG:SQL_result:
+[('广西柳药集团股份有限公司', '10068480649.28')]
+这是统计问题
+-----------------
+2021年货币总额第2高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1 OFFSET 1;
+LOG:SQL_result:
+[('杭州钢铁股份有限公司', '9909373765.85')]
+这是统计问题
+-----------------
+2019年负债总额最高的3家上市公司是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 3;
+LOG:SQL_result:
+[('宁夏宝丰能源集团股份有限公司', '9942544910.32'),('广东拓斯达科技股份有限公司', '992224869.30'),('江苏凯伦建材股份有限公司', '991035799.15')]
+这是统计问题
+-----------------
+2019年货币资金第五高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2019' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1 OFFSET 4;
+LOG:SQL_result:
+[('上海爱旭新能源股份有限公司', '989634799.91')]
+这是统计问题
+-----------------
+2020年资产总额第7高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1 OFFSET 6;
+LOG:SQL_result:
+[('北京光线传媒股份有限公司', '9825394730.14')]
+这是统计问题
+-----------------
+2021年哪家上市公司的总资产第十一高？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1 OFFSET 10;
+LOG:SQL_result:
+[('常州中英科技股份有限公司', '945159722.75')]
+这是统计问题
+-----------------
+2019年资产总金额第12高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1 OFFSET 11;
+LOG:SQL_result:
+[('濮阳惠成电子材料股份有限公司', '976418044.64')]
+这是统计问题
+-----------------
+哪家上市公司，2020年负债总额第二高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1 OFFSET 1;
+LOG:SQL_result:
+[('百合花集团股份有限公司', '987171163.44')]
+这是统计问题
+-----------------
+哪家上市公司2021年总负债第5高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1 OFFSET 4;
+LOG:SQL_result:
+[('深圳市超频三科技股份有限公司', '980371166.37')]
+这是统计问题
+-----------------
+2019年负债总金额第7高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1 OFFSET 6;
+LOG:SQL_result:
+[('浙江长城电工科技股份有限公司', '978943009.81')]
+这是统计问题
+-----------------
+2020年其他非流动金融资产第十一高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2020' AND 其他非流动负债 IS NOT NULL AND 其他非流动负债 != 1.0 ORDER BY 其他非流动负债 DESC LIMIT 1 OFFSET 10;
+LOG:SQL_result:
+[('浙江海正药业股份有限公司',)]
+这是统计问题
+-----------------
+2021年其他流动资产第12高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2021' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 1 OFFSET 11;
+LOG:SQL_result:
+[('四川天微电子股份有限公司',)]
+这是统计问题
+-----------------
+2019年哪家上市公司的其他非流动资产第二高？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2019' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1 OFFSET 1;
+LOG:SQL_result:
+[('江苏裕兴薄膜科技股份有限公司',)]
+这是统计问题
+-----------------
+2020年流动资产第5高的上市公司是？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2020' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 1 OFFSET 4;
+LOG:SQL_result:
+[('大众交通集团股份有限公司',)]
+这是统计问题
+-----------------
+哪家上市公司，2021年营业总收入第七高？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2021' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 1 OFFSET 6;
+LOG:SQL_result:
+[('山东潍坊润丰化工股份有限公司',)]
+这是统计问题
+-----------------
+哪家上市公司2019年营业收入第11高？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2019' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 1 OFFSET 10;
+LOG:SQL_result:
+[('深圳市安车检测股份有限公司',)]
+这是统计问题
+-----------------
+2020年营业外收入第12高的上市公司为？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2020' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 1 OFFSET 11;
+LOG:SQL_result:
+[('广东天龙科技集团股份有限公司',)]
+这是统计问题
+-----------------
+2021年营业总成本第二高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2021' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 1 OFFSET 1;
+LOG:SQL_result:
+[('上海先惠自动化技术股份有限公司', '995602484.57')]
+这是统计问题
+-----------------
+2019年营业成本第5高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 营业成本 FROM fin_report WHERE 年份='2019' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 1 OFFSET 4;
+LOG:SQL_result:
+[('湖南华升股份有限公司', '990178742.11')]
+这是统计问题
+-----------------
+哪四家上市公司，2020年总负债最高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 4;
+LOG:SQL_result:
+[('胜华新材料集团股份有限公司', '989560032.40'),('百合花集团股份有限公司', '987171163.44'),('江西新余国科科技股份有限公司', '97042149.19'),('梅花生物科技集团股份有限公司', '9676758011.97')]
+这是统计问题
+-----------------
+2020年哪家上市公司的营业利润第七高？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2020' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 1 OFFSET 6;
+LOG:SQL_result:
+[('江西洪城环境股份有限公司', '956602176.37')]
+这是统计问题
+-----------------
+2021年利润总额第11高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2021' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 1 OFFSET 10;
+LOG:SQL_result:
+[('北京元六鸿远电子科技股份有限公司', '965729868.28')]
+这是统计问题
+-----------------
+哪家上市公司，2019年净利润第十二高？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2019' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 1 OFFSET 11;
+LOG:SQL_result:
+[('广州发展集团股份有限公司', '961455803.84')]
+这是统计问题
+-----------------
+哪家上市公司2020年货币总额第2高？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2020' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1 OFFSET 1;
+LOG:SQL_result:
+[('卫宁健康科技集团股份有限公司', '988804969.84')]
+这是统计问题
+-----------------
+2021年货币资金第5高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1 OFFSET 4;
+LOG:SQL_result:
+[('日照港股份有限公司', '989502523.21')]
+这是统计问题
+-----------------
+哪5家上市公司2021年负债总金额最高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 5;
+LOG:SQL_result:
+[('中远海运发展股份有限公司', '99927421615.54'),('贵人鸟股份有限公司', '993074330.14'),('安徽华骐环保科技股份有限公司', '991412306.71'),('利华益维远化学股份有限公司', '983580869.56'),('深圳市超频三科技股份有限公司', '980371166.37')]
+这是统计问题
+-----------------
+2019年资产总额第七高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1 OFFSET 6;
+LOG:SQL_result:
+[('中铁铁龙集装箱物流股份有限公司', '9891666078.27')]
+这是统计问题
+-----------------
+2020年总资产第11高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1 OFFSET 10;
+LOG:SQL_result:
+[('新疆百花村医药集团股份有限公司', '974684317.02')]
+这是统计问题
+-----------------
+2021年哪家上市公司的资产总金额第十二高？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1 OFFSET 11;
+LOG:SQL_result:
+[('广东蒙泰高新纤维股份有限公司', '940490855.14')]
+这是统计问题
+-----------------
+2019年负债总额第2高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1 OFFSET 1;
+LOG:SQL_result:
+[('广东拓斯达科技股份有限公司', '992224869.30')]
+这是统计问题
+-----------------
+哪家上市公司，2020年总负债第五高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1 OFFSET 4;
+LOG:SQL_result:
+[('上海钢联电子商务股份有限公司', '9659589648.01')]
+这是统计问题
+-----------------
+哪家上市公司2021年负债总金额第7高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1 OFFSET 6;
+LOG:SQL_result:
+[('海波重型工程科技股份有限公司', '972986215.73')]
+这是统计问题
+-----------------
+2019年其他非流动金融资产第11高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2019' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1 OFFSET 10;
+LOG:SQL_result:
+[('西安三角防务股份有限公司', '938247.64')]
+这是统计问题
+-----------------
+2020年其他流动资产第十二高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2020' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 1 OFFSET 11;
+LOG:SQL_result:
+[('通裕重工股份有限公司', '946835529.78')]
+这是统计问题
+-----------------
+2021年其他非流动资产第2高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2021' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1 OFFSET 1;
+LOG:SQL_result:
+[('武汉科前生物股份有限公司', '986198225.63')]
+这是统计问题
+-----------------
+2019年哪家上市公司的流动资产第五高？
+LOG:SQL:
+SELECT 公司名称, 流动资产合计 FROM fin_report WHERE 年份='2019' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 1 OFFSET 4;
+LOG:SQL_result:
+[('北京博晖创新生物技术集团股份有限公司', '983157351.57')]
+这是统计问题
+-----------------
+2019年其他非流动金融资产最高的前7家上市公司为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动负债 FROM fin_report WHERE 年份='2019' AND 其他非流动负债 IS NOT NULL AND 其他非流动负债 != 1.0 ORDER BY 其他非流动负债 DESC LIMIT 7;
+LOG:SQL_result:
+[('朗新科技集团股份有限公司', '994733.57'),('山东鲁抗医药股份有限公司', '9903532.11'),('汉嘉设计集团股份有限公司', '97168356.05'),('中国葛洲坝集团股份有限公司', '94675825.82'),('吉艾科技集团股份公司', '935756308.33'),('上海大屯能源股份有限公司', '92619053.15'),('广东惠伦晶体科技股份有限公司', '86853623.69')]
+这是统计问题
+-----------------
+2020年营业总收入第7高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 营业总收入 FROM fin_report WHERE 年份='2020' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 1 OFFSET 6;
+LOG:SQL_result:
+[('锋尚文化集团股份有限公司', '983895054.72')]
+这是统计问题
+-----------------
+哪家上市公司，2021年营业收入第十一高？
+LOG:SQL:
+SELECT 公司名称, 营业收入 FROM fin_report WHERE 年份='2021' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 1 OFFSET 10;
+LOG:SQL_result:
+[('苏州锦富技术股份有限公司', '972160151.63')]
+这是统计问题
+-----------------
+哪家上市公司2019年营业外收入第12高？
+LOG:SQL:
+SELECT 公司名称, 营业外收入 FROM fin_report WHERE 年份='2019' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 1 OFFSET 11;
+LOG:SQL_result:
+[('北京电子城高科技集团股份有限公司', '93258464.65')]
+这是统计问题
+-----------------
+2020年其他流动资产最高的前三家上市公司是哪些家？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2020' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 3;
+LOG:SQL_result:
+[('西安陕鼓动力股份有限公司', '99659551.12'),('宁波均胜电子股份有限公司', '996410378.45'),('北京康斯特仪表科技股份有限公司', '9891366.51')]
+这是统计问题
+-----------------
+2021年其他非流动资产最高的前4家是哪些上市公司？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2021' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 4;
+LOG:SQL_result:
+[('东方航空物流股份有限公司', '98659429.1'),('武汉科前生物股份有限公司', '986198225.63'),('精伦电子股份有限公司', '978646.65'),('江西耐普矿机股份有限公司', '97393860.75')]
+这是统计问题
+-----------------
+2020年营业总成本第2高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2020' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 1 OFFSET 1;
+LOG:SQL_result:
+[('广州市嘉诚国际物流股份有限公司', '992144629.86')]
+这是统计问题
+-----------------
+2021年营业成本第五高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 营业成本 FROM fin_report WHERE 年份='2021' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 1 OFFSET 4;
+LOG:SQL_result:
+[('上海中谷物流股份有限公司', '9676609244.19')]
+这是统计问题
+-----------------
+2019年营业利润第7高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2019' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 1 OFFSET 6;
+LOG:SQL_result:
+[('北海国发川山生物股份有限公司', '9567475.06')]
+这是统计问题
+-----------------
+2020年哪家上市公司的利润总额第十一高？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2020' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 1 OFFSET 10;
+LOG:SQL_result:
+[('江苏硕世生物科技股份有限公司', '960990299.06')]
+这是统计问题
+-----------------
+2021年净利润第12高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2021' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 1 OFFSET 11;
+LOG:SQL_result:
+[('品渥食品股份有限公司', '95469747.38')]
+这是统计问题
+-----------------
+2021年货币总额最高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1;
+LOG:SQL_result:
+[('北京同仁堂股份有限公司', '9926307096.61')]
+这是统计问题
+-----------------
+2019年货币资金最高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2019' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1;
+LOG:SQL_result:
+[('河北建新化工股份有限公司', '999254562.78')]
+这是统计问题
+-----------------
+2020年资产总额最高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('北京科拓恒通生物技术股份有限公司', '999245812.07')]
+这是统计问题
+-----------------
+2021年哪家上市公司的总资产最高？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('中科院成都信息技术股份有限公司', '985590857.17')]
+这是统计问题
+-----------------
+2019年资产总金额最高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('无锡隆盛科技股份有限公司', '997099270.05')]
+这是统计问题
+-----------------
+哪家上市公司，2020年负债总额最高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('胜华新材料集团股份有限公司', '989560032.40')]
+这是统计问题
+-----------------
+哪家上市公司2021年总负债最高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('中远海运发展股份有限公司', '99927421615.54')]
+这是统计问题
+-----------------
+2019年负债总金额最高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('宁夏宝丰能源集团股份有限公司', '9942544910.32')]
+这是统计问题
+-----------------
+2020年其他非流动金融资产最高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2020' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('浙文互联集团股份有限公司', '998580.00')]
+这是统计问题
+-----------------
+2021年其他流动资产最高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2021' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('上海大众公用事业集团股份有限公司', '99743584.83')]
+这是统计问题
+-----------------
+2019年哪家上市公司的其他非流动资产最高？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2019' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('深圳市超频三科技股份有限公司', '997272.42')]
+这是统计问题
+-----------------
+2020年流动资产最高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 流动资产合计 FROM fin_report WHERE 年份='2020' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('浙江维康药业股份有限公司', '998616096.68')]
+这是统计问题
+-----------------
+哪家上市公司，2021年营业总收入最高？
+LOG:SQL:
+SELECT 公司名称, 营业总收入 FROM fin_report WHERE 年份='2021' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('杭州电魂网络科技股份有限公司', '996290977.71')]
+这是统计问题
+-----------------
+哪家上市公司2019年营业收入最高？
+LOG:SQL:
+SELECT 公司名称, 营业收入 FROM fin_report WHERE 年份='2019' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('爱尔眼科医院集团股份有限公司', '9990103976.04')]
+这是统计问题
+-----------------
+2020年营业外收入最高的上市公司为？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2020' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('深信服科技股份有限公司',)]
+这是统计问题
+-----------------
+2021年营业总成本最高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2021' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 1;
+LOG:SQL_result:
+[('博创科技股份有限公司',)]
+这是统计问题
+-----------------
+2019年营业成本最高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2019' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 1;
+LOG:SQL_result:
+[('江苏康缘药业股份有限公司',)]
+这是统计问题
+-----------------
+2020年哪家上市公司的营业利润最高？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2020' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 1;
+LOG:SQL_result:
+[('浙江百达精工股份有限公司',)]
+这是统计问题
+-----------------
+2021年利润总额最高的上市公司是？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2021' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 1;
+LOG:SQL_result:
+[('广东富信科技股份有限公司',)]
+这是统计问题
+-----------------
+哪家上市公司，2019年净利润最高？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2019' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 1;
+LOG:SQL_result:
+[('罗博特科智能科技股份有限公司',)]
+这是统计问题
+-----------------
+2019年哪五个上市公司的流动资产最高？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2019' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 5;
+LOG:SQL_result:
+[('广州发展集团股份有限公司',),('江苏锦鸡实业股份有限公司',),('山东双一科技股份有限公司',),('湖南国科微电子股份有限公司',),('北京博晖创新生物技术集团股份有限公司',)]
+这是统计问题
+-----------------
+哪家上市公司2020年货币总额最高？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2020' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1;
+LOG:SQL_result:
+[('金宏气体股份有限公司',)]
+这是统计问题
+-----------------
+2021年货币资金最高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1;
+LOG:SQL_result:
+[('北京同仁堂股份有限公司', '9926307096.61')]
+这是统计问题
+-----------------
+2019年资产总额最高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('无锡隆盛科技股份有限公司', '997099270.05')]
+这是统计问题
+-----------------
+2020年总资产最高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('北京科拓恒通生物技术股份有限公司', '999245812.07')]
+这是统计问题
+-----------------
+2021年哪家上市公司的资产总金额最高？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('中科院成都信息技术股份有限公司', '985590857.17')]
+这是统计问题
+-----------------
+2019年负债总额最高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('宁夏宝丰能源集团股份有限公司', '9942544910.32')]
+这是统计问题
+-----------------
+哪家上市公司，2020年总负债最高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('胜华新材料集团股份有限公司', '989560032.40')]
+这是统计问题
+-----------------
+哪家上市公司2021年负债总金额最高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('中远海运发展股份有限公司', '99927421615.54')]
+这是统计问题
+-----------------
+2019年其他非流动金融资产最高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2019' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('深圳市超频三科技股份有限公司', '997272.42')]
+这是统计问题
+-----------------
+2020年营业总收入最高的7家上市公司是？
+LOG:SQL:
+SELECT 公司名称, 营业总收入 FROM fin_report WHERE 年份='2020' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 7;
+LOG:SQL_result:
+[('深圳爱克莱特科技股份有限公司', '993975779.12'),('中孚信息股份有限公司', '992734319.13'),('中铁装配式建筑股份有限公司', '991428263.97'),('上海锦江国际酒店股份有限公司', '9897556264.41'),('北京市大龙伟业房地产开发股份有限公司', '987136508.10'),('苏美达股份有限公司', '98589905145.81'),('锋尚文化集团股份有限公司', '983895054.72')]
+这是统计问题
+-----------------
+请简要介绍2021年上海安硕征信有限公司的资产及负债情况。
+这是统计问题
+-----------------
+哪三家上市公司，2021年营业收入最高？
+LOG:SQL:
+SELECT 公司名称, 营业收入 FROM fin_report WHERE 年份='2021' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 3;
+LOG:SQL_result:
+[('杭州电魂网络科技股份有限公司', '996290977.71'),('武汉回盛生物科技股份有限公司', '996216817.61'),('江苏锦鸡实业股份有限公司', '993470872.82')]
+这是统计问题
+-----------------
+2020年其他流动资产最高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2020' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('西安陕鼓动力股份有限公司', '99659551.12')]
+这是统计问题
+-----------------
+2021年其他非流动资产最高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2021' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('东方航空物流股份有限公司', '98659429.1')]
+这是统计问题
+-----------------
+2019年哪家上市公司的流动资产最高？
+LOG:SQL:
+SELECT 公司名称, 流动资产合计 FROM fin_report WHERE 年份='2019' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('广州发展集团股份有限公司', '9987657576.90')]
+这是统计问题
+-----------------
+2020年营业总收入最高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 营业总收入 FROM fin_report WHERE 年份='2020' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('深圳爱克莱特科技股份有限公司', '993975779.12')]
+这是统计问题
+-----------------
+哪4家上市公司2019年营业外收入最高？
+LOG:SQL:
+SELECT 公司名称, 营业外收入 FROM fin_report WHERE 年份='2019' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 4;
+LOG:SQL_result:
+[('广西柳药集团股份有限公司', '9973413.23'),('汉威科技集团股份有限公司', '983130.02'),('江苏怡达化学股份有限公司', '98199.50'),('浩云科技股份有限公司', '976031.35')]
+这是统计问题
+-----------------
+2020年营业总成本最高的前5家上市公司为？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2020' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 5;
+LOG:SQL_result:
+[('福建凤竹纺织科技股份有限公司', '999213287.47'),('广州市嘉诚国际物流股份有限公司', '992144629.86'),('蓝星安迪苏股份有限公司', '9906842640'),('四方科技集团股份有限公司', '989059622.20'),('中铁装配式建筑股份有限公司', '982793285.3')]
+这是统计问题
+-----------------
+2021年营业成本最高的前七家上市公司是哪些家？
+LOG:SQL:
+SELECT 公司名称, 营业成本 FROM fin_report WHERE 年份='2021' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 7;
+LOG:SQL_result:
+[('上海富瀚微电子股份有限公司', '988166295.84'),('山东南山智尚科技股份有限公司', '982151010.09'),('内蒙古新华发行集团股份有限公司', '973043473.75'),('广州安必平医药科技股份有限公司', '96946837.26'),('上海中谷物流股份有限公司', '9676609244.19'),('云南贝泰妮生物科技集团股份有限公司', '965167028.03'),('武汉力源信息技术股份有限公司', '9596184414.17')]
+这是统计问题
+-----------------
+哪家上市公司，2021年营业收入最高？
+LOG:SQL:
+SELECT 公司名称, 营业收入 FROM fin_report WHERE 年份='2021' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('杭州电魂网络科技股份有限公司', '996290977.71')]
+这是统计问题
+-----------------
+哪家上市公司2019年营业外收入最高？
+LOG:SQL:
+SELECT 公司名称, 营业外收入 FROM fin_report WHERE 年份='2019' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('广西柳药集团股份有限公司', '9973413.23')]
+这是统计问题
+-----------------
+2019年营业利润最高的前3家是哪些上市公司？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2019' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 3;
+LOG:SQL_result:
+[('宁夏建材集团股份有限公司', '987473653.85'),('三角轮胎股份有限公司', '983976477.66'),('石家庄科林电气股份有限公司', '97858565.18')]
+这是统计问题
+-----------------
+2020年营业总成本最高的上市公司为？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2020' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 1;
+LOG:SQL_result:
+[('福建凤竹纺织科技股份有限公司', '999213287.47')]
+这是统计问题
+-----------------
+2021年营业成本最高的上市公司是哪家？
+LOG:SQL:
+SELECT 公司名称, 营业成本 FROM fin_report WHERE 年份='2021' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 1;
+LOG:SQL_result:
+[('上海富瀚微电子股份有限公司', '988166295.84')]
+这是统计问题
+-----------------
+2020年哪四个上市公司的利润总额最高？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2020' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 4;
+LOG:SQL_result:
+[('广州安必平医药科技股份有限公司', '99853025.37'),('珠海英搏尔电气股份有限公司', '9901820.52'),('浙江百达精工股份有限公司', '98685789.77'),('广东迪生力汽配股份有限公司', '98229032.89')]
+这是统计问题
+-----------------
+2019年营业利润最高的是哪家上市公司？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2019' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 1;
+LOG:SQL_result:
+[('宁夏建材集团股份有限公司', '987473653.85')]
+这是统计问题
+-----------------
+2021年净利润最高的5家上市公司是？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2021' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 5;
+LOG:SQL_result:
+[('常熟市天银机电股份有限公司', '99817322.11'),('北海国发川山生物股份有限公司', '9926729.25'),('杭叉集团股份有限公司', '991108201.97'),('浙江臻镭科技股份有限公司', '98844243.08'),('中集车辆集团股份有限公司', '987663448.21')]
+这是统计问题
+-----------------
+2020年哪家上市公司的利润总额最高？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2020' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 1;
+LOG:SQL_result:
+[('广州安必平医药科技股份有限公司', '99853025.37')]
+这是统计问题
+-----------------
+2021年净利润最高的上市公司是？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2021' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 1;
+LOG:SQL_result:
+[('常熟市天银机电股份有限公司', '99817322.11')]
+这是统计问题
+-----------------
+在上海注册的所有上市公司中，2019年货币总额最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%上海%' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1;
+LOG:SQL_result:
+[('上海爱旭新能源股份有限公司', '989634799.91')]
+这是统计问题
+-----------------
+哪七家上市公司，2019年货币总额最高？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2019' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 7;
+LOG:SQL_result:
+[('河北建新化工股份有限公司', '999254562.78'),('瀚蓝环境股份有限公司', '992926362.52'),('安徽山河药用辅料股份有限公司', '99066317.8'),('深圳市瑞凌实业集团股份有限公司', '990580792.14'),('上海爱旭新能源股份有限公司', '989634799.91'),('神驰机电股份有限公司', '967194995.74'),('北京市大龙伟业房地产开发股份有限公司', '964424519.03')]
+这是统计问题
+-----------------
+在北京注册的上市公司中，2020年货币资金最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%北京%' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1;
+LOG:SQL_result:
+[('北京银信长远科技股份有限公司', '950280283.29')]
+这是统计问题
+-----------------
+注册地址在南京的上市公司中，2021年资产总额最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%南京%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('国电南京自动化股份有限公司', '9302961087.17')]
+这是统计问题
+-----------------
+2019年总资产最高并且历史注册地址在无锡的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%无锡%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('无锡隆盛科技股份有限公司', '997099270.05')]
+这是统计问题
+-----------------
+2020年资产总金额最高并且曾经在苏州注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%苏州%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('苏州纽威阀门股份有限公司', '5349479144.22')]
+这是统计问题
+-----------------
+哪家上市公司，在杭州注册，2021年负债总额最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%杭州%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('英飞特电子杭州股份有限公司', '930608155.87')]
+这是统计问题
+-----------------
+哪3家上市公司2020年货币资金最高？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2020' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 3;
+LOG:SQL_result:
+[('金宏气体股份有限公司', '989366134.36'),('卫宁健康科技集团股份有限公司', '988804969.84'),('无锡芯朋微电子股份有限公司', '987885087.65')]
+这是统计问题
+-----------------
+哪家在深圳注册的上市公司，2019年总负债最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%深圳%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('博士眼镜连锁股份有限公司', '96646933.82')]
+这是统计问题
+-----------------
+2021年资产总额最高的前4家上市公司为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 4;
+LOG:SQL_result:
+[('中科院成都信息技术股份有限公司', '985590857.17'),('新疆百花村医药集团股份有限公司', '982313014.89'),('辽宁成大生物股份有限公司', '9792731456.06'),('苏州迈为科技股份有限公司', '9775882062.03')]
+这是统计问题
+-----------------
+2019年总资产最高的前五家上市公司是哪些家？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 5;
+LOG:SQL_result:
+[('无锡隆盛科技股份有限公司', '997099270.05'),('四川科新机电股份有限公司', '993677728.48'),('康龙化成北京新药技术股份有限公司', '9935038258.59'),('钢研纳克检测技术股份有限公司', '993351049.15'),('南京万德斯环保科技股份有限公司', '992508835.28')]
+这是统计问题
+-----------------
+2020年资产总金额最高的前7家是哪些上市公司？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 7;
+LOG:SQL_result:
+[('北京科拓恒通生物技术股份有限公司', '999245812.07'),('上海健麾信息技术股份有限公司', '997404072.75'),('宁波迦南智能电气股份有限公司', '996401897.63'),('北京康斯特仪表科技股份有限公司', '995487765.54'),('中伟新材料股份有限公司', '9864111074.13'),('熊猫乳品集团股份有限公司', '983851597.41'),('北京光线传媒股份有限公司', '9825394730.14')]
+这是统计问题
+-----------------
+在宁波注册的所有上市公司中，2020年负债总金额最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%宁波%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('宁波水表集团股份有限公司', '605864475.30')]
+这是统计问题
+-----------------
+在西安注册的上市公司中，2021年其他非流动金融资产最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动负债 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%西安%' AND 其他非流动负债 IS NOT NULL AND 其他非流动负债 != 1.0 ORDER BY 其他非流动负债 DESC LIMIT 1;
+LOG:SQL_result:
+[('天地源股份有限公司', '1000000.0')]
+这是统计问题
+-----------------
+请简要介绍2021年上海安硕征信有限公司的现金流情况。
+这是统计问题
+-----------------
+注册地址在天津的上市公司中，2019年其他流动资产最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%天津%' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('中远海运控股股份有限公司', '823912565.75')]
+这是统计问题
+-----------------
+2020年其他非流动资产最高并且历史注册地址在青岛的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%青岛%' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('青岛港国际股份有限公司', '811556445')]
+这是统计问题
+-----------------
+2021年流动资产最高并且曾经在武汉注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 流动资产合计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%武汉%' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('武汉中元华电科技股份有限公司', '914357800.45')]
+这是统计问题
+-----------------
+哪家上市公司，在重庆注册，2019年营业总收入最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业总收入 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%重庆%' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('天域生态环境股份有限公司', '837308909.97')]
+这是统计问题
+-----------------
+哪家在上海注册的上市公司，2020年营业收入最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 营业收入 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%上海%' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('上海锦江国际酒店股份有限公司', '9897556264.41')]
+这是统计问题
+-----------------
+2021年哪三个上市公司的负债总额最高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 3;
+LOG:SQL_result:
+[('中远海运发展股份有限公司', '99927421615.54'),('贵人鸟股份有限公司', '993074330.14'),('安徽华骐环保科技股份有限公司', '991412306.71')]
+这是统计问题
+-----------------
+在北京注册的所有上市公司中，2021年营业外收入最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业外收入 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%北京%' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('北京利德曼生化股份有限公司', '97643.81')]
+这是统计问题
+-----------------
+在南京注册的上市公司中，2019年营业总成本最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%南京%' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 1;
+LOG:SQL_result:
+[('南微医学科技股份有限公司', '983688063.45')]
+这是统计问题
+-----------------
+注册地址在无锡的上市公司中，2020年营业成本最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业成本 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%无锡%' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 1;
+LOG:SQL_result:
+[('凯龙高科技股份有限公司', '808171335.65')]
+这是统计问题
+-----------------
+2021年营业利润最高并且历史注册地址在苏州的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%苏州%' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 1;
+LOG:SQL_result:
+[('苏州晶方半导体科技股份有限公司', '639125380.33')]
+这是统计问题
+-----------------
+2019年利润总额最高并且曾经在杭州注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%杭州%' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 1;
+LOG:SQL_result:
+[('南方中金环境股份有限公司', '99515789.69')]
+这是统计问题
+-----------------
+哪家上市公司，在深圳注册，2020年净利润最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%深圳%' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 1;
+LOG:SQL_result:
+[('深圳爱克莱特科技股份有限公司', '98103411.03')]
+这是统计问题
+-----------------
+哪家在宁波注册的上市公司，2020年货币总额最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%宁波%' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1;
+LOG:SQL_result:
+[('乐歌人体工学科技股份有限公司', '905282551.82')]
+这是统计问题
+-----------------
+在西安注册的所有上市公司中，2021年货币资金最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%西安%' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 1;
+LOG:SQL_result:
+[('三人行传媒集团股份有限公司', '779840195.09')]
+这是统计问题
+-----------------
+在天津注册的上市公司中，2019年资产总额最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%天津%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('天津七一二通信广播股份有限公司', '5464685186.98')]
+这是统计问题
+-----------------
+注册地址在青岛的上市公司中，2020年总资产最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%青岛%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('青岛惠城环保科技集团股份有限公司', '962485059.01')]
+这是统计问题
+-----------------
+2021年资产总金额最高并且历史注册地址在武汉的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%武汉%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 1;
+LOG:SQL_result:
+[('百川能源股份有限公司', '8151726468.77')]
+这是统计问题
+-----------------
+2019年负债总额最高并且曾经在重庆注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%重庆%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('重庆再升科技股份有限公司', '983088831.82')]
+这是统计问题
+-----------------
+2019年总负债最高的4家上市公司是？
+LOG:SQL:
+SELECT 公司名称 FROM fin_report WHERE 年份='2019' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 4;
+LOG:SQL_result:
+[('宁夏宝丰能源集团股份有限公司',),('广东拓斯达科技股份有限公司',),('江苏凯伦建材股份有限公司',),('北京辰安科技股份有限公司',)]
+这是统计问题
+-----------------
+哪家上市公司，在北京注册，2020年总负债最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%北京%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('北京合康新能科技股份有限公司', '955803515.98')]
+这是统计问题
+-----------------
+哪家在南京注册的上市公司，2021年负债总金额最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%南京%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('国电南京自动化股份有限公司', '5749261490.84')]
+这是统计问题
+-----------------
+在无锡注册的所有上市公司中，2019年其他非流动金融资产最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动负债 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%无锡%' AND 其他非流动负债 IS NOT NULL AND 其他非流动负债 != 1.0 ORDER BY 其他非流动负债 DESC LIMIT 1;
+LOG:SQL_result:
+[('朗新科技集团股份有限公司', '994733.57')]
+这是统计问题
+-----------------
+在苏州注册的上市公司中，2020年其他流动资产最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%苏州%' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('苏州工业园区凌志软件股份有限公司', '81414976.00')]
+这是统计问题
+-----------------
+哪五家上市公司，2020年负债总金额最高？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 5;
+LOG:SQL_result:
+[('胜华新材料集团股份有限公司', '989560032.40'),('百合花集团股份有限公司', '987171163.44'),('江西新余国科科技股份有限公司', '97042149.19'),('梅花生物科技集团股份有限公司', '9676758011.97'),('上海钢联电子商务股份有限公司', '9659589648.01')]
+这是统计问题
+-----------------
+注册地址在杭州的上市公司中，2021年其他非流动资产最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%杭州%' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 1;
+LOG:SQL_result:
+[('咸亨国际科技股份有限公司', '920031.0')]
+这是统计问题
+-----------------
+哪7家上市公司2021年其他非流动金融资产最高？
+LOG:SQL:
+SELECT 公司名称, 其他非流动负债 FROM fin_report WHERE 年份='2021' AND 其他非流动负债 IS NOT NULL AND 其他非流动负债 != 1.0 ORDER BY 其他非流动负债 DESC LIMIT 7;
+LOG:SQL_result:
+[('仙乐健康科技股份有限公司', '9826.20'),('丝路视觉科技股份有限公司', '9719473.76'),('深圳微芯生物科技股份有限公司', '96746555.87'),('华新水泥股份有限公司', '94446000'),('高新兴科技集团股份有限公司', '93497482.09'),('上海国际港务集团股份有限公司', '92121585.68'),('中科星图股份有限公司', '92018742.5')]
+这是统计问题
+-----------------
+2019年其他流动资产最高的前3家上市公司为？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2019' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 3;
+LOG:SQL_result:
+[('迪瑞医疗科技股份有限公司', '99994.50'),('网宿科技股份有限公司', '99288207.05'),('深圳市科信通信技术股份有限公司', '9825099.27')]
+这是统计问题
+-----------------
+2020年其他非流动资产最高的前四家上市公司是哪些家？
+LOG:SQL:
+SELECT 公司名称,其他非流动资产 FROM fin_report WHERE 年份='2020' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 4;
+LOG:SQL_result:
+[('浙文互联集团股份有限公司', '998580.00'),('湖南郴电国际发展股份有限公司', '99653125.58'),('深圳微芯生物科技股份有限公司', '99559335.27'),('无锡芯朋微电子股份有限公司', '99059600.00')]
+这是统计问题
+-----------------
+2019年流动资产最高并且历史注册地址在深圳的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称,流动资产合计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%深圳%' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 1;
+LOG:SQL_result:
+[('深圳市朗科智能电气股份有限公司', '973909310.90')]
+这是统计问题
+-----------------
+2020年营业总收入最高并且曾经在宁波注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称,营业总收入 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%宁波%' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('宁波太平鸟时尚服饰股份有限公司', '9386865187.73')]
+这是统计问题
+-----------------
+2021年流动资产最高的前5家是哪些上市公司？
+LOG:SQL:
+SELECT 公司名称,流动资产合计 FROM fin_report WHERE 年份='2021' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 5;
+LOG:SQL_result:
+[('湖南松井新材料股份有限公司', '995098014.18'),('上海谊众药业股份有限公司', '993551276.42'),('博瑞生物医药苏州股份有限公司', '993005888.54'),('深圳市赢合科技股份有限公司', '9920050345.88'),('山东天岳先进科技股份有限公司', '990005511.0')]
+这是统计问题
+-----------------
+哪家上市公司，在西安注册，2021年营业收入最高？金额为？
+LOG:SQL:
+SELECT 公司名称,营业收入 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%西安%' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('天地源股份有限公司', '6941947174.46')]
+这是统计问题
+-----------------
+2019年哪七个上市公司的营业总收入最高？
+LOG:SQL:
+SELECT 公司名称,营业总收入 FROM fin_report WHERE 年份='2019' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 7;
+LOG:SQL_result:
+[('爱尔眼科医院集团股份有限公司', '9990103976.04'),('广东南方新媒体股份有限公司', '995995779.68'),('福建福能股份有限公司', '9945408144.10'),('北京首商集团股份有限公司', '9944022277.67'),('广州维力医疗器械股份有限公司', '993812556.74'),('江苏江南水务股份有限公司', '991750589.57'),('三川智慧科技股份有限公司', '987501235.07')]
+这是统计问题
+-----------------
+哪家在天津注册的上市公司，2019年营业外收入最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 营业外收入 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%天津%' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 1;
+LOG:SQL_result:
+[('天津卓朗信息科技股份有限公司', '88484630.28')]
+这是统计问题
+-----------------
+在上海注册的所有上市公司中，2020年营业总成本最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%上海%' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 1;
+LOG:SQL_result:
+[('上海广电电气集团股份有限公司', '939608717.26')]
+这是统计问题
+-----------------
+2020年营业收入最高的3家上市公司是？
+LOG:SQL:
+SELECT 公司名称,营业收入 FROM fin_report WHERE 年份='2020' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 3;
+LOG:SQL_result:
+[('深圳爱克莱特科技股份有限公司', '993975779.12'),('中孚信息股份有限公司', '992734319.13'),('中铁装配式建筑股份有限公司', '991428263.97')]
+这是统计问题
+-----------------
+在青岛注册的上市公司中，2021年营业成本最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业成本 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%青岛%' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 1;
+LOG:SQL_result:
+[('华仁药业股份有限公司', '771349590.16')]
+这是统计问题
+-----------------
+哪四家上市公司，2021年营业外收入最高？
+LOG:SQL:
+SELECT 公司名称,营业外收入 FROM fin_report WHERE 年份='2021' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 4;
+LOG:SQL_result:
+[('苏州市建筑科学研究院集团股份有限公司', '998802.71'),('中远海运发展股份有限公司', '9943531.93'),('哈尔滨空调股份有限公司', '986628.27'),('百川能源股份有限公司', '986583.66')]
+这是统计问题
+-----------------
+哪5家上市公司2019年营业总成本最高？
+LOG:SQL:
+SELECT 公司名称,营业总成本 FROM fin_report WHERE 年份='2019' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 5;
+LOG:SQL_result:
+[('宁波GQY视讯股份有限公司', '99694815.49'),('宁波美诺华药业股份有限公司', '995662031.41'),('江苏太平洋精锻科技股份有限公司', '991068315.01'),('上海汇通能源股份有限公司', '98794236.91'),('上海晨光文具股份有限公司', '9873266701.55')]
+这是统计问题
+-----------------
+注册地址在武汉的上市公司中，2019年营业利润最高的公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%武汉%' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 1;
+LOG:SQL_result:
+[('百川能源股份有限公司', '974190259.95')]
+这是统计问题
+-----------------
+2020年营业成本最高的前7家上市公司为？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2020' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 7;
+LOG:SQL_result:
+[('福建凤竹纺织科技股份有限公司', '999213287.47'),('广州市嘉诚国际物流股份有限公司', '992144629.86'),('蓝星安迪苏股份有限公司', '9906842640'),('四方科技集团股份有限公司', '989059622.20'),('中铁装配式建筑股份有限公司', '982793285.3'),('柳州化工股份有限公司', '97574036.40'),('晶瑞电子材料股份有限公司', '964270527.34')]
+这是统计问题
+-----------------
+2020年利润总额最高并且历史注册地址在重庆的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%重庆%' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 1;
+LOG:SQL_result:
+[('力帆科技集团股份有限公司', '74411451.95')]
+这是统计问题
+-----------------
+2021年净利润最高并且曾经在北京注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%北京%' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 1;
+LOG:SQL_result:
+[('华润双鹤药业股份有限公司', '972131934.64')]
+这是统计问题
+-----------------
+2021年营业利润最高的前三家上市公司是哪些家？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2021' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 3;
+LOG:SQL_result:
+[('欣旺达电子股份有限公司', '987365366.65'),('河南中原高速公路股份有限公司', '983879105.71'),('广东迪生力汽配股份有限公司', '97820806.91')]
+这是统计问题
+-----------------
+2019年利润总额最高的前4家是哪些上市公司？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2019' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 4;
+LOG:SQL_result:
+[('健民药业集团股份有限公司', '99793886.03'),('南方中金环境股份有限公司', '99515789.69'),('洛阳建龙微纳新材料股份有限公司', '99212445.77'),('广东久量股份有限公司', '99012618.3')]
+这是统计问题
+-----------------
+2020年哪五个上市公司的净利润最高？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2020' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 5;
+LOG:SQL_result:
+[('无锡芯朋微电子股份有限公司', '99736211.17'),('江苏久吾高科技股份有限公司', '99675142.23'),('天津捷强动力装备股份有限公司', '99567047.92'),('新疆天富能源股份有限公司', '99542474.87'),('深圳爱克莱特科技股份有限公司', '98103411.03')]
+这是统计问题
+-----------------
+2021年货币总额最高的7家上市公司是？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 7;
+LOG:SQL_result:
+[('北京同仁堂股份有限公司', '9926307096.61'),('杭州钢铁股份有限公司', '9909373765.85'),('火星人厨具股份有限公司', '990727430.82'),('上海华谊集团股份有限公司', '9907109351.7'),('日照港股份有限公司', '989502523.21'),('山东南山智尚科技股份有限公司', '983979794.46'),('山东钢铁股份有限公司', '9833750313.43')]
+这是统计问题
+-----------------
+在上海注册的所有上市公司中，2021年货币资金最高的前3家上市公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%上海%' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 3;
+LOG:SQL_result:
+[('上海华谊集团股份有限公司', '9907109351.7'),('东方航空物流股份有限公司', '9522850750.5'),('上海钢联电子商务股份有限公司', '908435781.35')]
+这是统计问题
+-----------------
+在北京注册的上市公司中，2019年资产总额最高的前四家上市公司是哪些家？金额为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%北京%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 4;
+LOG:SQL_result:
+[('康龙化成北京新药技术股份有限公司', '9935038258.59'),('钢研纳克检测技术股份有限公司', '993351049.15'),('信达地产股份有限公司', '98604627404.60'),('中国铁路通信信号股份有限公司', '97512591304.36')]
+这是统计问题
+-----------------
+注册地址在南京的上市公司中，2020年总资产最高的前5家是哪些上市公司？金额为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%南京%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 5;
+LOG:SQL_result:
+[('南京海辰药业股份有限公司', '906518927.96'),('江苏凤凰置业投资股份有限公司', '8725324251.56'),('国电南京自动化股份有限公司', '8675859329.55'),('烟台正海生物科技股份有限公司', '805539145.17'),('江苏宁沪高速公路股份有限公司', '61095560365.16')]
+这是统计问题
+-----------------
+2021年注册地址在无锡哪七个上市公司的资产总金额最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%无锡%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 7;
+LOG:SQL_result:
+[('朗新科技集团股份有限公司', '8849787273.48'),('无锡药明康德新药开发股份有限公司', '55127388384.03'),('无锡奥特维科技股份有限公司', '4282393361.48'),('银邦金属复合材料股份有限公司', '3717331191.77'),('无锡和晶科技股份有限公司', '2892271756.78'),('上能电气股份有限公司', '2697088332.87'),('无锡芯朋微电子股份有限公司', '1634436876.14')]
+这是统计问题
+-----------------
+2019年负债总额最高的3家并且曾经在苏州注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%苏州%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 3;
+LOG:SQL_result:
+[('江苏凯伦建材股份有限公司', '991035799.15'),('苏州斯莱克精密设备股份有限公司', '939251472.52'),('中新苏州工业园区开发集团股份有限公司', '9361642421.34')]
+这是统计问题
+-----------------
+2020年哪四家上市公司，在杭州注册，总负债最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%杭州%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 4;
+LOG:SQL_result:
+[('百合花集团股份有限公司', '987171163.44'),('杭州聚合顺新材料股份有限公司', '930141093.20'),('浙江铁流离合器股份有限公司', '924811166.50'),('杭州纵横通信股份有限公司', '849414912.23')]
+这是统计问题
+-----------------
+2021年哪5家在深圳注册的上市公司，负债总金额最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%深圳%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 5;
+LOG:SQL_result:
+[('深圳市超频三科技股份有限公司', '980371166.37'),('中集车辆集团股份有限公司', '9394759264.06'),('丝路视觉科技股份有限公司', '896685667.50'),('深圳市长亮科技股份有限公司', '866365766.61'),('深圳瑞华泰薄膜科技股份有限公司', '864515535.45')]
+这是统计问题
+-----------------
+在宁波注册的所有上市公司中，2019年其他非流动金融资产最高的前7家上市公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%宁波%' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 7;
+LOG:SQL_result:
+[('宁波美诺华药业股份有限公司', '97243311.44'),('东方日升新能源股份有限公司', '94238918.96'),('乐歌人体工学科技股份有限公司', '8415199.29'),('宁波继峰汽车零部件股份有限公司', '792809769.92'),('宁波联合集团股份有限公司', '7377876.11'),('三江购物俱乐部股份有限公司', '69930748.91'),('京投发展股份有限公司', '6890449421.32')]
+这是统计问题
+-----------------
+在西安注册的上市公司中，2020年其他流动资产最高的前三家上市公司是哪些家？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%西安%' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 3;
+LOG:SQL_result:
+[('西安陕鼓动力股份有限公司', '99659551.12'),('三人行传媒集团股份有限公司', '9533877.58'),('金堆城钼业股份有限公司', '8851289.94')]
+这是统计问题
+-----------------
+注册地址在天津的上市公司中，2021年其他非流动资产最高的前4家是哪些上市公司？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%天津%' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 4;
+LOG:SQL_result:
+[('天津利安隆新材料股份有限公司', '91284832.04'),('天津锐新昌科技股份有限公司', '8300682.36'),('中材节能股份有限公司', '80635370.11'),('爱玛科技集团股份有限公司', '4942771969.13')]
+这是统计问题
+-----------------
+2019年注册地址在青岛哪五个上市公司的流动资产最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 流动资产合计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%青岛%' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 5;
+LOG:SQL_result:
+[('三角轮胎股份有限公司', '8948556871.03'),('青岛国林科技集团股份有限公司', '787004229.56'),('青岛惠城环保科技集团股份有限公司', '444825749.43'),('青岛中资中程集团股份有限公司', '4391611215.53'),('青岛东软载波科技股份有限公司', '2500676291.24')]
+这是统计问题
+-----------------
+2020年营业总收入最高的7家并且曾经在武汉注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 营业总收入 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%武汉%' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 7;
+LOG:SQL_result:
+[('武汉科前生物股份有限公司', '843227687.69'),('武汉回盛生物科技股份有限公司', '777458548.09'),('湖北久之洋红外系统股份有限公司', '722748579.21'),('长江出版传媒股份有限公司', '6675054216.48'),('百川能源股份有限公司', '4295772505.14'),('嘉必优生物技术武汉股份有限公司', '323460668.81'),('武汉祥龙电业股份有限公司', '30668649.13')]
+这是统计问题
+-----------------
+2021年哪三家上市公司，在重庆注册，营业收入最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业收入 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%重庆%' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 3;
+LOG:SQL_result:
+[('重庆港股份有限公司', '5481832867.12'),('深圳市大族数控科技股份有限公司', '4080562430.11'),('重庆博腾制药科技股份有限公司', '3105149629.68')]
+这是统计问题
+-----------------
+2019年哪4家在上海注册的上市公司，营业外收入最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 营业外收入 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%上海%' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 4;
+LOG:SQL_result:
+[('上海国际港务集团股份有限公司', '96079813.78'),('上海环境集团股份有限公司', '9051344.81'),('长发集团长江投资实业股份有限公司', '82333895.66'),('上海汽车集团股份有限公司', '766952147.81')]
+这是统计问题
+-----------------
+在北京注册的所有上市公司中，2020年营业总成本最高的前5家上市公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%北京%' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 5;
+LOG:SQL_result:
+[('蓝星安迪苏股份有限公司', '9906842640'),('中铁装配式建筑股份有限公司', '982793285.3'),('北京首都在线科技股份有限公司', '963860329.50'),('西藏诺迪康药业股份有限公司', '951130340.59'),('圣邦微电子北京股份有限公司', '942937674.68')]
+这是统计问题
+-----------------
+在南京注册的上市公司中，2021年营业成本最高的前七家上市公司是哪些家？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业成本 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%南京%' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 7;
+LOG:SQL_result:
+[('南京市测绘勘察研究院股份有限公司', '503276392.74'),('国电南京自动化股份有限公司', '4479896230.26'),('烟台正海生物科技股份有限公司', '43596232.43'),('江苏本川智能电路科技股份有限公司', '430898274.32'),('南京医药股份有限公司', '42185985412.63'),('幸福蓝海影视文化集团股份有限公司', '382905226.55'),('南京寒锐钴业股份有限公司', '3013000733.19')]
+这是统计问题
+-----------------
+注册地址在无锡的上市公司中，2019年营业利润最高的前3家是哪些上市公司？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%无锡%' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 3;
+LOG:SQL_result:
+[('东珠生态环保股份有限公司', '439525675.99'),('无锡威唐工业技术股份有限公司', '43788486.72'),('无锡宝通科技股份有限公司', '311279270.51')]
+这是统计问题
+-----------------
+2020年注册地址在苏州哪四个上市公司的利润总额最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%苏州%' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 4;
+LOG:SQL_result:
+[('苏州伟创电气科技股份有限公司', '97321415.39'),('晶瑞电子材料股份有限公司', '93631488.80'),('苏州科达科技股份有限公司', '71412138.77'),('康平科技苏州股份有限公司', '66753132.37')]
+这是统计问题
+-----------------
+2021年净利润最高的5家并且曾经在杭州注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%杭州%' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 5;
+LOG:SQL_result:
+[('杭叉集团股份有限公司', '991108201.97'),('浙江臻镭科技股份有限公司', '98844243.08'),('银江技术股份有限公司', '95645814.25'),('浙江泰林生物技术股份有限公司', '63529851.10'),('杭州当虹科技股份有限公司', '61347496.08')]
+这是统计问题
+-----------------
+2019年哪七家上市公司，在深圳注册，货币总额最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%深圳%' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 7;
+LOG:SQL_result:
+[('深圳市瑞凌实业集团股份有限公司', '990580792.14'),('深圳普门科技股份有限公司', '819953716.75'),('深圳太辰光通信股份有限公司', '760026494.71'),('深圳市赢合科技股份有限公司', '714518182.71'),('深圳市长盈精密技术股份有限公司', '694509859.36'),('深圳市智莱科技股份有限公司', '689196235.69'),('深圳市优博讯科技股份有限公司', '586730801.81')]
+这是统计问题
+-----------------
+2020年哪3家在宁波注册的上市公司，货币资金最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%宁波%' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 3;
+LOG:SQL_result:
+[('乐歌人体工学科技股份有限公司', '905282551.82'),('宁波均胜电子股份有限公司', '8650017094.00'),('宁波拓普集团股份有限公司', '787123646.45')]
+这是统计问题
+-----------------
+在西安注册的所有上市公司中，2021年资产总额最高的前4家上市公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%西安%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 4;
+LOG:SQL_result:
+[('中国航发动力股份有限公司', '90648498035.02'),('天地源股份有限公司', '41274569917.58'),('三人行传媒集团股份有限公司', '3209613710.56'),('陕西建设机械股份有限公司', '17602567240.94')]
+这是统计问题
+-----------------
+在天津注册的上市公司中，2019年总资产最高的前五家上市公司是哪些家？金额为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%天津%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 5;
+LOG:SQL_result:
+[('天津七一二通信广播股份有限公司', '5464685186.98'),('威海光威复合材料股份有限公司', '4062536347.93'),('天津瑞普生物技术股份有限公司', '3563250715.37'),('天津港股份有限公司', '35106520852.28'),('海洋石油工程股份有限公司', '31856542935.10')]
+这是统计问题
+-----------------
+注册地址在青岛的上市公司中，2020年资产总金额最高的前7家是哪些上市公司？金额为？
+LOG:SQL:
+SELECT 公司名称, 资产总计 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%青岛%' AND 资产总计 IS NOT NULL AND 资产总计 != 1.0 ORDER BY 资产总计 DESC LIMIT 7;
+LOG:SQL_result:
+[('青岛惠城环保科技集团股份有限公司', '962485059.01'),('青岛港国际股份有限公司', '57177364980'),('青岛中资中程集团股份有限公司', '4600691210.48'),('青岛海尔生物医疗股份有限公司', '3942599032.83'),('青岛汇金通电力设备股份有限公司', '2572028402.96'),('三角轮胎股份有限公司', '16653519724.13'),('青岛国林科技集团股份有限公司', '1133020430.56')]
+这是统计问题
+-----------------
+2021年注册地址在武汉哪三个上市公司的负债总额最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%武汉%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 3;
+LOG:SQL_result:
+[('海波重型工程科技股份有限公司', '972986215.73'),('长飞光纤光缆股份有限公司', '8893621576.0'),('马应龙药业集团股份有限公司', '812721320.88')]
+这是统计问题
+-----------------
+2019年总负债最高的4家并且曾经在重庆注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%重庆%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 4;
+LOG:SQL_result:
+[('重庆再升科技股份有限公司', '983088831.82'),('重庆博腾制药科技股份有限公司', '891163683.95'),('福安药业集团股份有限公司', '746590058.59'),('神驰机电股份有限公司', '588763440.91')]
+这是统计问题
+-----------------
+2020年哪五家上市公司，在北京注册，负债总金额最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 负债合计 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%北京%' AND 负债合计 IS NOT NULL AND 负债合计 != 1.0 ORDER BY 负债合计 DESC LIMIT 5;
+LOG:SQL_result:
+[('北京合康新能科技股份有限公司', '955803515.98'),('北京北陆药业股份有限公司', '955500130.72'),('北京万泰生物药业股份有限公司', '923286109.55'),('北京海新能源科技股份有限公司', '9115858348.46'),('北京思特奇信息技术股份有限公司', '884175194.09')]
+这是统计问题
+-----------------
+2021年哪7家在南京注册的上市公司，其他非流动金融资产最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%南京%' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 7;
+LOG:SQL_result:
+[('烟台正海生物科技股份有限公司', '4383456.66'),('南京寒锐钴业股份有限公司', '41928722.24'),('江苏本川智能电路科技股份有限公司', '39005227.21'),('南京医药股份有限公司', '36848674.62'),('南京市测绘勘察研究院股份有限公司', '351000.00'),('国电南京自动化股份有限公司', '3289116.88'),('南京宝色股份公司', '2595132.02')]
+这是统计问题
+-----------------
+在无锡注册的所有上市公司中，2019年其他流动资产最高的前3家上市公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他流动资产 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%无锡%' AND 其他流动资产 IS NOT NULL AND 其他流动资产 != 1.0 ORDER BY 其他流动资产 DESC LIMIT 3;
+LOG:SQL_result:
+[('中电电机股份有限公司', '65815424.66'),('无锡隆盛科技股份有限公司', '5850454.24'),('弘元绿色能源股份有限公司', '56740073.14')]
+这是统计问题
+-----------------
+在苏州注册的上市公司中，2020年其他非流动资产最高的前四家上市公司是哪些家？金额为？
+LOG:SQL:
+SELECT 公司名称, 其他非流动资产 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%苏州%' AND 其他非流动资产 IS NOT NULL AND 其他非流动资产 != 1.0 ORDER BY 其他非流动资产 DESC LIMIT 4;
+LOG:SQL_result:
+[('江苏江南高纤股份有限公司', '946469.80'),('康平科技苏州股份有限公司', '7952473.39'),('固德威技术股份有限公司', '7844066.41'),('江苏南大光电材料股份有限公司', '76179458.42')]
+这是统计问题
+-----------------
+注册地址在杭州的上市公司中，2021年流动资产最高的前5家是哪些上市公司？金额为？
+LOG:SQL:
+SELECT 公司名称, 流动资产合计 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%杭州%' AND 流动资产合计 IS NOT NULL AND 流动资产合计 != 1.0 ORDER BY 流动资产合计 DESC LIMIT 5;
+LOG:SQL_result:
+[('浙江中控技术股份有限公司', '9771818301.49'),('浙江核新同花顺网络信息股份有限公司', '7356297629.44'),('杭州士兰微电子股份有限公司', '6849957817.56'),('杭叉集团股份有限公司', '6686454611.62'),('浙文互联集团股份有限公司', '6288026030.26')]
+这是统计问题
+-----------------
+2019年注册地址在深圳哪七个上市公司的营业总收入最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 营业总收入 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%深圳%' AND 营业总收入 IS NOT NULL AND 营业总收入 != 1.0 ORDER BY 营业总收入 DESC LIMIT 7;
+LOG:SQL_result:
+[('深圳市安车检测股份有限公司', '972674678.37'),('深圳市佳士科技股份有限公司', '965557154.57'),('深圳市优博讯科技股份有限公司', '951309604.48'),('丝路视觉科技股份有限公司', '916410710.53'),('深圳市长盈精密技术股份有限公司', '8655207884.12'),('深圳友讯达科技股份有限公司', '780403666.19'),('深圳太辰光通信股份有限公司', '753231136.58')]
+这是统计问题
+-----------------
+2020年营业收入最高的3家并且曾经在宁波注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 营业收入 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%宁波%' AND 营业收入 IS NOT NULL AND 营业收入 != 1.0 ORDER BY 营业收入 DESC LIMIT 3;
+LOG:SQL_result:
+[('宁波太平鸟时尚服饰股份有限公司', '9386865187.73'),('宁波高发汽车控制系统股份有限公司', '891428384.14'),('京投发展股份有限公司', '8864424166.23')]
+这是统计问题
+-----------------
+请简要介绍2020年上海安硕征信有限公司的资产及负债情况。
+这是统计问题
+-----------------
+2021年哪四家上市公司，在西安注册，营业外收入最高？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业外收入 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%西安%' AND 营业外收入 IS NOT NULL AND 营业外收入 != 1.0 ORDER BY 营业外收入 DESC LIMIT 4;
+LOG:SQL_result:
+[('三人行传媒集团股份有限公司', '2105.9'),('天地源股份有限公司', '169250886.00'),('陕西建设机械股份有限公司', '14159832.97'),('中国航发动力股份有限公司', '128370871.45')]
+这是统计问题
+-----------------
+2019年哪5家在天津注册的上市公司，营业总成本最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 营业总成本 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%天津%' AND 营业总成本 IS NOT NULL AND 营业总成本 != 1.0 ORDER BY 营业总成本 DESC LIMIT 5;
+LOG:SQL_result:
+[('新经典文化股份有限公司', '667754821.91'),('天津海泰科技发展股份有限公司', '652803028.46'),('天津卓朗信息科技股份有限公司', '1885071818.81'),('天津七一二通信广播股份有限公司', '1817731932.38'),('天津凯发电气股份有限公司', '1732266094.68')]
+这是统计问题
+-----------------
+在上海注册的所有上市公司中，2020年营业成本最高的前7家上市公司为？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业成本 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%上海%' AND 营业成本 IS NOT NULL AND 营业成本 != 1.0 ORDER BY 营业成本 DESC LIMIT 7;
+LOG:SQL_result:
+[('上海晨光文具股份有限公司', '9806609999.48'),('上海贝岭股份有限公司', '946727739.06'),('上海阿拉丁生化科技股份有限公司', '91861913.23'),('上海中谷物流股份有限公司', '8961463759.55'),('上海新华传媒股份有限公司', '872402301.75'),('芯原微电子上海股份有限公司', '828939690.07'),('上海爱旭新能源股份有限公司', '8224276819.70')]
+这是统计问题
+-----------------
+在青岛注册的上市公司中，2021年营业利润最高的前三家上市公司是哪些家？金额为？
+LOG:SQL:
+SELECT 公司名称, 营业利润 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%青岛%' AND 营业利润 IS NOT NULL AND 营业利润 != 1.0 ORDER BY 营业利润 DESC LIMIT 3;
+LOG:SQL_result:
+[('青岛海尔生物医疗股份有限公司', '961433976.33'),('青岛国林科技集团股份有限公司', '86163032.15'),('青岛达能环保设备股份有限公司', '71880932.26')]
+这是统计问题
+-----------------
+注册地址在武汉的上市公司中，2019年利润总额最高的前4家是哪些上市公司？金额为？
+LOG:SQL:
+SELECT 公司名称, 利润总额 FROM fin_report WHERE 年份='2019' AND 注册地址 LIKE '%武汉%' AND 利润总额 IS NOT NULL AND 利润总额 != 1.0 ORDER BY 利润总额 DESC LIMIT 4;
+LOG:SQL_result:
+[('健民药业集团股份有限公司', '99793886.03'),('百川能源股份有限公司', '963336237.72'),('长飞光纤光缆股份有限公司', '883509048'),('中国葛洲坝集团股份有限公司', '8787890249.84')]
+这是统计问题
+-----------------
+2020年注册地址在重庆哪五个上市公司的净利润最高？金额是？
+LOG:SQL:
+SELECT 公司名称, 净利润 FROM fin_report WHERE 年份='2020' AND 注册地址 LIKE '%重庆%' AND 净利润 IS NOT NULL AND 净利润 != 1.0 ORDER BY 净利润 DESC LIMIT 5;
+LOG:SQL_result:
+[('重庆三峡水利电力集团股份有限公司', '623777916.19'),('力帆科技集团股份有限公司', '54683244.20'),('重庆再升科技股份有限公司', '394547220.12'),('重庆博腾制药科技股份有限公司', '323193623.71'),('重庆梅安森科技股份有限公司', '26074899.91')]
+这是统计问题
+-----------------
+2021年货币总额最高的7家并且曾经在北京注册的上市公司是？金额是？
+LOG:SQL:
+SELECT 公司名称, 货币资金 FROM fin_report WHERE 年份='2021' AND 注册地址 LIKE '%北京%' AND 货币资金 IS NOT NULL AND 货币资金 != 1.0 ORDER BY 货币资金 DESC LIMIT 7;
+LOG:SQL_result:
+[('北京同仁堂股份有限公司', '9926307096.61'),('北京市大龙伟业房地产开发股份有限公司', '975756738.34'),('北京万邦达环保技术股份有限公司', '946967294.71'),('北京巴士传媒股份有限公司', '937525527.08'),('恒宇信通航空装备北京股份有限公司', '936113545.61'),('北京利德曼生化股份有限公司', '928600082.38'),('北京银信长远科技股份有限公司', '884042159.86')]
+这是统计问题
+-----------------
+请简要介绍2019年上海安硕征信有限公司的研发情况。
+这是统计问题
+-----------------
+根据2021年的年报数据，请简要介绍北京智谱华章科技有限公司的研发情况。
