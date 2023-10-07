@@ -104,7 +104,7 @@
 * 后续我们也将根据项目需求，持续迭代更新数据。
 
 **3) 方案/代码/模型开源**
-* 经同意，[结婚买房代代韭菜](./code/结婚买房代代韭菜)、[Chatglm反卷总局](./code/Chatglm反卷总局)、nsddd、馒头科技、南哪都队、龙盈战队、[安硕硕眼探企]((./code/finglm_all))等团队的方案、代码、模型完全开源，纳入FinGLM项目。
+* 经同意，[结婚买房代代韭菜](./code/结婚买房代代韭菜)、[Chatglm反卷总局](./code/Chatglm反卷总局)、[nsddd](./code/nsddd)、[馒头科技](./code/馒头科技)、[南哪都队](./code/南哪都队)、[龙盈战队](./code/龙盈战队)、[安硕硕眼探企]((./code/finglm_all))等团队的方案、代码、模型完全开源，纳入FinGLM项目。
 * 我们将长期维护优化 [FinGLM 项目](./code/finglm_all)，提供便捷解决方案。
 
 **4) 开放交流**
@@ -134,17 +134,17 @@
 - [ ] **比赛数据集开源**
   - 年报数据集
     - [X] [PDF 文件](https://modelscope.cn/datasets/modelscope/chatglm_llm_fintech_raw_dataset/summary)。包含 11588 份 2019 年至 2021 年期间的部分上市公司年度报告。
-    - [x] [TXT 文件]()。利用 [`pdf2txt.py`](./tool/pdf_to_txt) 对 PDF 文件解析而来。
-    - [ ] HTML 文件
+    - [x] [TXT 文件](https://modelscope.cn/datasets/modelscope/chatglm_llm_fintech_raw_dataset/summary)。利用 [`pdf2txt.py`](./tool/pdf_to_txt) 对 PDF 文件解析而来。
+    - [x] [HTML 文件](https://modelscope.cn/datasets/modelscope/chatglm_llm_fintech_raw_dataset/summary)。
   - 数据库接入
     - [ ] sqlite
     - [ ] mongodb
-- [ ] 决赛项目开源：
-    - [ ] 馒头科技
-    - [ ] 南哪都队
+- [X] 决赛项目开源：
+    - [x] [馒头科技](./code/馒头科技)
+    - [x] [南哪都队](./code/南哪都队)
     - [x] [Chatglm反卷总局](./code/Chatglm反卷总局)
     - [x] [nsddd](./code/nsddd)
-    - [ ] 龙盈战队
+    - [x] [龙盈战队](./code/龙盈战队)
     - [x] [结婚买房代代韭菜](./code/结婚买房代代韭菜)
     - [x] [安硕硕眼探企](.code/finglm_all)
 
@@ -182,11 +182,11 @@
 
 ### 1. 馒头科技 
 
-[[PPT]](./slides/馒头科技.pdf) [[视频]](https://www.bilibili.com/video/BV18h4y187UU/) [代码]
+[[PPT]](./slides/馒头科技.pdf) [[视频]](https://www.bilibili.com/video/BV18h4y187UU/) [[代码]](./code/馒头科技)
 ![mantou](./img/mantou.jpg)
 ### 2. 南哪都队
 
-[[PPT]](./slides/南哪都队.pdf) [[视频]](https://www.bilibili.com/video/BV1Gm4y1V7LD/) [代码]
+[[PPT]](./slides/南哪都队.pdf) [[视频]](https://www.bilibili.com/video/BV1Gm4y1V7LD/) [[代码]](./code/南哪都队)
 
 ![nanna](./img/nanna.jpg)
 
@@ -205,7 +205,7 @@
 
 ### 5. 龙盈战队 
 
-[[PPT]](./slides/龙盈战队.pdf) [[视频]](https://www.bilibili.com/video/BV1Ju4y167ew) [代码]
+[[PPT]](./slides/龙盈战队.pdf) [[视频]](https://www.bilibili.com/video/BV1Ju4y167ew) [[代码]](./code/龙盈战队)
 
 ![longying](./img/longying.jpg)
 ### 6. 结婚买房代代韭菜 
@@ -224,7 +224,7 @@
 
 ### 8. 饺子研究院 
 
-[PPT] [[视频]](https://www.bilibili.com/video/BV12z4y1V7S3/?spm_id_from=333.999.0.0&vd_source=df16438efe36af5724526b8869fb54c1) [代码]
+[[PPT]](./slides/吃辣子.pdf) [[视频]](https://www.bilibili.com/video/BV12z4y1V7S3/?spm_id_from=333.999.0.0&vd_source=df16438efe36af5724526b8869fb54c1) [代码]
 
 ![jiaozi](./img/jiaozi.jpg)
 
@@ -304,7 +304,14 @@ Invoke-WebRequest -Uri https://sail-moe.oss-cn-hangzhou.aliyuncs.com/open_data/h
 
 #### HTML下载
 
-(即将更新)
+Note: pdf转html格式文件，方便大家复用（有个文件损坏了，所以总数比pdf少1个，共11587 个）
+```
+# Linux
+wget https://sail-moe.oss-cn-hangzhou.aliyuncs.com/open_data/hackathon_chatglm_fintech/allhtml.zip
+
+# Windows示例
+Invoke-WebRequest -Uri https://sail-moe.oss-cn-hangzhou.aliyuncs.com/open_data/hackathon_chatglm_fintech/allhtml.zip -OutFile D:\\allhtml.zip
+```
 
 
 #### 使用建议
@@ -321,7 +328,7 @@ Invoke-WebRequest -Uri https://sail-moe.oss-cn-hangzhou.aliyuncs.com/open_data/h
 
 5、构建金融知识问答库：结合构建的金融数据库，应用大模型构建基础的金融问答库。例如，
 
-```python
+```
 {"question"："某公司2021年的财务费用为多少元？", "answer": "某公司2021年的财务费用为XXXX元。"}
 prompt:用多种句式修改question及answer的内容。
 
