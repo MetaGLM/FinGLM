@@ -1,0 +1,14 @@
+{
+  "auto_map": {
+    "AutoTokenizer": [
+      "tokenization_chatglm.ChatGLMTokenizer",
+      null
+    ]
+  },
+  "clean_up_tokenization_spaces": false,
+  "do_lower_case": false,
+  "model_max_length": 1000000000000000019884624838656,
+  "padding_side": "left",
+  "remove_space": false,
+  "tokenizer_class": "ChatGLMTokenizer"
+}

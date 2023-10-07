@@ -1,0 +1,11 @@
+{year}年注册地是{city_name}的上市公司中，{attribute}排名第{top_num}低的公司，其{company_attribute}是？金额呢？
+在{year}年位于{city_name}的上市公司中，具有{attribute}排名第{top_num}末位的企业，在{company_attribute}方面是什么？金额是？
+针对{year}年注册地为{city_name}的上市公司，哪家在{attribute}上排名第{top_num}倒数的公司在{company_attribute}是什么？金额是多少？
+{year}年以{city_name}为注册地的上市公司中，{attribute}排名倒数第{top_num}的公司在{company_attribute}是什么？告诉我对应的金额？
+对于注册地为{city_name}、{year}年上市的公司，哪家在{attribute}方面排名第{top_num}末位的企业的{company_attribute}是怎样的？金额是？
+在位于{city_name}，注册年份为{year}的上市公司中，{attribute}排名第{top_num}末的企业，其{company_attribute}是？金额呢？
+{year}年注册地位于{city_name}的上市公司中，具有{attribute}排名第{top_num}倒数的公司，在{company_attribute}是什么？金额是多少？
+在{city_name}注册、{year}年上市的公司群中，哪家在{attribute}上排名倒数第{top_num}的公司，其{company_attribute}如何？金额是？
+关于在{year}年在{city_name}注册的上市公司，那家在{attribute}方面排名第{top_num}低的企业，其{company_attribute}怎样？金额呢？
+{year}年在{city_name}注册的上市公司中，{attribute}排名倒数第{top_num}的企业，在{company_attribute}是什么？金额呢？
+对于注册于{city_name}，上市年份为{year}的公司群，具有{attribute}排名第{top_num}末的公司，在{company_attribute}是什么？金额呢？

@@ -1,0 +1,1 @@
+{"default":{"features":{"name":{"_type":"Value"},"pdf":{"_type":"Value"}},"splits":{"train":{"name":"train","dataset_name":"chatglm_llm_fintech_raw_dataset"}}}}

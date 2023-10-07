@@ -1,0 +1,16 @@
+什么公司在{year}年中拥有最高的{attribute}？金额呢？
+在{year}年，哪家公司具有最高的{attribute}？金额是？
+哪个公司在{year}年达到了{attribute}的最高值？金额呢？
+在{year}这一年里，哪一家公司的{attribute}是最高的？告诉我对应的金额？
+哪家公司在{year}年取得了{attribute}最高值？告诉我对应的金额？
+{year}年中，哪个公司的{attribute}最高？告诉我对应的金额？
+哪家企业在{year}这一年里的{attribute}最高？金额是多少？
+{year}年，哪家公司表现出最高的{attribute}？金额呢？
+哪家公司在{year}这一年中的{attribute}最高？金额是多少？
+哪家公司在{year}年取得了最高的{attribute}？金额是多少？
+{year}年中，哪家企业达到了{attribute}的最高值？金额是？
+哪个公司在{year}年中实现了{attribute}的最大值？金额是多少？
+哪家公司在{year}年中取得了{attribute}的最高点？金额是？
+在{year}年，哪家企业的{attribute}最高？金额是？
+哪家企业在{year}这一年中的{attribute}达到了最大值？金额是多少？
+{year}年，哪家企业在{attribute}方面取得了最高的结果？金额呢？
