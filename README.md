@@ -304,7 +304,7 @@ Invoke-WebRequest -Uri https://sail-moe.oss-cn-hangzhou.aliyuncs.com/open_data/h
 
 #### HTML下载
 
-Note: pdf转html格式文件，方便大家复用（有个文件损坏了，所以总数比pdf少1个，共11587 个）
+Note: pdf转html格式文件，方便大家复用（有个文件损坏了，所以总数比pdf少，共11582 个）
 ```
 # Linux
 wget https://sail-moe.oss-cn-hangzhou.aliyuncs.com/open_data/hackathon_chatglm_fintech/allhtml.zip
@@ -369,7 +369,7 @@ prompt：请模仿上面的question给出100个类似的问题与对应的答案
 
 \begin{array}{ll}
 max_{similar}(sentence1,sentence2,sentence3), & 无基础信息及关键词\\
-0.25 + 0.25 + max_{similar}(sentence1,sentence2,sentence3)*0.5, & 基础信息正确，关键词正确 \\
+0.25+0.25+max_{similar}(sentence1,sentence2,sentence3)*0.5, & 基础信息正确，关键词正确 \\
 0.25 + 0 + max_{similar}(sentence1,sentence2,sentence3)*0.5, & 基础信息正确，关键词错误\\
 0, & 基础信息错误
 
