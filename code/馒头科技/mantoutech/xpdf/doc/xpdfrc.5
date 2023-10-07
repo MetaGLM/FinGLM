@@ -1,0 +1,854 @@
+.\" Copyright 2002-2022 Glyph & Cog, LLC
+.TH xpdfrc 5 "18 Apr 202"
+.SH NAME
+xpdfrc \- configuration file for Xpdf tools (version 4.04)
+.SH DESCRIPTION
+All of the Xpdf tools read a single configuration file.
+.PP
+On Linux/Unix/MacOS: if you have a
+.I .xpdfrc
+file in your home directory, it will be read.  Otherwise, a
+system-wide configuration file will be read from
+.IR /etc/xpdfrc ,
+if it exists.  (This is its default location; depending on build
+options, it may be placed elsewhere.)
+.PP
+On Windows: the file must be named
+.I xpdfrc
+(no leading dot, no extension), and must be placed in the same
+directory as the executable (pdftotext.exe, xpdf.exe, etc.)
+.PP
+The xpdfrc file consists of a series of configuration options, one
+per line.  Blank lines and lines starting with a \'#' (comments) are
+ignored.
+.PP
+Arguments can be single-quoted or double-quoted, e.g., for file names
+that contain spaces ("aaa bbb", 'aaa bbb').  This quoting does not
+provide any escaping, so there's no way to include a double quote in a
+double-quoted argument or a single quote in a single-quoted argument.
+.PP
+
+Arguments can also be at-quoted: @"aaa bbb".  At-quoted strings allow
+use of the DATADIR variable, which is set to the 'data' subdirectory
+in the xpdf install directory.  The percent sign (%) is an escape
+character: a percent sign followed by any other character is replaced
+with that character.
+.PP
+.RS
+.nf
+@"abc %"def%" ghi" --> abc "def" ghi    
+@"${DATADIR}/foo"  --> ...install-dir.../data/foo
+@"%${DATADIR}/foo" --> ${DATADIR}/foo
+.fi
+.RE
+.PP
+The following sections list all of the configuration options, sorted
+into functional groups.  There is an examples section at the end.
+.SH INCLUDE FILES
+.TP
+.BI include " config\-file"
+Includes the specified config file.  The effect of this is equivalent
+to inserting the contents of
+.I config\-file
+directly into the parent config file in place of the
+.I include
+command.  Config files can be nested arbitrarily deeply.
+.SH GENERAL FONT CONFIGURATION
+.TP
+.BI fontFile " PDF\-font\-name font\-file"
+Maps a PDF font,
+.IR PDF\-font\-name ,
+to a font for display or PostScript output.  The font file,
+.IR font\-file ,
+can be any type allowed in a PDF file.  This command can be used for
+8-bit or 16-bit (CID) fonts.
+.TP
+.BI fontDir " dir"
+Specifies a search directory for font files.  There can be multiple
+fontDir commands; all of the specified directories will be searched in
+order.  The font files can be Type 1 (.pfa or .pfb) or TrueType (.ttf
+or .ttc); other files in the directory will be ignored.  The font file
+name (not including the extension) must exactly match the PDF font
+name.  This search is performed if the font name doesn't match any of
+the fonts declared with the fontFile command.  There are no default
+fontDir directories.
+.TP
+.BI fontFileCC " registry\-ordering font\-file"
+Maps the
+.I registry\-ordering
+character collection to a font for display or PostScript output.  This
+mapping is used if the font name doesn't match any of the fonts
+declared with the fontFile, fontDir, psResidentFont16, or
+psResidentFontCC commands.
+.SH POSTSCRIPT FONT CONFIGURATION
+.TP
+.BR psFontPassthrough " yes | no"
+If set to "yes", pass 8-bit font names through to the PostScript
+output without substitution.  Fonts which are not embedded in the PDF
+file are expected to be available on the printer.  This defaults to
+"no".
+.TP
+.BI psResidentFont " PDF\-font\-name PS\-font\-name"
+When the 8-bit font
+.I PDF\-font\-name
+is used (without embedding) in a PDF file, it will be translated to
+the PostScript font
+.IR PS\-font\-name ,
+which is assumed to be resident in the printer.  Typically,
+.I PDF\-font\-name
+and
+.I PS\-font\-name
+are the same.  By default, only the Base-14 fonts are assumed to be
+resident.
+.TP
+.BI psResidentFont16 " PDF\-font\-name wMode PS\-font\-name encoding"
+When the 16-bit (CID) font
+.I PDF\-font\-name
+with writing mode
+.I wMode
+is used (without embedding) in a PDF file, it will be translated to
+the PostScript font
+.IR PS\-font\-name ,
+which is assumed to be resident in the printer.  The writing mode
+must be either \'H' for horizontal or \'V' for vertical.  The resident
+font is assumed to use the specified encoding (which must have been
+defined with the unicodeMap command).
+.TP
+.BI psResidentFontCC " registry\-ordering wMode PS\-font\-name encoding"
+When a 16-bit (CID) font using the
+.I registry\-ordering
+character collection and 
+.I wMode
+writing mode is used (without embedding) in a PDF file, the PostScript
+font,
+.IR PS\-font\-name ,
+is substituted for it.  The substituted font is assumed to be
+resident in the printer.  The writing mode must be either \'H' for
+horizontal or \'V' for vertical.  The resident font is assumed to use
+the specified encoding (which must have been defined with the
+unicodeMap command).
+.TP
+.BR psEmbedType1Fonts " yes | no"
+If set to "no", prevents embedding of Type 1 fonts in generated
+PostScript.  This defaults to "yes".
+.TP
+.BR psEmbedTrueTypeFonts " yes | no"
+If set to "no", prevents embedding of TrueType fonts in generated
+PostScript.  This defaults to "yes".
+.TP
+.BR psEmbedCIDTrueTypeFonts " yes | no"
+If set to "no", prevents embedding of CID TrueType fonts in generated
+PostScript.  For Level 3 PostScript, this generates a CID font, for
+lower levels it generates a non-CID composite font.  This defaults to
+"yes".
+.TP
+.BR psEmbedCIDPostScriptFonts " yes | no"
+If set to "no", prevents embedding of CID PostScript fonts in
+generated PostScript.  For Level 3 PostScript, this generates a CID
+font, for lower levels it generates a non-CID composite font.  This
+defaults to "yes".
+.SH POSTSCRIPT CONTROL
+.TP
+.BI psPaperSize " width(pts) height(pts)"
+Sets the paper size for PostScript output.  The
+.I width
+and
+.I height
+parameters give the paper size in PostScript points (1 point = 1/72
+inch).
+.TP
+.BR psPaperSize " letter | legal | A4 | A3 | match"
+Sets the paper size for PostScript output to a standard size.  The
+default paper size is set when xpdf and pdftops are built, typically
+to "letter" or "A4".  This can also be set to "match", which will set
+the paper size to match the size specified in the PDF file.
+.TP
+.BR psImageableArea " llx lly urx ury"
+Sets the imageable area for PostScript output.  The four integers are
+the coordinates of the lower-left and upper-right corners of the
+imageable region, specified in points (with the origin being the
+lower-left corner of the paper).  This defaults to the full paper
+size; the psPaperSize option will reset the imageable area
+coordinates.
+.TP
+.BR psCrop " yes | no"
+If set to "yes", PostScript output is cropped to the CropBox specified
+in the PDF file; otherwise no cropping is done.  This defaults to
+"yes".
+.TP
+.BR psUseCropBoxAsPage " yes | no"
+If set to "yes", PostScript output treats the CropBox as the page size.
+By default, this is "no", and the MediaBox is used as the page size.
+.TP
+.BR psExpandSmaller " yes | no"
+If set to "yes", PDF pages smaller than the PostScript imageable area
+are expanded to fill the imageable area.  Otherwise, no scaling is
+done on smaller pages.  This defaults to "no".
+.TP
+.BR psShrinkLarger " yes | no"
+If set to yes, PDF pages larger than the PostScript imageable area are
+shrunk to fit the imageable area.  Otherwise, no scaling is done on
+larger pages.  This defaults to "yes".
+.TP
+.BR psCenter " yes | no"
+If set to yes, PDF pages smaller than the PostScript imageable area
+(after any scaling) are centered in the imageable area.  Otherwise,
+they are aligned at the lower-left corner of the imageable area.  This
+defaults to "yes".
+.TP
+.BR psDuplex " yes | no"
+If set to "yes", the generated PostScript will set the "Duplex"
+pagedevice entry.  This tells duplex-capable printers to enable
+duplexing.  This defaults to "no".
+.TP
+.BR psLevel " level1 | level1sep | level2 | level2gray | level2sep | level3 | level3gray | level3Sep"
+Sets the PostScript level to generate.  This defaults to "level2".
+.TP
+.BR psPreload " yes | no"
+If set to "yes", PDF forms are converted to PS procedures, and image
+data is preloaded.  This uses more memory in the PostScript
+interpreter, but generates significantly smaller PS files in
+situations where, e.g., the same image is drawn on every page of a
+long document.  This defaults to "no".
+.TP
+.BR psOPI " yes | no"
+If set to "yes", generates PostScript OPI comments for all images and
+forms which have OPI information.  This option is only available if
+the Xpdf tools were compiled with OPI support.  This defaults to "no".
+.TP
+.BR psASCIIHex " yes | no"
+If set to "yes", the ASCIIHexEncode filter will be used instead of
+ASCII85Encode for binary data.  This defaults to "no".
+.TP
+.BR psLZW " yes | no"
+If set to "yes", the LZWEncode filter will be used for lossless
+compression in PostScript output; if set to "no", the RunLengthEncode
+filter will be used instead.  LZW generates better compression
+(smaller PS files), but may not be supported by some printers.  This
+defaults to "yes".
+.TP
+.BR psUncompressPreloadedImages " yes | no"
+If set to "yes", all preloaded images in PS files will uncompressed.
+If set to "no", the original compressed images will be used when
+possible.  The "yes" setting is useful to work around certain buggy
+PostScript interpreters.  This defaults to "no".
+.TP
+.BR psMinLineWidth " float"
+Set the minimum line width, in points, for PostScript output.  The
+default value is 0 (no minimum).
+.TP
+.BR psRasterResolution " float"
+Set the resolution (in dpi) for rasterized pages in PostScript output.
+(Pdftops will rasterize pages which use transparency.)  This defaults
+to 300.
+.TP
+.BR psRasterMono " yes | no"
+If set to "yes", rasterized pages in PS files will be monochrome
+(8-bit gray) instead of color.  This defaults to "no".
+.TP
+.BR psRasterSliceSize " pixels"
+When rasterizing pages, pdftops splits the page into horizontal
+"slices", to limit memory usage.  This option sets the maximum slice
+size, in pixels.  This defaults to 20000000 (20 million).
+.TP
+.BR psAlwaysRasterize " yes | no"
+If set to "yes", all PostScript output will be rasterized.  This
+defaults to "no".
+.TP
+.BR psNeverRasterize " yes | no"
+Pdftops rasterizes an pages that use transparency (because PostScript
+doesn't support transparency).  If psNeverRasterize is set to "yes",
+rasterization is disabled: pages will never be rasterized, even if
+they contain transparency.  This will likely result in incorrect
+output for PDF files that use transparency, and a warning message to
+that effect will be printed.  This defaults to "no".
+.TP
+.BI fontDir " dir"
+See the description above, in the DISPLAY FONTS section.
+.SH TEXT CONTROL AND CHARACTER MAPPING
+.TP
+.BI textEncoding " encoding\-name"
+Sets the encoding to use for text output.  (This can be overridden
+with the "\-enc" switch on the command line.)  The
+.I encoding\-name
+must be defined with the unicodeMap command (see above).  This
+defaults to "Latin1".
+.TP
+.BR textEOL " unix | dos | mac"
+Sets the end-of-line convention to use for text output.  The options
+are:
+.nf
+
+    unix = LF
+    dos  = CR+LF
+    mac  = CR
+
+.fi
+(This can be overridden with the "\-eol" switch on the command line.)
+The default value is based on the OS where xpdf and pdftotext were
+built.
+.TP
+.BR textPageBreaks " yes | no"
+If set to "yes", text extraction will insert page breaks (form feed
+characters) between pages.  This defaults to "yes".
+.TP
+.BR textKeepTinyChars " yes | no"
+If set to "yes", text extraction will keep all characters.  If set to
+"no", text extraction will discard tiny (smaller than 3 point)
+characters after the first 50000 per page, avoiding extremely slow run
+times for PDF files that use special fonts to do shading or
+cross-hatching.  This defaults to "yes".
+.TP
+.BI nameToUnicode " map\-file"
+Specifies a file with the mapping from character names to Unicode.
+This is used to handle PDF fonts that have valid encodings but no
+ToUnicode entry.  Each line of a nameToUnicode file looks like this:
+
+.I "    " hex\-string name
+
+The
+.I hex\-string
+is the Unicode (UCS-2) character index, and
+.I name
+is the corresponding character name.  Multiple nameToUnicode files can
+be used; if a character name is given more than once, the code in the
+last specified file is used.  There is a built-in default
+nameToUnicode table with all of Adobe's standard character names.
+.TP
+.BI cidToUnicode " registry\-ordering map\-file"
+Specifies the file with the mapping from character collection to
+Unicode.  Each line of a cidToUnicode file represents one character:
+
+.I "    " hex\-string
+
+The
+.I hex\-string
+is the Unicode (UCS-2) index for that character.  The first line maps
+CID 0, the second line CID 1, etc.  File size is determined by size of
+the character collection.  Only one file is allowed per character
+collection; the last specified file is used.  There are no built-in
+cidToUnicode mappings.
+.TP
+.BI unicodeToUnicode " font\-name\-substring map\-file"
+This is used to work around PDF fonts which have incorrect Unicode
+information.  It specifies a file which maps from the given
+(incorrect) Unicode indexes to the correct ones.  The mapping will be
+used for any font whose name contains
+.IR font\-name\-substring .
+Each line of a unicodeToUnicode file represents one Unicode character:
+
+.RI "    " in\-hex " " out\-hex1 " " out\-hex2 " ..."
+
+The
+.I in\-hex
+field is an input (incorrect) Unicode index, and the rest of the
+fields are one or more output (correct) Unicode indexes.  Each
+occurrence of
+.I in\-hex
+will be converted to the specified output sequence.
+.TP
+.BI unicodeRemapping " remap\-file"
+Remap Unicode characters when doing text extraction.  This specifies a
+file that maps from a particular Unicode index to zero or more
+replacement Unicode indexes.  Each line of the remap file represents
+one Unicode character:
+
+.RI "    " in\-hex " " out\-hex1 " " out\-hex2 " ..."
+
+Any Unicode characters not listed will be left unchanged.  This
+function is typically used to remap things like non-breaking spaces,
+soft hyphens, ligatures, etc.
+.TP
+.BI unicodeMap " encoding\-name map\-file"
+Specifies the file with mapping from Unicode to
+.IR encoding\-name .
+These encodings are used for text output (see below).  Each line of a
+unicodeMap file represents a range of one or more Unicode characters
+which maps linearly to a range in the output encoding:
+.nf
+
+.I "    " in\-start\-hex in\-end\-hex out\-start\-hex
+
+.fi
+Entries for single characters can be abbreviated to:
+.nf
+
+.I "    " in\-hex out\-hex
+
+.fi
+The
+.I in\-start\-hex
+and
+.I in\-end\-hex
+fields (or the single
+.I in\-hex
+field) specify the Unicode range.  The
+.I out\-start\-hex
+field (or the
+.I out\-hex
+field) specifies the start of the output encoding range.  The length
+of the
+.I out\-start\-hex
+(or
+.IR out\-hex )
+string determines the length of the output characters (e.g., UTF-8
+uses different numbers of bytes to represent characters in different
+ranges).  Entries must be given in increasing Unicode order.  Only one
+file is allowed per encoding; the last specified file is used.  The
+.IR Latin1 ,
+.IR ASCII7 ,
+.IR Symbol ,
+.IR ZapfDingbats ,
+.IR UTF-8 ,
+and
+.I UCS-2
+encodings are predefined.
+.TP
+.BI cMapDir " registry\-ordering dir"
+Specifies a search directory,
+.IR dir ,
+for CMaps for the
+.I registry\-ordering
+character collection.  There can be multiple directories for a
+particular collection.  There are no default CMap directories.
+.TP
+.BI toUnicodeDir " dir"
+Specifies a search directory,
+.IR dir ,
+for ToUnicode CMaps.  There can be multiple ToUnicode directories.
+There are no default ToUnicode directories.
+.TP
+.BI mapNumericCharNames " yes | no"
+If set to "yes", the Xpdf tools will attempt to map various numeric
+character names sometimes used in font subsets.  In some cases this
+leads to usable text, and in other cases it leads to gibberish --
+there is no way for Xpdf to tell.  This defaults to "yes".
+.TP
+.BI mapUnknownCharNames " yes | no"
+If set to "yes", and mapNumericCharNames is set to "no", the Xpdf
+tools will apply a simple pass-through mapping (Unicode index =
+character code) for all unrecognized glyph names.  (For CID fonts,
+setting mapNumericCharNames to "no" is unnecessary.)  In some cases,
+this leads to usable text, and in other cases it leads to gibberish --
+there is no way for Xpdf to tell.  This defaults to "no".
+.TP
+.BI mapExtTrueTypeFontsViaUnicode " yes | no"
+When rasterizing text using an external TrueType font, there are two
+options for handling character codes.  If
+mapExtTrueTypeFontsViaUnicode is set to "yes", Xpdf will use the font
+encoding/ToUnicode info to map character codes to Unicode, and then
+use the font's Unicode cmap to map Unicode to GIDs.  If
+mapExtTrueTypeFontsViaUnicode is set to "no", Xpdf will assume the
+character codes are GIDs (i.e., use an identity mapping).  This
+defaults to "yes".
+.TP
+.BI useTrueTypeUnicodeMapping " yes | no"
+If set to "yes", the Xpdf tools will use the Unicode encoding
+information in TrueType fonts (16-bit only), if avaiable, to override
+the PDF ToUnicode maps.  Otherwise, the ToUnicode maps are always used
+when present.  This defaults to "no".
+.TP
+.BI dropFont " font-name"
+Drop all text drawn in the specified font.  To drop text drawn in
+unnamed fonts, use:
+.nf
+
+    dropFont ""
+
+.fi
+There can be any number of dropFont commands.
+.SH RASTERIZER SETTINGS
+.TP
+.BR enableFreeType " yes | no"
+Enables or disables use of FreeType (a TrueType / Type 1 font
+rasterizer).  This is only relevant if the Xpdf tools were built with
+FreeType support.  ("enableFreeType" replaces the old
+"freetypeControl" option.)  This option defaults to "yes".
+.TP
+.BR disableFreeTypeHinting " yes | no"
+If this is set to "yes", FreeType hinting will be forced off.  This
+option defaults to "no".
+.TP
+.BR antialias " yes | no"
+Enables or disables font anti-aliasing in the PDF rasterizer.  This
+option affects all font rasterizers.  ("antialias" replaces the
+anti-aliasing control provided by the old "t1libControl" and
+"freetypeControl" options.)  This default to "yes".
+.TP
+.BR vectorAntialias " yes | no"
+Enables or disables anti-aliasing of vector graphics in the PDF
+rasterizer.  This defaults to "yes".
+.TP
+.BR imageMaskAntialias " yes | no"
+Enables or disables anti-aliasing of image masks (when downsampling or
+upsampling) in the PDF rasterizer.  This defaults to "yes".
+.TP
+.BR antialiasPrinting " yes | no"
+If this is "yes", bitmaps sent to the printer will be antialiased
+(according to the "antialias" and "vectorAntialias" settings).  If
+this is "no", printed bitmaps will not be antialiased.  This defaults
+to "no".
+.TP
+.BR strokeAdjust " yes | no | cad"
+Sets the stroke adjustment mode.  If set to "no", no stroke adjustment
+will be done.  If set to "yes", normal stroke adjustment will be done:
+horizontal and vertical lines will be moved by up to half a pixel to
+make them look cleaner when vector anti-aliasing is enabled.  If set
+to "cad", a slightly different stroke adjustment algorithm will be
+used to ensure that lines of the same original width will always have
+the same adjusted width (at the expense of allowing gaps and overlaps
+between adjacent lines).  This defaults to "yes".
+.TP
+.BR forceAccurateTiling " yes | no"
+If this is set to "yes", the TilingType is forced to 2 (no distortion)
+for all tiling patterns, regardless of the setting in the pattern
+dictionary.  This defaults to "no".
+.TP
+.BR screenType " dispersed | clustered | stochasticClustered"
+Sets the halftone screen type, which will be used when generating a
+monochrome (1-bit) bitmap.  The three options are dispersed-dot
+dithering, clustered-dot dithering (with a round dot and 45-degree
+screen angle), and stochastic clustered-dot dithering.  By default,
+"stochasticClustered" is used for resolutions of 300 dpi and higher,
+and "dispersed" is used for resolutions lower then 300 dpi.
+.TP
+.BI screenSize " integer"
+Sets the size of the (square) halftone screen threshold matrix.  By
+default, this is 4 for dispersed-dot dithering, 10 for clustered-dot
+dithering, and 100 for stochastic clustered-dot dithering.
+.TP
+.BI screenDotRadius " integer"
+Sets the halftone screen dot radius.  This is only used when
+screenType is set to stochasticClustered, and it defaults to 2.  In
+clustered-dot mode, the dot radius is half of the screen size.
+Dispersed-dot dithering doesn't have a dot radius.
+.TP
+.BI screenGamma " float"
+Sets the halftone screen gamma correction parameter.  Gamma values
+greater than 1 make the output brighter; gamma values less than 1 make
+it darker.  The default value is 1.
+.TP
+.BI screenBlackThreshold " float"
+When halftoning, all values below this threshold are forced to solid
+black.  This parameter is a floating point value between 0 (black) and
+1 (white).  The default value is 0.
+.TP
+.BI screenWhiteThreshold " float"
+When halftoning, all values above this threshold are forced to solid
+white.  This parameter is a floating point value between 0 (black) and
+1 (white).  The default value is 1.
+.TP
+.BI minLineWidth " float"
+Set the minimum line width, in device pixels.  This affects the
+rasterizer only, not the PostScript converter (except when it uses
+rasterization to handle transparency).  The default value is 0 (no
+minimum).
+.TP
+.BI enablePathSimplification " yes | no"
+If set to "yes", simplify paths by removing points where it won't make
+a significant difference to the shape.  The default value is "no".
+.TP
+.BI overprintPreview " yes | no"
+If set to "yes", generate overprint preview output, honoring the
+OP/op/OPM settings in the PDF file.  Ignored for non-CMYK output.  The
+default value is "no".
+.SH VIEWER SETTINGS
+These settings only apply to the Xpdf GUI PDF viewer.
+.TP
+.BR initialZoom " \fIpercentage\fR | page | width"
+Sets the initial zoom factor.  A number specifies a zoom percentage,
+where 100 means 72 dpi.  You may also specify \'page', to fit the page
+to the window size, or \'width', to fit the page width to the window
+width.
+.TP
+.BI defaultFitZoom " percentage"
+If xpdf is started with fit-page or fit-width zoom and no window
+geometry, it will calculate a desired window size based on the PDF
+page size and this defaultFitZoom value.  I.e., the window size will
+be chosen such that exactly one page will fit in the window at this
+zoom factor (which must be a percentage).  The default value is
+based on the screen resolution.
+.TP
+.BR initialDisplayMode " single | continuous | sideBySideSingle | sideBySideContinuous | horizontalContinuous"
+Sets the initial display mode.  The default setting is "continuous".
+.TP
+.BI initialToolbarState " yes | no"
+If set to "yes", xpdf opens with the toolbar visible.  If set to "no",
+xpdf opens with the toolbar hidden.  The default is "yes".
+.TP
+.BI initialSidebarState " yes | no"
+If set to "yes", xpdf opens with the sidebar (tabs, outline, etc.)
+visible.  If set to "no", xpdf opens with the sidebar collapsed.  The
+default is "yes".
+.TP
+.BI initialSidebarWidth " width"
+Sets the initial sidebar width, in pixels.  This is only relevant if
+initialSidebarState is "yes".  The default value is zero, which tells
+xpdf to use an internal default size.
+.TP
+.BR initialSelectMode " block | linear"
+Sets the initial selection mode.  The default setting is "linear".
+.TP
+.BI paperColor " color"
+Set the "paper color", i.e., the background of the page display.  The
+color can be #RRGGBB (hexadecimal) or a named color.  This option will
+not work well with PDF files that do things like filling in white
+behind the text.
+.TP
+.BI matteColor " color"
+Set the matte color, i.e., the color used for background outside the
+actual page area.  The color can be #RRGGBB (hexadecimal) or a named
+color.
+.TP
+.BI fullScreenMatteColor " color"
+Set the matte color for full-screen mode.  The color can be #RRGGBB
+(hexadecimal) or a named color.
+.TP
+.BI selectionColor " color"
+Set the selection color.  The color can be #RRGGBB (hexadecimal) or a
+named color.
+.TP
+.BI reverseVideoInvertImages " yes | no"
+If set to "no", xpdf's reverse-video mode inverts text and vector
+graphic content, but not images.  If set to "yes", xpdf inverts images
+as well.  The default is "no".
+.TP
+.BI popupMenuCmd " title command ..."
+Add a command to the popup menu.
+.I Title
+is the text to be displayed in the menu.
+.I Command
+is an Xpdf command (see the COMMANDS section of the
+.BR xpdf (1)
+man page for details).  Multiple commands are separated by whitespace.
+.TP
+.BI maxTileWidth " pixels"
+Set the maximum width of tiles to be used by xpdf when rasterizing
+pages.  This defaults to 1500.
+.TP
+.BI maxTileHeight " pixels"
+Set the maximum height of tiles to be used by xpdf when rasterizing
+pages.  This defaults to 1500.
+.TP
+.BI tileCacheSize " tiles"
+Set the maximum number of tiles to be cached by xpdf when rasterizing
+pages.  This defaults to 10.
+.TP
+.BI workerThreads " numThreads"
+Set the number of worker threads to be used by xpdf when rasterizing
+pages.  This defaults to 1.
+.TP
+.BI launchCommand " command"
+Sets the command executed when you click on a "launch"-type link.  The
+intent is for the command to be a program/script which determines the
+file type and runs the appropriate viewer.  The command line will
+consist of the file to be launched, followed by any parameters
+specified with the link.  Do not use "%s" in "command".  By default,
+this is unset, and Xpdf will simply try to execute the file (after
+prompting the user).
+.TP
+.BI movieCommand " command"
+Sets the command executed when you click on a movie annotation.  The
+string "%s" will be replaced with the movie file name.  This has no
+default value.
+.TP
+.BI defaultPrinter " printer"
+Sets the default printer used in the viewer's print dialog.
+.TP
+.BI bind " modifiers-key context command ..."
+Add a key or mouse button binding.
+.I Modifiers
+can be zero or more of:
+.nf
+
+    shift-
+    ctrl-
+    alt-
+
+.fi
+.I Key
+can be a regular ASCII character, or any one of:
+.nf
+
+    space
+    tab
+    return
+    enter
+    backspace
+    esc
+    insert
+    delete
+    home
+    end
+    pgup
+    pgdn
+    left / right / up / down                (arrow keys)
+    f1 .. f35                               (function keys)
+    mousePress1 .. mousePress7              (mouse buttons)
+    mouseRelease1 .. mouseRelease7          (mouse buttons)
+    mouseClick1 .. mouseClick7              (mouse buttons)
+    mouseDoubleClick1 .. mouseDoubleClick7  (mouse buttons)
+    mouseTripleClick1 .. mouseTripleClick7  (mouse buttons)
+
+.fi
+.I Context
+is either "any" or a comma-separated combination of:
+.nf
+
+    fullScreen / window       (full screen mode on/off)
+    continuous / singlePage   (continuous mode on/off)
+    overLink / offLink        (mouse over link or not)
+    scrLockOn / scrLockOff    (scroll lock on/off)
+
+.fi
+The context string can include only one of each pair in the above
+list.
+
+.I Command
+is an Xpdf command (see the COMMANDS section of the
+.BR xpdf (1)
+man page for details).  Multiple commands are separated by whitespace.
+
+The bind command replaces any existing binding, but only if it was
+defined for the exact same modifiers, key, and context.  All tokens
+(modifiers, key, context, commands) are case-sensitive.
+
+Example key bindings:
+.nf
+
+    # bind ctrl-a in any context to the nextPage
+    # command
+    bind ctrl-a any nextPage
+
+    # bind uppercase B, when in continuous mode
+    # with scroll lock on, to the reload command
+    # followed by the prevPage command
+    bind B continuous,scrLockOn reload prevPage
+
+.fi
+See the
+.BR xpdf (1)
+man page for more examples.
+.TP
+.BI unbind " modifiers-key context"
+Removes a key binding established with the bind command.  This is most
+useful to remove default key bindings before establishing new ones
+(e.g., if the default key binding is given for "any" context, and you
+want to create new key bindings for multiple contexts).
+.TP
+.BI tabStateFile " path"
+Sets the file used by the loadTabState and saveTabState commands (see
+the
+.BR xpdf (1)
+man page for more information).
+.SH MISCELLANEOUS SETTINGS
+.TP
+.BI drawAnnotations " yes | no"
+If set to "no", annotations will not be drawn or printed.  The default
+value is "yes".
+.TP
+.BI drawFormFields " yes | no"
+If set to "no", form fields will not be drawn or printed.  The default
+value is "yes".
+.TP
+.BI enableXFA " yes | no"
+If an XFA form is present, and this option is set to "yes", Xpdf will
+parse the XFA form and use certain XFA information to override
+AcroForm information.  If set to "no", the XFA form will not be read.
+The default value is "yes".
+.TP
+.BI savePageNumbers " yes | no"
+If set to "yes", xpdf will save the current page numbers of all open
+files in ~/.xpdf.pages when the files are closed (or when quitting
+xpdf).  Next time the file is opened, the last-viewed page number will
+be restored.  The default value is "yes".
+.TP
+.BI printCommands " yes | no"
+If set to "yes", drawing commands are printed as they're executed
+(useful for debugging).  This defaults to "no".
+.TP
+.BI printStatusInfo
+If set to "yes", print a status message (to stdout) before each page
+is processed.  This defaults to "no".
+.TP
+.BI errQuiet " yes | no"
+If set to "yes", this suppresses all error and warning messages from
+all of the Xpdf tools.  This defaults to "no".
+.SH EXAMPLES
+The following is a sample xpdfrc file.
+.nf
+
+# from the Thai support package
+nameToUnicode /usr/local/share/xpdf/Thai.nameToUnicode
+
+# from the Japanese support package
+cidToUnicode Adobe-Japan1 /usr/local/share/xpdf/Adobe-Japan1.cidToUnicode
+unicodeMap   JISX0208     /usr/local/share/xpdf/JISX0208.unicodeMap
+cMapDir      Adobe-Japan1 /usr/local/share/xpdf/cmap/Adobe-Japan1
+
+# use the Base-14 Type 1 fonts from ghostscript
+fontFile Times-Roman           /usr/local/share/ghostscript/fonts/n021003l.pfb
+fontFile Times-Italic          /usr/local/share/ghostscript/fonts/n021023l.pfb
+fontFile Times-Bold            /usr/local/share/ghostscript/fonts/n021004l.pfb
+fontFile Times-BoldItalic      /usr/local/share/ghostscript/fonts/n021024l.pfb
+fontFile Helvetica             /usr/local/share/ghostscript/fonts/n019003l.pfb
+fontFile Helvetica-Oblique     /usr/local/share/ghostscript/fonts/n019023l.pfb
+fontFile Helvetica-Bold        /usr/local/share/ghostscript/fonts/n019004l.pfb
+fontFile Helvetica-BoldOblique /usr/local/share/ghostscript/fonts/n019024l.pfb
+fontFile Courier               /usr/local/share/ghostscript/fonts/n022003l.pfb
+fontFile Courier-Oblique       /usr/local/share/ghostscript/fonts/n022023l.pfb
+fontFile Courier-Bold          /usr/local/share/ghostscript/fonts/n022004l.pfb
+fontFile Courier-BoldOblique   /usr/local/share/ghostscript/fonts/n022024l.pfb
+fontFile Symbol                /usr/local/share/ghostscript/fonts/s050000l.pfb
+fontFile ZapfDingbats          /usr/local/share/ghostscript/fonts/d050000l.pfb
+
+# use the Bakoma Type 1 fonts
+# (this assumes they happen to be installed in /usr/local/fonts/bakoma)
+fontDir /usr/local/fonts/bakoma
+
+# set some PostScript options
+psPaperSize          letter
+psDuplex             no
+psLevel              level2
+psEmbedType1Fonts    yes
+psEmbedTrueTypeFonts yes
+
+# assume that the PostScript printer has the Univers and
+# Univers-Bold fonts
+psResidentFont Univers      Univers
+psResidentFont Univers-Bold Univers-Bold
+
+# set the text output options
+textEncoding UTF-8
+textEOL      unix
+
+# misc options
+enableFreeType  yes
+launchCommand   viewer-script
+
+.fi
+.SH FILES
+.TP
+.B /etc/xpdfrc
+This is the default location for the system-wide configuration file.
+Depending on build options, it may be placed elsewhere.
+.TP
+.B $HOME/.xpdfrc
+This is the user's configuration file.  If it exists, it will be read
+in place of the system-wide file.
+.SH AUTHOR
+The Xpdf software and documentation are copyright 1996-2022 Glyph &
+Cog, LLC.
+.SH "SEE ALSO"
+.BR xpdf (1),
+.BR pdftops (1),
+.BR pdftotext (1),
+.BR pdftohtml (1),
+.BR pdfinfo (1),
+.BR pdffonts (1),
+.BR pdfdetach (1),
+.BR pdftoppm (1),
+.BR pdftopng (1),
+.BR pdfimages (1)
+.br
+.B http://www.xpdfreader.com/
