@@ -5,8 +5,7 @@
 </p>
 <p align="center">
   <a href="https://tianchi.aliyun.com/competition/entrance/532126">赛题链接</a> |
-  <a href="https://tianchi.aliyun.com/specials/promotion/SMP2023ChatGLMChallenge">赛题宣传页</a> |
-  <a href="https://modelscope.cn/models/finglm/FinGLM">魔搭社区</a>
+  <a href="https://tianchi.aliyun.com/specials/promotion/SMP2023ChatGLMChallenge">赛题宣传页</a>
 </p>
 
 📃 **FinGLM**:  致力于构建一个开放的、公益的、持久的金融大模型项目，利用开源开放来促进「AI+金融」。
@@ -105,7 +104,7 @@
 * 后续我们也将根据项目需求，持续迭代更新数据。
 
 **3) 方案/代码/模型开源**
-* 经同意，[结婚买房代代韭菜](./code/结婚买房代代韭菜)、[Chatglm反卷总局](./code/Chatglm反卷总局)、[nsddd](./code/nsddd)、馒头科技、南哪都队、龙盈战队、[安硕硕眼探企](./code/finglm_all)等团队的方案、代码、模型完全开源，纳入FinGLM项目。
+* 经同意，[结婚买房代代韭菜](./code/结婚买房代代韭菜)、[Chatglm反卷总局](./code/Chatglm反卷总局)、nsddd、馒头科技、南哪都队、龙盈战队、[安硕硕眼探企]((./code/finglm_all))等团队的方案、代码、模型完全开源，纳入FinGLM项目。
 * 我们将长期维护优化 [FinGLM 项目](./code/finglm_all)，提供便捷解决方案。
 
 **4) 开放交流**
@@ -144,7 +143,7 @@
     - [ ] 馒头科技
     - [ ] 南哪都队
     - [x] [Chatglm反卷总局](./code/Chatglm反卷总局)
-    - [x] nsddd
+    - [x] [nsddd](./code/nsddd)
     - [ ] 龙盈战队
     - [x] [结婚买房代代韭菜](./code/结婚买房代代韭菜)
     - [x] [安硕硕眼探企](.code/finglm_all)
@@ -172,11 +171,11 @@
 ## 🏆 开源项目
 
 ### 0. FinGLM_all 
-[[PPT]](./slides/安硕硕眼探企分享及FinGLM开源发布.pdf) [[视频]](https://www.bilibili.com/video/BV1ip4y1F7Gw/)[[代码]](./code/finglm_all)
+[[PPT]](.slides/安硕硕眼探企分享及FinGLM开源发布.pdf) [[视频]](https://www.bilibili.com/video/BV1ip4y1F7Gw/)[[代码]](./code/finglm_all)
 
 本项目为安硕硕眼探企团队，根据自己的项目以及其他几队的项目整合而成。后续我们也将围绕此项目进行持续迭代升级。
 
-![finglm_all](./img/finglm_all.jpg)
+![](./img/finglm_all.jpg)
 
 
 
@@ -185,7 +184,6 @@
 
 [[PPT]](./slides/馒头科技.pdf) [[视频]](https://www.bilibili.com/video/BV18h4y187UU/) [代码]
 ![mantou](./img/mantou.jpg)
-
 ### 2. 南哪都队
 
 [[PPT]](./slides/南哪都队.pdf) [[视频]](https://www.bilibili.com/video/BV1Gm4y1V7LD/) [代码]
@@ -200,7 +198,7 @@
 
 ### 4. nsddd 
 
-[[PPT]](./slides/nsddd.pdf) [[视频]](https://www.bilibili.com/video/BV15u4y147Xx) [代码](./code/nsddd)
+[[PPT]](./slides/nsddd.pdf) [[视频]](https://www.bilibili.com/video/BV15u4y147Xx) [[代码]](./code/nsddd)
 
 ![nsddd](./img/nsddd.jpg)
 
@@ -210,8 +208,7 @@
 [[PPT]](./slides/龙盈战队.pdf) [[视频]](https://www.bilibili.com/video/BV1Ju4y167ew) [代码]
 
 ![longying](./img/longying.jpg)
-
-### 6. 结婚买房代代韭菜
+### 6. 结婚买房代代韭菜 
 
 [[PPT]](./slides/结婚买房代代韭菜.pdf) [[视频]](https://www.bilibili.com/video/BV1rm4y1G7uj) [[代码]](./code/结婚买房代代韭菜)
 
@@ -227,7 +224,7 @@
 
 ### 8. 饺子研究院 
 
-[[PPT]](./slides/吃辣子.pdf) [[视频]](https://www.bilibili.com/video/BV12z4y1V7S3/?spm_id_from=333.999.0.0&vd_source=df16438efe36af5724526b8869fb54c1) [代码]
+[PPT] [[视频]](https://www.bilibili.com/video/BV12z4y1V7S3/?spm_id_from=333.999.0.0&vd_source=df16438efe36af5724526b8869fb54c1) [代码]
 
 ![jiaozi](./img/jiaozi.jpg)
 
