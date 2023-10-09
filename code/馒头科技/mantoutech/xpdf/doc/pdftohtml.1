@@ -1,0 +1,158 @@
+.\" Copyright 1997-2022 Glyph & Cog, LLC
+.TH pdftohtml 1 "18 Apr 2022"
+.SH NAME
+pdftohtml \- Portable Document Format (PDF) to HTML converter
+(version 4.04)
+.SH SYNOPSIS
+.B pdftohtml
+[options]
+.I PDF-file
+.I HTML-dir
+.SH DESCRIPTION
+.B Pdftohtml
+converts Portable Document Format (PDF) files to HTML.
+.PP
+Pdftohtml reads the PDF file,
+.IR PDF-file ,
+and places an HTML file for each page, along with auxiliary images
+in the directory,
+.IR HTML-dir .
+The HTML directory will be created; if it already exists, pdftohtml
+will report an error.
+.SH CONFIGURATION FILE
+Pdftohtml reads a configuration file at startup.  It first tries to
+find the user's private config file, ~/.xpdfrc.  If that doesn't
+exist, it looks for a system-wide config file, typically /etc/xpdfrc
+(but this location can be changed when pdftohtml is built).  See the
+.BR xpdfrc (5)
+man page for details.
+.SH OPTIONS
+Many of the following options can be set with configuration file
+commands.  These are listed in square brackets with the description of
+the corresponding command line option.
+.TP
+.BI \-f " number"
+Specifies the first page to convert.
+.TP
+.BI \-l " number"
+Specifies the last page to convert.
+.TP
+.BI \-z " number"
+Specifies the initial zoom level.  The default is 1.0, which means
+72dpi, i.e., 1 point in the PDF file will be 1 pixel in the HTML.
+Using \'-z 1.5', for example, will make the initial view 50% larger.
+.TP
+.BI \-r " number"
+Specifies the resolution, in DPI, for background images.  This
+controls the pixel size of the background image files.  The initial
+zoom level is controlled by the \'-z' option.  Specifying a larger
+\'-r' value will allow the viewer to zoom in farther without upscaling
+artifacts in the background.
+.TP
+.BI \-vstretch " number"
+Specifies a vertical stretch factor.  Setting this to a value greater
+than 1.0 will stretch each page vertically, spreading out the lines.
+This also stretches the background image to match.
+.TP
+.B \-embedbackground
+Embeds the background image as base64-encoded data directly in the
+HTML file, rather than storing it as a separate file.
+.TP
+.B \-nofonts
+Disable extraction of embedded fonts.  By default, pdftohtml extracts
+TrueType and OpenType fonts.  Disabling extraction can work around
+problems with buggy fonts.
+.TP
+.B \-embedfonts
+Embeds any extracted fonts as base64-encoded data directly in the HTML
+file, rather than storing them as separate files.
+.TP
+.B \-skipinvisible
+Don't draw invisible text.  By default, invisible text (commonly used
+in OCR'ed PDF files) is drawn as transparent (alpha=0) HTML text.
+This option tells pdftohtml to discard invisible text entirely.
+.TP
+.B \-allinvisible
+Treat all text as invisible.  By default, regular (non-invisible) text
+is not drawn in the background image, and is instead drawn with HTML
+on top of the image.  This option tells pdftohtml to include the
+regular text in the background image, and then draw it as transparent
+(alpha=0) HTML text.
+.TP
+.B \-formfields
+Convert AcroForm text and checkbox fields to HTML input elements.
+This also removes text (e.g., underscore characters) and erases
+background image content (e.g., lines or boxes) in the field areas.
+.TP
+.B \-table
+Use table mode when performing the underlying text extraction.  This
+will generally produce better output when the PDF content is a
+full-page table.  NB: This does not generate HTML tables; it just
+changes the way text is split up.
+.TP
+.BI \-opw " password"
+Specify the owner password for the PDF file.  Providing this will
+bypass all security restrictions.
+.TP
+.BI \-upw " password"
+Specify the user password for the PDF file.
+.TP
+.B \-verbose
+Print a status message (to stdout) before processing each page.
+.RB "[config file: " printStatusInfo ]
+.TP
+.B \-q
+Don't print any messages or errors.
+.RB "[config file: " errQuiet ]
+.TP
+.BI \-cfg " config-file"
+Read
+.I config-file
+in place of ~/.xpdfrc or the system-wide config file.
+.TP
+.B \-v
+Print copyright and version information.
+.TP
+.B \-h
+Print usage information.
+.RB ( \-help
+and
+.B \-\-help
+are equivalent.)
+.SH BUGS
+Some PDF files contain fonts whose encodings have been mangled beyond
+recognition.  There is no way (short of OCR) to extract text from
+these files.
+.SH EXIT CODES
+The Xpdf tools use the following exit codes:
+.TP
+0
+No error.
+.TP
+1
+Error opening a PDF file.
+.TP
+2
+Error opening an output file.
+.TP
+3
+Error related to PDF permissions.
+.TP
+99
+Other error.
+.SH AUTHOR
+The pdftohtml software and documentation are copyright 1996-2022 Glyph
+& Cog, LLC.
+.SH "SEE ALSO"
+.BR xpdf (1),
+.BR pdftops (1),
+.BR pdftotext (1),
+.BR pdfinfo (1),
+.BR pdffonts (1),
+.BR pdfdetach (1),
+.BR pdftoppm (1),
+.BR pdftopng (1),
+.BR pdfimages (1),
+.BR xpdfrc (5)
+.br
+.B http://www.xpdfreader.com/

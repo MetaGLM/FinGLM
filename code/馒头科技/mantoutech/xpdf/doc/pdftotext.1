@@ -1,0 +1,222 @@
+.\" Copyright 1997-2022 Glyph & Cog, LLC
+.TH pdftotext 1 "18 Apr 2022"
+.SH NAME
+pdftotext \- Portable Document Format (PDF) to text converter
+(version 4.04)
+.SH SYNOPSIS
+.B pdftotext
+[options]
+.RI [ PDF-file
+.RI [ text-file ]]
+.SH DESCRIPTION
+.B Pdftotext
+converts Portable Document Format (PDF) files to plain text.
+.PP
+Pdftotext reads the PDF file,
+.IR PDF-file ,
+and writes a text file,
+.IR text-file .
+If
+.I text-file
+is not specified, pdftotext converts
+.I file.pdf
+to
+.IR file.txt .
+If 
+.I text-file
+is \'-', the text is sent to stdout.
+.SH CONFIGURATION FILE
+Pdftotext reads a configuration file at startup.  It first tries to
+find the user's private config file, ~/.xpdfrc.  If that doesn't
+exist, it looks for a system-wide config file, typically /etc/xpdfrc
+(but this location can be changed when pdftotext is built).  See the
+.BR xpdfrc (5)
+man page for details.
+.SH OPTIONS
+Many of the following options can be set with configuration file
+commands.  These are listed in square brackets with the description of
+the corresponding command line option.
+.TP
+.BI \-f " number"
+Specifies the first page to convert.
+.TP
+.BI \-l " number"
+Specifies the last page to convert.
+.TP
+.B \-layout
+Maintain (as best as possible) the original physical layout of the
+text.  The default is to \'undo' physical layout (columns,
+hyphenation, etc.) and output the text in reading order.  If the
+.B \-fixed
+option is given, character spacing within each line will be determined
+by the specified character pitch.
+.TP
+.B \-simple
+Similar to
+.BR \-layout ,
+but optimized for simple one-column pages.  This mode will do a better
+job of maintaining horizontal spacing, but it will only work properly
+with a single column of text.
+.TP
+.B \-simple2
+Similar to
+.BR \-simple ,
+but handles slightly rotated text (e.g., OCR output) better.  Only works
+for pages with a single column of text.
+.TP
+.B \-table
+Table mode is similar to physical layout mode, but optimized for
+tabular data, with the goal of keeping rows and columns aligned (at
+the expense of inserting extra whitespace).  If the
+.B \-fixed
+option is given, character spacing within each line will be determined
+by the specified character pitch.
+.TP
+.B \-lineprinter
+Line printer mode uses a strict fixed-character-pitch and -height
+layout.  That is, the page is broken into a grid, and characters are
+placed into that grid.  If the grid spacing is too small for the
+actual characters, the result is extra whitespace.  If the grid
+spacing is too large, the result is missing whitespace.  The grid
+spacing can be specified using the
+.B \-fixed
+and
+.B \-linespacing
+options.
+If one or both are not given on the command line, pdftotext will
+attempt to compute appropriate value(s).
+.TP
+.B \-raw
+Keep the text in content stream order.  Depending on how the PDF file
+was generated, this may or may not be useful.
+.TP
+.BI \-fixed " number"
+Specify the character pitch (character width), in points, for physical
+layout, table, or line printer mode.  This is ignored in all other
+modes.
+.TP
+.BI \-linespacing " number"
+Specify the line spacing, in points, for line printer mode.  This is
+ignored in all other modes.
+.TP
+.B \-clip
+Text which is hidden because of clipping is removed before doing
+layout, and then added back in.  This can be helpful for tables where
+clipped (invisible) text would overlap the next column.
+.TP
+.B \-nodiag
+Diagonal text, i.e., text that is not close to one of the 0, 90, 180,
+or 270 degree axes, is discarded.  This is useful to skip watermarks
+drawn on top of body text, etc.
+.TP
+.BI \-enc " encoding-name"
+Sets the encoding to use for text output.  The
+.I encoding\-name
+must be defined with the unicodeMap command (see
+.BR xpdfrc (5)).
+The encoding name is case-sensitive.  This defaults to "Latin1" (which
+is a built-in encoding).
+.RB "[config file: " textEncoding ]
+.TP
+.BI \-eol " unix | dos | mac"
+Sets the end-of-line convention to use for text output.
+.RB "[config file: " textEOL ]
+.TP
+.B \-nopgbrk
+Don't insert a page breaks (form feed character) at the end of each
+page.
+.RB "[config file: " textPageBreaks ]
+.TP
+.B \-bom
+Insert a Unicode byte order marker (BOM) at the start of the text
+output.
+.TP
+.BI \-marginl " number"
+Specifies the left margin, in points.  Text in the left margin (i.e.,
+within that many points of the left edge of the page) is discarded.
+The default value is zero.
+.TP
+.BI \-marginr " number"
+Specifies the right margin, in points.  Text in the right margin
+(i.e., within that many points of the right edge of the page) is
+discarded.  The default value is zero.
+.TP
+.BI \-margint " number"
+Specifies the top margin, in points.  Text in the top margin (i.e.,
+within that many points of the top edge of the page) is discarded.
+The default value is zero.
+.TP
+.BI \-marginb " number"
+Specifies the bottom margin, in points.  Text in the bottom margin
+(i.e., within that many points of the bottom edge of the page) is
+discarded.  The default value is zero.
+.TP
+.BI \-opw " password"
+Specify the owner password for the PDF file.  Providing this will
+bypass all security restrictions.
+.TP
+.BI \-upw " password"
+Specify the user password for the PDF file.
+.TP
+.B \-verbose
+Print a status message (to stdout) before processing each page.
+.RB "[config file: " printStatusInfo ]
+.TP
+.B \-q
+Don't print any messages or errors.
+.RB "[config file: " errQuiet ]
+.TP
+.BI \-cfg " config-file"
+Read
+.I config-file
+in place of ~/.xpdfrc or the system-wide config file.
+.TP
+.B \-listencodings
+List all available text output encodings, then exit.
+.TP
+.B \-v
+Print copyright and version information, then exit.
+.TP
+.B \-h
+Print usage information, then exit.
+.RB ( \-help
+and
+.B \-\-help
+are equivalent.)
+.SH BUGS
+Some PDF files contain fonts whose encodings have been mangled beyond
+recognition.  There is no way (short of OCR) to extract text from
+these files.
+.SH EXIT CODES
+The Xpdf tools use the following exit codes:
+.TP
+0
+No error.
+.TP
+1
+Error opening a PDF file.
+.TP
+2
+Error opening an output file.
+.TP
+3
+Error related to PDF permissions.
+.TP
+99
+Other error.
+.SH AUTHOR
+The pdftotext software and documentation are copyright 1996-2022 Glyph
+& Cog, LLC.
+.SH "SEE ALSO"
+.BR xpdf (1),
+.BR pdftops (1),
+.BR pdftohtml (1),
+.BR pdfinfo (1),
+.BR pdffonts (1),
+.BR pdfdetach (1),
+.BR pdftoppm (1),
+.BR pdftopng (1),
+.BR pdfimages (1),
+.BR xpdfrc (5)
+.br
+.B http://www.xpdfreader.com/

@@ -1,0 +1,18 @@
+Xpdf - Unix binaries
+====================
+
+The Xpdf software and documentation are
+copyright 1996-2021 Glyph & Cog, LLC.
+
+Email: xpdf@xpdfreader.com
+WWW: http://www.xpdfreader.com/
+
+
+There is no need to "install" anything from this package.  You can
+unpack the tar file and run the binaries directly from there.
+
+Man pages are available in the 'doc' subdirectory.  They can be read
+with, e.g., 'man doc/pdftotext.1'.
+
+The 'doc/sample-xpdfrc' file can be used as a template for ~/.xpdfrc.
+This configuration file is completely optional.

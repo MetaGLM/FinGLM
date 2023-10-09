@@ -1,0 +1,37 @@
+Subject: ANNOUNCE: Xpdf 4.04 - a PDF viewer and related tools
+
+Glyph & Cog, LLC is pleased to announce a new version of Xpdf, the
+open source Portable Document Format (PDF) viewer.  The Xpdf project
+also includes a PDF text extractor, PDF-to-PostScript converter, and
+various other utilities.
+
+Xpdf uses the Qt toolkit and runs on Linux and Windows.  The
+non-graphical components (pdftops, pdftotext, etc.) run on Linux,
+Unix, Windows, MacOSX, and pretty much any other system with a decent
+C++ compiler.
+
+4.04 is primarily a bug fix release.  There are some new features:
+
+* XpdfReader improvements:
+  - Implemented selection extension via shift-click, and word/line
+    selection via double/triple click.
+  - Added default bindings for ctrl-mousewheel-up/down to zoom in/out.
+  - Added a help menu item that shows all of the key bindings.
+
+* Various new command line options for pdftotext, pdftohtml, pdftoppm,
+  pdftopng, and xpdf.
+
+See the `CHANGES' file for a complete list of changes.
+
+Source (C++ and C) is available, and it should be fairly easy to
+compile for Linux and Windows.
+
+More information, source code, and precompiled binaries are on the
+xpdf web page:
+
+    http://www.xpdfreader.com/
+
+For information on commercial licensing and consulting, please see the
+Glyph & Cog web site:
+
+    http://www.glyphandcog.com/
