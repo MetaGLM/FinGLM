@@ -1,0 +1,6 @@
+{year}年{attribute}最少公司是谁？金额呢？
+{year}年{attribute}最少的公司是哪一家？金额呢？
+哪家公司在{year}年的{attribute}方面最少？金额呢？
+{year}年{attribute}最小的公司是谁？金额呢？
+{year}年{attribute}最少的公司是哪个？金额是多少？
+{year}年{attribute}最少的公司是哪家？金额是多少？

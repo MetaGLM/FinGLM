@@ -1,0 +1,107 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: eval",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "cwd": "${workspaceFolder}/ChatGLM2-6B/ptuning",
+            "args": [
+                "--do_predict",
+                "--validation_file",
+                "../../data/temp/entity_extraction_dev.json",
+                "--test_file",
+                "../../data/temp/entity_extraction_dev.json",
+                "--overwrite_cache",
+                "--prompt_column",
+                "prompt",
+                "--response_column",
+                "response",
+                "--model_name_or_path",
+                "../../model/chatglm2-6b",
+                "--ptuning_checkpoint",
+                "../../model/entity_extraction/checkpoint-3000",
+                "--output_dir",
+                "./output/entity_extraction",
+                "--overwrite_output_dir",
+                "--max_source_length",
+                "64",
+                "--max_target_length",
+                "64",
+                "--per_device_eval_batch_size",
+                "1",
+                "--predict_with_generate",
+                "--pre_seq_len",
+                "128"
+            ]
+        },
+        {
+            "name": "Python: train",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "${workspaceFolder}/ChatGLM2-6B/ptuning",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--do_train",
+                "--train_file",
+                "../../data/temp/classify_train.json",
+                "--validation_file",
+                "../../data/temp/classify_dev.json",
+                "--prompt_column",
+                "prompt",
+                "--response_column",
+                "response",
+                "--history_column",
+                "history",
+                "--overwrite_cache",
+                "--model_name_or_path",
+                "../../model/chatglm2-6b",
+                "--output_dir",
+                "../../model/entity_extraction",
+                "--overwrite_output_dir",
+                "--max_source_length",
+                "64",
+                "--max_target_length",
+                "64",
+                "--per_device_train_batch_size",
+                "16",
+                "--per_device_eval_batch_size",
+                "16",
+                "--gradient_accumulation_steps",
+                "1",
+                "--predict_with_generate",
+                "--max_steps",
+                "3000",
+                "--logging_steps",
+                "10",
+                "--save_steps",
+                "1000",
+                "--learning_rate",
+                "2e-2",
+                "--pre_seq_len",
+                "128"
+            ]
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1"
+            },
+            "args": [
+            ]
+        },
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "epoch": 2.99,
+    "predict_accuracy": 0.8992125984251969,
+    "predict_bleu-4": 98.28572351706038,
+    "predict_rouge-1": 99.2395942257218,
+    "predict_rouge-2": 97.81298435695538,
+    "predict_rouge-l": 98.39220787401575,
+    "predict_runtime": 246.073,
+    "predict_samples": 1905,
+    "predict_samples_per_second": 7.742,
+    "predict_steps_per_second": 0.061,
+    "train_loss": 0.0605657958984375,
+    "train_runtime": 4611.9834,
+    "train_samples": 17126,
+    "train_samples_per_second": 11.102,
+    "train_steps_per_second": 0.087
+}

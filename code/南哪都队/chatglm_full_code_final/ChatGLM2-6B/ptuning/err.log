@@ -1,0 +1,433 @@
+master_addr is only used for static rdzv_backend and when rdzv_endpoint is not specified.
+2023-08-10 04:23:22.541052: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-08-10 04:23:22.552658: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-08-10 04:23:22.606548: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-08-10 04:23:22.616036: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-08-10 04:23:24.903539: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-08-10 04:23:24.903537: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Downloading data files:   0%|          | 0/2 [00:00<?, ?it/s]Downloading data files: 100%|██████████| 2/2 [00:00<00:00, 3081.78it/s]
+Extracting data files #0:   0%|          | 0/1 [00:00<?, ?obj/s]
+Extracting data files #1:   0%|          | 0/1 [00:00<?, ?obj/s][AExtracting data files #0: 100%|██████████| 1/1 [00:00<00:00, 133.85obj/s]
+Extracting data files #1: 100%|██████████| 1/1 [00:00<00:00, 110.86obj/s]
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 9738 examples [00:00, 96954.30 examples/s]                                                                  Generating validation split: 0 examples [00:00, ? examples/s]                                                               0%|          | 0/2 [00:00<?, ?it/s]  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 56.54it/s]
+[INFO|configuration_utils.py:710] 2023-08-10 04:23:50,166 >> loading configuration file ../../model/chatglm2-6b/config.json
+100%|██████████| 2/2 [00:00<00:00, 228.73it/s]
+[INFO|configuration_utils.py:710] 2023-08-10 04:23:50,179 >> loading configuration file ../../model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:768] 2023-08-10 04:23:50,180 >> Model config ChatGLMConfig {
+  "_name_or_path": "../../model/chatglm2-6b",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration"
+  },
+  "bias_dropout_fusion": true,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.31.0",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+
+[INFO|tokenization_utils_base.py:1837] 2023-08-10 04:23:50,187 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1837] 2023-08-10 04:23:50,187 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1837] 2023-08-10 04:23:50,187 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1837] 2023-08-10 04:23:50,187 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:2600] 2023-08-10 04:23:50,587 >> loading weights file ../../model/chatglm2-6b/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:599] 2023-08-10 04:23:50,589 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.31.0"
+}
+
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:08,  1.39s/it]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:08,  1.40s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:02<00:06,  1.38s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:02<00:06,  1.39s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:04<00:05,  1.33s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:04<00:05,  1.35s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:05<00:03,  1.28s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:05<00:03,  1.29s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:06<00:02,  1.27s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:06<00:02,  1.30s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:07<00:01,  1.26s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:07<00:01,  1.28s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:08<00:00,  1.09s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:08<00:00,  1.21s/it]
+[WARNING|modeling_utils.py:3331] 2023-08-10 04:23:59,197 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at ../../model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards: 100%|██████████| 7/7 [00:08<00:00,  1.10s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:08<00:00,  1.23s/it]
+[INFO|modeling_utils.py:3329] 2023-08-10 04:23:59,315 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+
+[WARNING|modeling_utils.py:3331] 2023-08-10 04:23:59,316 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at ../../model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2949] 2023-08-10 04:23:59,317 >> Generation config file not found, using a generation config created from the model config.
+Running tokenizer on train dataset #0:   0%|          | 0/2 [00:00<?, ?ba/s]
+Running tokenizer on train dataset #1:   0%|          | 0/2 [00:00<?, ?ba/s][A
+
+Running tokenizer on train dataset #2:   0%|          | 0/2 [00:00<?, ?ba/s][A[A
+
+
+Running tokenizer on train dataset #3:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A
+
+
+
+Running tokenizer on train dataset #4:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A
+
+
+
+
+Running tokenizer on train dataset #5:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A
+
+
+
+
+
+Running tokenizer on train dataset #6:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A[A
+
+
+
+
+
+
+Running tokenizer on train dataset #7:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A[ARunning tokenizer on train dataset #0:  50%|█████     | 1/2 [00:01<00:01,  1.12s/ba]
+
+
+Running tokenizer on train dataset #3:  50%|█████     | 1/2 [00:01<00:01,  1.14s/ba][A[A[A
+Running tokenizer on train dataset #1:  50%|█████     | 1/2 [00:01<00:01,  1.17s/ba][A
+
+Running tokenizer on train dataset #2:  50%|█████     | 1/2 [00:01<00:01,  1.17s/ba][A[A
+
+
+
+
+
+Running tokenizer on train dataset #6:  50%|█████     | 1/2 [00:01<00:01,  1.12s/ba][A[A[A[A[A[A
+
+
+
+
+Running tokenizer on train dataset #5:  50%|█████     | 1/2 [00:01<00:01,  1.13s/ba][A[A[A[A[A
+
+
+
+Running tokenizer on train dataset #4:  50%|█████     | 1/2 [00:01<00:01,  1.15s/ba][A[A[A[A
+
+
+
+
+
+
+Running tokenizer on train dataset #7:  50%|█████     | 1/2 [00:01<00:01,  1.12s/ba][A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9:  50%|█████     | 1/2 [00:01<00:01,  1.14s/ba][A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8:  50%|█████     | 1/2 [00:01<00:01,  1.16s/ba][A[A[A[A[A[A[A[ARunning tokenizer on train dataset #0: 100%|██████████| 2/2 [00:01<00:00,  1.19ba/s]Running tokenizer on train dataset #0: 100%|██████████| 2/2 [00:01<00:00,  1.13ba/s]
+
+
+
+
+
+
+Running tokenizer on train dataset #6: 100%|██████████| 2/2 [00:01<00:00,  1.20ba/s][A[A[A[A[A[ARunning tokenizer on train dataset #6: 100%|██████████| 2/2 [00:01<00:00,  1.14ba/s]
+
+
+Running tokenizer on train dataset #2: 100%|██████████| 2/2 [00:01<00:00,  1.16ba/s][A[ARunning tokenizer on train dataset #2: 100%|██████████| 2/2 [00:01<00:00,  1.10ba/s]
+
+
+
+
+
+Running tokenizer on train dataset #5: 100%|██████████| 2/2 [00:01<00:00,  1.18ba/s][A[A[A[A[ARunning tokenizer on train dataset #5: 100%|██████████| 2/2 [00:01<00:00,  1.12ba/s]
+
+
+
+
+
+
+
+Running tokenizer on train dataset #7: 100%|██████████| 2/2 [00:01<00:00,  1.19ba/s][A[A[A[A[A[A[ARunning tokenizer on train dataset #7: 100%|██████████| 2/2 [00:01<00:00,  1.13ba/s]
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8: 100%|██████████| 2/2 [00:01<00:00,  1.13ba/s][A[A[A[A[A[A[A[ARunning tokenizer on train dataset #8: 100%|██████████| 2/2 [00:01<00:00,  1.08ba/s]
+
+
+
+Running tokenizer on train dataset #3: 100%|██████████| 2/2 [00:01<00:00,  1.06ba/s][A[A[ARunning tokenizer on train dataset #3: 100%|██████████| 2/2 [00:01<00:00,  1.02ba/s]
+
+Running tokenizer on train dataset #1: 100%|██████████| 2/2 [00:01<00:00,  1.04ba/s][ARunning tokenizer on train dataset #1: 100%|██████████| 2/2 [00:01<00:00,  1.00ba/s]
+
+
+
+
+Running tokenizer on train dataset #4: 100%|██████████| 2/2 [00:01<00:00,  1.05ba/s][A[A[A[ARunning tokenizer on train dataset #4: 100%|██████████| 2/2 [00:01<00:00,  1.02ba/s]
+
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9: 100%|██████████| 2/2 [00:01<00:00,  1.06ba/s][A[A[A[A[A[A[A[A[ARunning tokenizer on train dataset #9: 100%|██████████| 2/2 [00:01<00:00,  1.03ba/s]
+Running tokenizer on train dataset #0:   0%|          | 0/2 [00:00<?, ?ba/s]
+Running tokenizer on train dataset #1:   0%|          | 0/2 [00:00<?, ?ba/s][A
+
+Running tokenizer on train dataset #2:   0%|          | 0/2 [00:00<?, ?ba/s][A[A
+
+
+Running tokenizer on train dataset #3:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A
+
+
+
+Running tokenizer on train dataset #4:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A
+
+
+
+
+Running tokenizer on train dataset #5:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A
+
+
+
+
+
+Running tokenizer on train dataset #6:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A[A
+
+
+
+
+
+
+Running tokenizer on train dataset #7:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9:   0%|          | 0/2 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A[ARunning tokenizer on train dataset #0:  50%|█████     | 1/2 [00:01<00:01,  1.03s/ba][INFO|trainer.py:565] 2023-08-10 04:24:05,585 >> max_steps is given, it will override any value given in num_train_epochs
+
+Running tokenizer on train dataset #1:  50%|█████     | 1/2 [00:01<00:01,  1.15s/ba][A
+
+Running tokenizer on train dataset #2:  50%|█████     | 1/2 [00:01<00:01,  1.15s/ba][A[A
+
+
+Running tokenizer on train dataset #3:  50%|█████     | 1/2 [00:01<00:01,  1.15s/ba][A[A[A
+
+
+
+
+Running tokenizer on train dataset #5:  50%|█████     | 1/2 [00:01<00:01,  1.12s/ba][A[A[A[A[A
+
+
+
+
+
+Running tokenizer on train dataset #6:  50%|█████     | 1/2 [00:01<00:01,  1.12s/ba][A[A[A[A[A[A
+
+
+
+Running tokenizer on train dataset #4:  50%|█████     | 1/2 [00:01<00:01,  1.15s/ba][A[A[A[A
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8:  50%|█████     | 1/2 [00:01<00:01,  1.11s/ba][A[A[A[A[A[A[A[A
+
+
+
+
+
+
+Running tokenizer on train dataset #7:  50%|█████     | 1/2 [00:01<00:01,  1.14s/ba][A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9:  50%|█████     | 1/2 [00:01<00:01,  1.12s/ba][A[A[A[A[A[A[A[A[A/home/zy/anaconda3/envs/torch/lib/python3.9/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+Running tokenizer on train dataset #0: 100%|██████████| 2/2 [00:01<00:00,  1.25ba/s]Running tokenizer on train dataset #0: 100%|██████████| 2/2 [00:01<00:00,  1.19ba/s]
+
+
+
+
+
+Running tokenizer on train dataset #5: 100%|██████████| 2/2 [00:01<00:00,  1.19ba/s][A[A[A[A[ARunning tokenizer on train dataset #5: 100%|██████████| 2/2 [00:01<00:00,  1.13ba/s]
+
+
+
+
+
+
+Running tokenizer on train dataset #6: 100%|██████████| 2/2 [00:01<00:00,  1.20ba/s][A[A[A[A[A[ARunning tokenizer on train dataset #6: 100%|██████████| 2/2 [00:01<00:00,  1.14ba/s]
+
+
+
+Running tokenizer on train dataset #3: 100%|██████████| 2/2 [00:01<00:00,  1.17ba/s][A[A[ARunning tokenizer on train dataset #3: 100%|██████████| 2/2 [00:01<00:00,  1.11ba/s]
+
+
+
+
+Running tokenizer on train dataset #4: 100%|██████████| 2/2 [00:01<00:00,  1.17ba/s][A[A[A[ARunning tokenizer on train dataset #4: 100%|██████████| 2/2 [00:01<00:00,  1.11ba/s]
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8: 100%|██████████| 2/2 [00:01<00:00,  1.19ba/s][A[A[A[A[A[A[A[ARunning tokenizer on train dataset #8: 100%|██████████| 2/2 [00:01<00:00,  1.14ba/s]
+
+
+
+
+
+
+
+Running tokenizer on train dataset #7: 100%|██████████| 2/2 [00:01<00:00,  1.18ba/s][A[A[A[A[A[A[ARunning tokenizer on train dataset #7: 100%|██████████| 2/2 [00:01<00:00,  1.12ba/s]
+
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9: 100%|██████████| 2/2 [00:01<00:00,  1.19ba/s][A[A[A[A[A[A[A[A[ARunning tokenizer on train dataset #9: 100%|██████████| 2/2 [00:01<00:00,  1.13ba/s]
+
+Running tokenizer on train dataset #1: 100%|██████████| 2/2 [00:01<00:00,  1.05ba/s][ARunning tokenizer on train dataset #1: 100%|██████████| 2/2 [00:01<00:00,  1.02ba/s]
+
+
+Running tokenizer on train dataset #2: 100%|██████████| 2/2 [00:01<00:00,  1.06ba/s][A[ARunning tokenizer on train dataset #2: 100%|██████████| 2/2 [00:01<00:00,  1.02ba/s]
+/home/zy/anaconda3/envs/torch/lib/python3.9/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1686] 2023-08-10 04:24:08,572 >> ***** Running training *****
+[INFO|trainer.py:1687] 2023-08-10 04:24:08,572 >>   Num examples = 17,126
+[INFO|trainer.py:1688] 2023-08-10 04:24:08,572 >>   Num Epochs = 3
+[INFO|trainer.py:1689] 2023-08-10 04:24:08,573 >>   Instantaneous batch size per device = 64
+[INFO|trainer.py:1692] 2023-08-10 04:24:08,573 >>   Total train batch size (w. parallel, distributed & accumulation) = 128
+[INFO|trainer.py:1693] 2023-08-10 04:24:08,573 >>   Gradient Accumulation steps = 1
+[INFO|trainer.py:1694] 2023-08-10 04:24:08,573 >>   Total optimization steps = 400
+[INFO|trainer.py:1695] 2023-08-10 04:24:08,573 >>   Number of trainable parameters = 1,835,008
+  0%|          | 0/400 [00:00<?, ?it/s]  0%|          | 1/400 [00:12<1:23:35, 12.57s/it]  0%|          | 2/400 [00:23<1:18:32, 11.84s/it]  1%|          | 3/400 [00:35<1:16:54, 11.62s/it]  1%|          | 4/400 [00:46<1:16:06, 11.53s/it]  1%|▏         | 5/400 [00:58<1:15:38, 11.49s/it]  2%|▏         | 6/400 [01:09<1:15:17, 11.47s/it]  2%|▏         | 7/400 [01:20<1:15:02, 11.46s/it]  2%|▏         | 8/400 [01:32<1:14:51, 11.46s/it]  2%|▏         | 9/400 [01:43<1:14:38, 11.45s/it]  2%|▎         | 10/400 [01:55<1:14:28, 11.46s/it]                                                    2%|▎         | 10/400 [01:55<1:14:28, 11.46s/it]  3%|▎         | 11/400 [02:06<1:14:19, 11.46s/it]  3%|▎         | 12/400 [02:18<1:14:11, 11.47s/it]  3%|▎         | 13/400 [02:29<1:14:00, 11.48s/it]  4%|▎         | 14/400 [02:41<1:13:52, 11.48s/it]  4%|▍         | 15/400 [02:52<1:13:43, 11.49s/it]  4%|▍         | 16/400 [03:04<1:13:35, 11.50s/it]  4%|▍         | 17/400 [03:15<1:13:25, 11.50s/it]  4%|▍         | 18/400 [03:27<1:13:15, 11.51s/it]  5%|▍         | 19/400 [03:38<1:13:06, 11.51s/it]  5%|▌         | 20/400 [03:50<1:12:57, 11.52s/it]                                                    5%|▌         | 20/400 [03:50<1:12:57, 11.52s/it]  5%|▌         | 21/400 [04:01<1:12:47, 11.52s/it]  6%|▌         | 22/400 [04:13<1:12:36, 11.53s/it]  6%|▌         | 23/400 [04:24<1:12:26, 11.53s/it]  6%|▌         | 24/400 [04:36<1:12:14, 11.53s/it]  6%|▋         | 25/400 [04:48<1:12:05, 11.53s/it]  6%|▋         | 26/400 [04:59<1:11:55, 11.54s/it]  7%|▋         | 27/400 [05:11<1:11:43, 11.54s/it]  7%|▋         | 28/400 [05:22<1:11:31, 11.54s/it]  7%|▋         | 29/400 [05:34<1:11:22, 11.54s/it]  8%|▊         | 30/400 [05:45<1:11:10, 11.54s/it]                                                    8%|▊         | 30/400 [05:45<1:11:10, 11.54s/it]  8%|▊         | 31/400 [05:57<1:11:00, 11.55s/it]  8%|▊         | 32/400 [06:08<1:10:49, 11.55s/it]  8%|▊         | 33/400 [06:20<1:10:38, 11.55s/it]  8%|▊         | 34/400 [06:31<1:10:27, 11.55s/it]  9%|▉         | 35/400 [06:43<1:10:14, 11.55s/it]  9%|▉         | 36/400 [06:55<1:10:02, 11.55s/it]  9%|▉         | 37/400 [07:06<1:09:51, 11.55s/it] 10%|▉         | 38/400 [07:18<1:09:39, 11.54s/it] 10%|▉         | 39/400 [07:29<1:09:28, 11.55s/it] 10%|█         | 40/400 [07:41<1:09:17, 11.55s/it]                                                   10%|█         | 40/400 [07:41<1:09:17, 11.55s/it] 10%|█         | 41/400 [07:52<1:09:04, 11.55s/it] 10%|█         | 42/400 [08:04<1:08:53, 11.55s/it] 11%|█         | 43/400 [08:15<1:08:42, 11.55s/it] 11%|█         | 44/400 [08:27<1:08:32, 11.55s/it] 11%|█▏        | 45/400 [08:38<1:08:21, 11.55s/it] 12%|█▏        | 46/400 [08:50<1:08:09, 11.55s/it] 12%|█▏        | 47/400 [09:02<1:07:58, 11.55s/it] 12%|█▏        | 48/400 [09:13<1:07:47, 11.56s/it] 12%|█▏        | 49/400 [09:25<1:07:36, 11.56s/it] 12%|█▎        | 50/400 [09:36<1:07:25, 11.56s/it]                                                   12%|█▎        | 50/400 [09:36<1:07:25, 11.56s/it][INFO|configuration_utils.py:458] 2023-08-10 04:33:45,494 >> Configuration saved in ../../model/table_qa/checkpoint-50/config.json
+[INFO|configuration_utils.py:375] 2023-08-10 04:33:45,500 >> Configuration saved in ../../model/table_qa/checkpoint-50/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-08-10 04:33:45,587 >> Model weights saved in ../../model/table_qa/checkpoint-50/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2210] 2023-08-10 04:33:45,600 >> tokenizer config file saved in ../../model/table_qa/checkpoint-50/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2217] 2023-08-10 04:33:45,603 >> Special tokens file saved in ../../model/table_qa/checkpoint-50/special_tokens_map.json
+ 13%|█▎        | 51/400 [09:48<1:07:43, 11.64s/it] 13%|█▎        | 52/400 [10:00<1:07:19, 11.61s/it] 13%|█▎        | 53/400 [10:11<1:07:00, 11.59s/it] 14%|█▎        | 54/400 [10:23<1:06:44, 11.57s/it] 14%|█▍        | 55/400 [10:34<1:06:27, 11.56s/it] 14%|█▍        | 56/400 [10:46<1:06:13, 11.55s/it] 14%|█▍        | 57/400 [10:57<1:06:00, 11.55s/it] 14%|█▍        | 58/400 [11:09<1:05:47, 11.54s/it] 15%|█▍        | 59/400 [11:20<1:05:34, 11.54s/it] 15%|█▌        | 60/400 [11:32<1:05:22, 11.54s/it]                                                   15%|█▌        | 60/400 [11:32<1:05:22, 11.54s/it] 15%|█▌        | 61/400 [11:43<1:05:10, 11.54s/it] 16%|█▌        | 62/400 [11:55<1:04:57, 11.53s/it] 16%|█▌        | 63/400 [12:07<1:04:46, 11.53s/it] 16%|█▌        | 64/400 [12:18<1:04:34, 11.53s/it] 16%|█▋        | 65/400 [12:30<1:04:22, 11.53s/it] 16%|█▋        | 66/400 [12:41<1:04:12, 11.54s/it] 17%|█▋        | 67/400 [12:53<1:04:01, 11.54s/it] 17%|█▋        | 68/400 [13:04<1:03:50, 11.54s/it] 17%|█▋        | 69/400 [13:16<1:03:40, 11.54s/it] 18%|█▊        | 70/400 [13:27<1:03:29, 11.54s/it]                                                   18%|█▊        | 70/400 [13:27<1:03:29, 11.54s/it] 18%|█▊        | 71/400 [13:39<1:03:18, 11.54s/it] 18%|█▊        | 72/400 [13:50<1:03:05, 11.54s/it] 18%|█▊        | 73/400 [14:02<1:03:06, 11.58s/it] 18%|█▊        | 74/400 [14:14<1:02:50, 11.57s/it] 19%|█▉        | 75/400 [14:25<1:02:37, 11.56s/it] 19%|█▉        | 76/400 [14:37<1:02:22, 11.55s/it] 19%|█▉        | 77/400 [14:48<1:02:09, 11.55s/it] 20%|█▉        | 78/400 [15:00<1:01:57, 11.54s/it] 20%|█▉        | 79/400 [15:11<1:01:45, 11.54s/it] 20%|██        | 80/400 [15:23<1:01:34, 11.54s/it]                                                   20%|██        | 80/400 [15:23<1:01:34, 11.54s/it] 20%|██        | 81/400 [15:34<1:01:23, 11.55s/it] 20%|██        | 82/400 [15:46<1:01:11, 11.55s/it] 21%|██        | 83/400 [15:57<1:01:00, 11.55s/it] 21%|██        | 84/400 [16:09<1:00:47, 11.54s/it] 21%|██▏       | 85/400 [16:21<1:00:36, 11.54s/it] 22%|██▏       | 86/400 [16:32<1:00:24, 11.54s/it] 22%|██▏       | 87/400 [16:44<1:00:11, 11.54s/it] 22%|██▏       | 88/400 [16:55<59:59, 11.54s/it]   22%|██▏       | 89/400 [17:07<59:47, 11.53s/it] 22%|██▎       | 90/400 [17:18<59:36, 11.54s/it]                                                 22%|██▎       | 90/400 [17:18<59:36, 11.54s/it] 23%|██▎       | 91/400 [17:30<59:24, 11.54s/it] 23%|██▎       | 92/400 [17:41<59:11, 11.53s/it] 23%|██▎       | 93/400 [17:53<58:59, 11.53s/it] 24%|██▎       | 94/400 [18:04<58:48, 11.53s/it] 24%|██▍       | 95/400 [18:16<58:37, 11.53s/it] 24%|██▍       | 96/400 [18:27<58:27, 11.54s/it] 24%|██▍       | 97/400 [18:39<58:14, 11.53s/it] 24%|██▍       | 98/400 [18:50<58:03, 11.54s/it] 25%|██▍       | 99/400 [19:02<57:53, 11.54s/it] 25%|██▌       | 100/400 [19:14<57:41, 11.54s/it]                                                  25%|██▌       | 100/400 [19:14<57:41, 11.54s/it][INFO|configuration_utils.py:458] 2023-08-10 04:43:22,843 >> Configuration saved in ../../model/table_qa/checkpoint-100/config.json
+[INFO|configuration_utils.py:375] 2023-08-10 04:43:22,857 >> Configuration saved in ../../model/table_qa/checkpoint-100/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-08-10 04:43:22,951 >> Model weights saved in ../../model/table_qa/checkpoint-100/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2210] 2023-08-10 04:43:22,962 >> tokenizer config file saved in ../../model/table_qa/checkpoint-100/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2217] 2023-08-10 04:43:22,966 >> Special tokens file saved in ../../model/table_qa/checkpoint-100/special_tokens_map.json
+ 25%|██▌       | 101/400 [19:26<58:17, 11.70s/it] 26%|██▌       | 102/400 [19:37<57:50, 11.65s/it] 26%|██▌       | 103/400 [19:49<57:27, 11.61s/it] 26%|██▌       | 104/400 [20:00<57:08, 11.58s/it] 26%|██▋       | 105/400 [20:12<56:50, 11.56s/it] 26%|██▋       | 106/400 [20:23<56:34, 11.55s/it] 27%|██▋       | 107/400 [20:35<56:21, 11.54s/it] 27%|██▋       | 108/400 [20:46<56:07, 11.53s/it] 27%|██▋       | 109/400 [20:58<55:55, 11.53s/it] 28%|██▊       | 110/400 [21:09<55:43, 11.53s/it]                                                  28%|██▊       | 110/400 [21:09<55:43, 11.53s/it] 28%|██▊       | 111/400 [21:21<55:30, 11.53s/it] 28%|██▊       | 112/400 [21:32<55:19, 11.53s/it] 28%|██▊       | 113/400 [21:44<55:08, 11.53s/it] 28%|██▊       | 114/400 [21:55<54:55, 11.52s/it] 29%|██▉       | 115/400 [22:07<54:42, 11.52s/it] 29%|██▉       | 116/400 [22:18<54:30, 11.52s/it] 29%|██▉       | 117/400 [22:30<54:18, 11.51s/it] 30%|██▉       | 118/400 [22:41<54:08, 11.52s/it] 30%|██▉       | 119/400 [22:53<53:58, 11.52s/it] 30%|███       | 120/400 [23:05<53:47, 11.53s/it]                                                  30%|███       | 120/400 [23:05<53:47, 11.53s/it] 30%|███       | 121/400 [23:16<53:36, 11.53s/it] 30%|███       | 122/400 [23:28<53:24, 11.53s/it] 31%|███       | 123/400 [23:39<53:13, 11.53s/it] 31%|███       | 124/400 [23:51<53:02, 11.53s/it] 31%|███▏      | 125/400 [24:02<52:51, 11.53s/it] 32%|███▏      | 126/400 [24:14<52:38, 11.53s/it] 32%|███▏      | 127/400 [24:25<52:27, 11.53s/it] 32%|███▏      | 128/400 [24:37<52:14, 11.52s/it] 32%|███▏      | 129/400 [24:48<52:02, 11.52s/it] 32%|███▎      | 130/400 [25:00<51:50, 11.52s/it]                                                  32%|███▎      | 130/400 [25:00<51:50, 11.52s/it] 33%|███▎      | 131/400 [25:11<51:39, 11.52s/it] 33%|███▎      | 132/400 [25:23<51:27, 11.52s/it] 33%|███▎      | 133/400 [25:34<51:15, 11.52s/it] 34%|███▎      | 134/400 [25:46<51:00, 11.51s/it] 34%|███▍      | 135/400 [25:57<50:55, 11.53s/it] 34%|███▍      | 136/400 [26:09<50:43, 11.53s/it] 34%|███▍      | 137/400 [26:20<50:32, 11.53s/it] 34%|███▍      | 138/400 [26:32<50:20, 11.53s/it] 35%|███▍      | 139/400 [26:44<50:07, 11.52s/it] 35%|███▌      | 140/400 [26:55<49:55, 11.52s/it]                                                  35%|███▌      | 140/400 [26:55<49:55, 11.52s/it] 35%|███▌      | 141/400 [27:07<49:43, 11.52s/it] 36%|███▌      | 142/400 [27:18<49:31, 11.52s/it] 36%|███▌      | 143/400 [27:30<49:19, 11.51s/it] 36%|███▌      | 144/400 [27:41<49:07, 11.51s/it] 36%|███▋      | 145/400 [27:53<48:56, 11.51s/it] 36%|███▋      | 146/400 [28:04<48:44, 11.52s/it] 37%|███▋      | 147/400 [28:16<48:34, 11.52s/it] 37%|███▋      | 148/400 [28:27<48:23, 11.52s/it] 37%|███▋      | 149/400 [28:39<48:11, 11.52s/it] 38%|███▊      | 150/400 [28:50<47:59, 11.52s/it]                                                  38%|███▊      | 150/400 [28:50<47:59, 11.52s/it][INFO|configuration_utils.py:458] 2023-08-10 04:52:59,393 >> Configuration saved in ../../model/table_qa/checkpoint-150/config.json
+[INFO|configuration_utils.py:375] 2023-08-10 04:52:59,398 >> Configuration saved in ../../model/table_qa/checkpoint-150/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-08-10 04:52:59,473 >> Model weights saved in ../../model/table_qa/checkpoint-150/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2210] 2023-08-10 04:52:59,505 >> tokenizer config file saved in ../../model/table_qa/checkpoint-150/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2217] 2023-08-10 04:52:59,508 >> Special tokens file saved in ../../model/table_qa/checkpoint-150/special_tokens_map.json
+ 38%|███▊      | 151/400 [29:02<48:14, 11.63s/it] 38%|███▊      | 152/400 [29:14<47:54, 11.59s/it] 38%|███▊      | 153/400 [29:25<47:37, 11.57s/it] 38%|███▊      | 154/400 [29:37<47:22, 11.56s/it] 39%|███▉      | 155/400 [29:48<47:08, 11.55s/it] 39%|███▉      | 156/400 [30:00<46:54, 11.54s/it] 39%|███▉      | 157/400 [30:11<46:41, 11.53s/it] 40%|███▉      | 158/400 [30:23<46:29, 11.53s/it] 40%|███▉      | 159/400 [30:34<46:16, 11.52s/it] 40%|████      | 160/400 [30:46<46:05, 11.52s/it]                                                  40%|████      | 160/400 [30:46<46:05, 11.52s/it] 40%|████      | 161/400 [30:57<45:54, 11.52s/it] 40%|████      | 162/400 [31:09<45:42, 11.52s/it] 41%|████      | 163/400 [31:20<45:30, 11.52s/it] 41%|████      | 164/400 [31:32<45:18, 11.52s/it] 41%|████▏     | 165/400 [31:43<45:07, 11.52s/it] 42%|████▏     | 166/400 [31:55<44:56, 11.52s/it] 42%|████▏     | 167/400 [32:06<44:44, 11.52s/it] 42%|████▏     | 168/400 [32:18<44:31, 11.52s/it] 42%|████▏     | 169/400 [32:29<44:19, 11.51s/it] 42%|████▎     | 170/400 [32:41<44:08, 11.51s/it]                                                  42%|████▎     | 170/400 [32:41<44:08, 11.51s/it] 43%|████▎     | 171/400 [32:52<43:56, 11.51s/it] 43%|████▎     | 172/400 [33:04<43:44, 11.51s/it] 43%|████▎     | 173/400 [33:15<43:32, 11.51s/it] 44%|████▎     | 174/400 [33:27<43:21, 11.51s/it] 44%|████▍     | 175/400 [33:38<43:10, 11.51s/it] 44%|████▍     | 176/400 [33:50<42:59, 11.52s/it] 44%|████▍     | 177/400 [34:02<42:49, 11.52s/it] 44%|████▍     | 178/400 [34:13<42:37, 11.52s/it] 45%|████▍     | 179/400 [34:25<42:26, 11.52s/it] 45%|████▌     | 180/400 [34:36<42:14, 11.52s/it]                                                  45%|████▌     | 180/400 [34:36<42:14, 11.52s/it] 45%|████▌     | 181/400 [34:48<42:02, 11.52s/it] 46%|████▌     | 182/400 [34:59<41:51, 11.52s/it] 46%|████▌     | 183/400 [35:11<41:40, 11.52s/it] 46%|████▌     | 184/400 [35:22<41:28, 11.52s/it] 46%|████▋     | 185/400 [35:34<41:16, 11.52s/it] 46%|████▋     | 186/400 [35:45<41:05, 11.52s/it] 47%|████▋     | 187/400 [35:57<40:53, 11.52s/it] 47%|████▋     | 188/400 [36:08<40:41, 11.52s/it] 47%|████▋     | 189/400 [36:20<40:29, 11.52s/it] 48%|████▊     | 190/400 [36:31<40:18, 11.51s/it]                                                  48%|████▊     | 190/400 [36:31<40:18, 11.51s/it] 48%|████▊     | 191/400 [36:43<40:05, 11.51s/it] 48%|████▊     | 192/400 [36:54<39:54, 11.51s/it] 48%|████▊     | 193/400 [37:06<39:43, 11.51s/it] 48%|████▊     | 194/400 [37:17<39:31, 11.51s/it] 49%|████▉     | 195/400 [37:29<39:19, 11.51s/it] 49%|████▉     | 196/400 [37:40<39:08, 11.51s/it] 49%|████▉     | 197/400 [37:52<38:57, 11.52s/it] 50%|████▉     | 198/400 [38:03<38:45, 11.51s/it] 50%|████▉     | 199/400 [38:15<38:34, 11.51s/it] 50%|█████     | 200/400 [38:26<38:22, 11.51s/it]                                                  50%|█████     | 200/400 [38:26<38:22, 11.51s/it][INFO|configuration_utils.py:458] 2023-08-10 05:02:35,708 >> Configuration saved in ../../model/table_qa/checkpoint-200/config.json
+[INFO|configuration_utils.py:375] 2023-08-10 05:02:35,753 >> Configuration saved in ../../model/table_qa/checkpoint-200/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-08-10 05:02:35,858 >> Model weights saved in ../../model/table_qa/checkpoint-200/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2210] 2023-08-10 05:02:36,051 >> tokenizer config file saved in ../../model/table_qa/checkpoint-200/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2217] 2023-08-10 05:02:36,055 >> Special tokens file saved in ../../model/table_qa/checkpoint-200/special_tokens_map.json
+ 50%|█████     | 201/400 [38:39<38:53, 11.73s/it] 50%|█████     | 202/400 [38:50<38:29, 11.66s/it] 51%|█████     | 203/400 [39:02<38:09, 11.62s/it] 51%|█████     | 204/400 [39:13<37:51, 11.59s/it] 51%|█████▏    | 205/400 [39:25<37:35, 11.57s/it] 52%|█████▏    | 206/400 [39:36<37:20, 11.55s/it] 52%|█████▏    | 207/400 [39:48<37:07, 11.54s/it] 52%|█████▏    | 208/400 [39:59<36:54, 11.54s/it] 52%|█████▏    | 209/400 [40:11<36:42, 11.53s/it] 52%|█████▎    | 210/400 [40:22<36:30, 11.53s/it]                                                  52%|█████▎    | 210/400 [40:22<36:30, 11.53s/it] 53%|█████▎    | 211/400 [40:34<36:18, 11.53s/it] 53%|█████▎    | 212/400 [40:45<36:07, 11.53s/it] 53%|█████▎    | 213/400 [40:57<35:55, 11.53s/it] 54%|█████▎    | 214/400 [41:08<35:43, 11.52s/it] 54%|█████▍    | 215/400 [41:20<35:31, 11.52s/it] 54%|█████▍    | 216/400 [41:31<35:19, 11.52s/it] 54%|█████▍    | 217/400 [41:43<35:07, 11.52s/it] 55%|█████▍    | 218/400 [41:54<34:57, 11.52s/it] 55%|█████▍    | 219/400 [42:06<34:45, 11.52s/it] 55%|█████▌    | 220/400 [42:18<34:34, 11.53s/it]                                                  55%|█████▌    | 220/400 [42:18<34:34, 11.53s/it] 55%|█████▌    | 221/400 [42:29<34:22, 11.52s/it] 56%|█████▌    | 222/400 [42:41<34:11, 11.52s/it] 56%|█████▌    | 223/400 [42:52<33:59, 11.52s/it] 56%|█████▌    | 224/400 [43:04<33:47, 11.52s/it] 56%|█████▋    | 225/400 [43:15<33:36, 11.52s/it] 56%|█████▋    | 226/400 [43:27<33:24, 11.52s/it] 57%|█████▋    | 227/400 [43:38<33:12, 11.52s/it] 57%|█████▋    | 228/400 [43:50<33:00, 11.52s/it] 57%|█████▋    | 229/400 [44:01<32:49, 11.52s/it] 57%|█████▊    | 230/400 [44:13<32:37, 11.52s/it]                                                  57%|█████▊    | 230/400 [44:13<32:37, 11.52s/it] 58%|█████▊    | 231/400 [44:24<32:26, 11.52s/it] 58%|█████▊    | 232/400 [44:36<32:15, 11.52s/it] 58%|█████▊    | 233/400 [44:47<32:04, 11.52s/it] 58%|█████▊    | 234/400 [44:59<31:52, 11.52s/it] 59%|█████▉    | 235/400 [45:10<31:40, 11.52s/it] 59%|█████▉    | 236/400 [45:22<31:29, 11.52s/it] 59%|█████▉    | 237/400 [45:33<31:17, 11.52s/it] 60%|█████▉    | 238/400 [45:45<31:06, 11.52s/it] 60%|█████▉    | 239/400 [45:56<30:54, 11.52s/it] 60%|██████    | 240/400 [46:08<30:43, 11.52s/it]                                                  60%|██████    | 240/400 [46:08<30:43, 11.52s/it] 60%|██████    | 241/400 [46:19<30:31, 11.52s/it] 60%|██████    | 242/400 [46:31<30:20, 11.52s/it] 61%|██████    | 243/400 [46:42<30:07, 11.51s/it] 61%|██████    | 244/400 [46:54<29:56, 11.52s/it] 61%|██████▏   | 245/400 [47:05<29:44, 11.51s/it] 62%|██████▏   | 246/400 [47:17<29:33, 11.51s/it] 62%|██████▏   | 247/400 [47:28<29:21, 11.51s/it] 62%|██████▏   | 248/400 [47:40<29:10, 11.51s/it] 62%|██████▏   | 249/400 [47:52<28:58, 11.51s/it] 62%|██████▎   | 250/400 [48:03<28:46, 11.51s/it]                                                  62%|██████▎   | 250/400 [48:03<28:46, 11.51s/it][INFO|configuration_utils.py:458] 2023-08-10 05:12:12,346 >> Configuration saved in ../../model/table_qa/checkpoint-250/config.json
+[INFO|configuration_utils.py:375] 2023-08-10 05:12:12,352 >> Configuration saved in ../../model/table_qa/checkpoint-250/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-08-10 05:12:12,451 >> Model weights saved in ../../model/table_qa/checkpoint-250/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2210] 2023-08-10 05:12:12,504 >> tokenizer config file saved in ../../model/table_qa/checkpoint-250/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2217] 2023-08-10 05:12:12,510 >> Special tokens file saved in ../../model/table_qa/checkpoint-250/special_tokens_map.json
+ 63%|██████▎   | 251/400 [48:15<29:02, 11.70s/it] 63%|██████▎   | 252/400 [48:27<28:43, 11.64s/it] 63%|██████▎   | 253/400 [48:38<28:25, 11.60s/it] 64%|██████▎   | 254/400 [48:50<28:09, 11.57s/it] 64%|██████▍   | 255/400 [49:01<27:55, 11.56s/it] 64%|██████▍   | 256/400 [49:13<27:41, 11.54s/it] 64%|██████▍   | 257/400 [49:24<27:28, 11.53s/it] 64%|██████▍   | 258/400 [49:36<27:15, 11.52s/it] 65%|██████▍   | 259/400 [49:47<27:04, 11.52s/it] 65%|██████▌   | 260/400 [49:59<26:52, 11.52s/it]                                                  65%|██████▌   | 260/400 [49:59<26:52, 11.52s/it] 65%|██████▌   | 261/400 [50:10<26:40, 11.52s/it] 66%|██████▌   | 262/400 [50:22<26:28, 11.51s/it] 66%|██████▌   | 263/400 [50:33<26:16, 11.51s/it] 66%|██████▌   | 264/400 [50:45<26:04, 11.51s/it] 66%|██████▋   | 265/400 [50:56<25:54, 11.51s/it] 66%|██████▋   | 266/400 [51:08<25:42, 11.51s/it] 67%|██████▋   | 267/400 [51:19<25:31, 11.51s/it] 67%|██████▋   | 268/400 [51:31<25:18, 11.50s/it] 67%|██████▋   | 269/400 [51:42<25:10, 11.53s/it] 68%|██████▊   | 270/400 [51:54<24:57, 11.52s/it]                                                  68%|██████▊   | 270/400 [51:54<24:57, 11.52s/it] 68%|██████▊   | 271/400 [52:05<24:46, 11.52s/it] 68%|██████▊   | 272/400 [52:17<24:34, 11.52s/it] 68%|██████▊   | 273/400 [52:28<24:23, 11.52s/it] 68%|██████▊   | 274/400 [52:40<24:11, 11.52s/it] 69%|██████▉   | 275/400 [52:51<23:59, 11.52s/it] 69%|██████▉   | 276/400 [53:03<23:48, 11.52s/it] 69%|██████▉   | 277/400 [53:15<23:36, 11.51s/it] 70%|██████▉   | 278/400 [53:26<23:24, 11.51s/it] 70%|██████▉   | 279/400 [53:38<23:12, 11.51s/it] 70%|███████   | 280/400 [53:49<23:01, 11.51s/it]                                                  70%|███████   | 280/400 [53:49<23:01, 11.51s/it] 70%|███████   | 281/400 [54:01<22:49, 11.51s/it] 70%|███████   | 282/400 [54:12<22:37, 11.51s/it] 71%|███████   | 283/400 [54:24<22:27, 11.51s/it] 71%|███████   | 284/400 [54:35<22:15, 11.51s/it] 71%|███████▏  | 285/400 [54:47<22:04, 11.52s/it] 72%|███████▏  | 286/400 [54:58<21:52, 11.51s/it] 72%|███████▏  | 287/400 [55:10<21:41, 11.52s/it] 72%|███████▏  | 288/400 [55:21<21:29, 11.51s/it] 72%|███████▏  | 289/400 [55:33<21:17, 11.51s/it] 72%|███████▎  | 290/400 [55:44<21:06, 11.51s/it]                                                  72%|███████▎  | 290/400 [55:44<21:06, 11.51s/it] 73%|███████▎  | 291/400 [55:56<20:54, 11.51s/it] 73%|███████▎  | 292/400 [56:07<20:42, 11.51s/it] 73%|███████▎  | 293/400 [56:19<20:30, 11.50s/it] 74%|███████▎  | 294/400 [56:30<20:19, 11.51s/it] 74%|███████▍  | 295/400 [56:42<20:08, 11.51s/it] 74%|███████▍  | 296/400 [56:53<19:56, 11.51s/it] 74%|███████▍  | 297/400 [57:05<19:45, 11.51s/it] 74%|███████▍  | 298/400 [57:16<19:33, 11.51s/it] 75%|███████▍  | 299/400 [57:28<19:22, 11.51s/it] 75%|███████▌  | 300/400 [57:39<19:11, 11.51s/it]                                                  75%|███████▌  | 300/400 [57:39<19:11, 11.51s/it][INFO|configuration_utils.py:458] 2023-08-10 05:21:48,406 >> Configuration saved in ../../model/table_qa/checkpoint-300/config.json
+[INFO|configuration_utils.py:375] 2023-08-10 05:21:48,410 >> Configuration saved in ../../model/table_qa/checkpoint-300/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-08-10 05:21:48,463 >> Model weights saved in ../../model/table_qa/checkpoint-300/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2210] 2023-08-10 05:21:48,475 >> tokenizer config file saved in ../../model/table_qa/checkpoint-300/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2217] 2023-08-10 05:21:48,478 >> Special tokens file saved in ../../model/table_qa/checkpoint-300/special_tokens_map.json
+ 75%|███████▌  | 301/400 [57:51<19:09, 11.62s/it] 76%|███████▌  | 302/400 [58:03<18:55, 11.59s/it] 76%|███████▌  | 303/400 [58:14<18:41, 11.56s/it] 76%|███████▌  | 304/400 [58:26<18:28, 11.55s/it] 76%|███████▋  | 305/400 [58:37<18:15, 11.53s/it] 76%|███████▋  | 306/400 [58:49<18:03, 11.52s/it] 77%|███████▋  | 307/400 [59:00<17:51, 11.52s/it] 77%|███████▋  | 308/400 [59:12<17:39, 11.52s/it] 77%|███████▋  | 309/400 [59:23<17:27, 11.51s/it] 78%|███████▊  | 310/400 [59:35<17:15, 11.51s/it]                                                  78%|███████▊  | 310/400 [59:35<17:15, 11.51s/it] 78%|███████▊  | 311/400 [59:46<17:03, 11.50s/it] 78%|███████▊  | 312/400 [59:58<16:52, 11.50s/it] 78%|███████▊  | 313/400 [1:00:09<16:41, 11.51s/it] 78%|███████▊  | 314/400 [1:00:21<16:29, 11.51s/it] 79%|███████▉  | 315/400 [1:00:32<16:18, 11.51s/it] 79%|███████▉  | 316/400 [1:00:44<16:06, 11.51s/it] 79%|███████▉  | 317/400 [1:00:55<15:55, 11.51s/it] 80%|███████▉  | 318/400 [1:01:07<15:44, 11.51s/it] 80%|███████▉  | 319/400 [1:01:18<15:32, 11.52s/it] 80%|████████  | 320/400 [1:01:30<15:20, 11.51s/it]                                                    80%|████████  | 320/400 [1:01:30<15:20, 11.51s/it] 80%|████████  | 321/400 [1:01:41<15:09, 11.51s/it] 80%|████████  | 322/400 [1:01:53<14:58, 11.51s/it] 81%|████████  | 323/400 [1:02:04<14:46, 11.51s/it] 81%|████████  | 324/400 [1:02:16<14:34, 11.51s/it] 81%|████████▏ | 325/400 [1:02:27<14:23, 11.51s/it] 82%|████████▏ | 326/400 [1:02:39<14:11, 11.51s/it] 82%|████████▏ | 327/400 [1:02:50<14:00, 11.51s/it] 82%|████████▏ | 328/400 [1:03:02<13:48, 11.51s/it] 82%|████████▏ | 329/400 [1:03:13<13:37, 11.51s/it] 82%|████████▎ | 330/400 [1:03:25<13:25, 11.51s/it]                                                    82%|████████▎ | 330/400 [1:03:25<13:25, 11.51s/it] 83%|████████▎ | 331/400 [1:03:36<13:14, 11.51s/it] 83%|████████▎ | 332/400 [1:03:48<13:03, 11.52s/it] 83%|████████▎ | 333/400 [1:03:59<12:51, 11.52s/it] 84%|████████▎ | 334/400 [1:04:11<12:40, 11.52s/it] 84%|████████▍ | 335/400 [1:04:23<12:28, 11.52s/it] 84%|████████▍ | 336/400 [1:04:34<12:17, 11.52s/it] 84%|████████▍ | 337/400 [1:04:46<12:05, 11.52s/it] 84%|████████▍ | 338/400 [1:04:57<11:54, 11.52s/it] 85%|████████▍ | 339/400 [1:05:09<11:42, 11.52s/it] 85%|████████▌ | 340/400 [1:05:20<11:31, 11.52s/it]                                                    85%|████████▌ | 340/400 [1:05:20<11:31, 11.52s/it] 85%|████████▌ | 341/400 [1:05:32<11:19, 11.52s/it] 86%|████████▌ | 342/400 [1:05:43<11:08, 11.52s/it] 86%|████████▌ | 343/400 [1:05:55<10:56, 11.52s/it] 86%|████████▌ | 344/400 [1:06:06<10:45, 11.52s/it] 86%|████████▋ | 345/400 [1:06:18<10:33, 11.52s/it] 86%|████████▋ | 346/400 [1:06:29<10:21, 11.51s/it] 87%|████████▋ | 347/400 [1:06:41<10:10, 11.52s/it] 87%|████████▋ | 348/400 [1:06:52<09:58, 11.52s/it] 87%|████████▋ | 349/400 [1:07:04<09:47, 11.51s/it] 88%|████████▊ | 350/400 [1:07:15<09:35, 11.51s/it]                                                    88%|████████▊ | 350/400 [1:07:15<09:35, 11.51s/it][INFO|configuration_utils.py:458] 2023-08-10 05:31:24,562 >> Configuration saved in ../../model/table_qa/checkpoint-350/config.json
+[INFO|configuration_utils.py:375] 2023-08-10 05:31:24,587 >> Configuration saved in ../../model/table_qa/checkpoint-350/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-08-10 05:31:24,621 >> Model weights saved in ../../model/table_qa/checkpoint-350/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2210] 2023-08-10 05:31:24,630 >> tokenizer config file saved in ../../model/table_qa/checkpoint-350/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2217] 2023-08-10 05:31:24,633 >> Special tokens file saved in ../../model/table_qa/checkpoint-350/special_tokens_map.json
+ 88%|████████▊ | 351/400 [1:07:27<09:28, 11.61s/it] 88%|████████▊ | 352/400 [1:07:39<09:15, 11.58s/it] 88%|████████▊ | 353/400 [1:07:50<09:03, 11.56s/it] 88%|████████▊ | 354/400 [1:08:02<08:50, 11.54s/it] 89%|████████▉ | 355/400 [1:08:13<08:38, 11.53s/it] 89%|████████▉ | 356/400 [1:08:25<08:27, 11.52s/it] 89%|████████▉ | 357/400 [1:08:36<08:15, 11.52s/it] 90%|████████▉ | 358/400 [1:08:48<08:03, 11.51s/it] 90%|████████▉ | 359/400 [1:08:59<07:52, 11.52s/it] 90%|█████████ | 360/400 [1:09:11<07:40, 11.52s/it]                                                    90%|█████████ | 360/400 [1:09:11<07:40, 11.52s/it] 90%|█████████ | 361/400 [1:09:22<07:29, 11.51s/it] 90%|█████████ | 362/400 [1:09:34<07:17, 11.51s/it] 91%|█████████ | 363/400 [1:09:45<07:05, 11.51s/it] 91%|█████████ | 364/400 [1:09:57<06:54, 11.51s/it] 91%|█████████▏| 365/400 [1:10:08<06:43, 11.51s/it] 92%|█████████▏| 366/400 [1:10:20<06:31, 11.51s/it] 92%|█████████▏| 367/400 [1:10:31<06:19, 11.51s/it] 92%|█████████▏| 368/400 [1:10:43<06:08, 11.51s/it] 92%|█████████▏| 369/400 [1:10:54<05:56, 11.50s/it] 92%|█████████▎| 370/400 [1:11:06<05:45, 11.51s/it]                                                    92%|█████████▎| 370/400 [1:11:06<05:45, 11.51s/it] 93%|█████████▎| 371/400 [1:11:17<05:33, 11.51s/it] 93%|█████████▎| 372/400 [1:11:29<05:22, 11.51s/it] 93%|█████████▎| 373/400 [1:11:40<05:10, 11.51s/it] 94%|█████████▎| 374/400 [1:11:52<04:59, 11.51s/it] 94%|█████████▍| 375/400 [1:12:03<04:47, 11.51s/it] 94%|█████████▍| 376/400 [1:12:15<04:36, 11.51s/it] 94%|█████████▍| 377/400 [1:12:26<04:24, 11.51s/it] 94%|█████████▍| 378/400 [1:12:38<04:13, 11.51s/it] 95%|█████████▍| 379/400 [1:12:49<04:01, 11.51s/it] 95%|█████████▌| 380/400 [1:13:01<03:50, 11.50s/it]                                                    95%|█████████▌| 380/400 [1:13:01<03:50, 11.50s/it] 95%|█████████▌| 381/400 [1:13:12<03:38, 11.51s/it] 96%|█████████▌| 382/400 [1:13:24<03:27, 11.50s/it] 96%|█████████▌| 383/400 [1:13:35<03:15, 11.50s/it] 96%|█████████▌| 384/400 [1:13:47<03:04, 11.50s/it] 96%|█████████▋| 385/400 [1:13:58<02:52, 11.50s/it] 96%|█████████▋| 386/400 [1:14:10<02:41, 11.50s/it] 97%|█████████▋| 387/400 [1:14:21<02:29, 11.51s/it] 97%|█████████▋| 388/400 [1:14:33<02:18, 11.51s/it] 97%|█████████▋| 389/400 [1:14:44<02:06, 11.51s/it] 98%|█████████▊| 390/400 [1:14:56<01:55, 11.51s/it]                                                    98%|█████████▊| 390/400 [1:14:56<01:55, 11.51s/it] 98%|█████████▊| 391/400 [1:15:07<01:43, 11.51s/it] 98%|█████████▊| 392/400 [1:15:19<01:32, 11.51s/it] 98%|█████████▊| 393/400 [1:15:30<01:20, 11.51s/it] 98%|█████████▊| 394/400 [1:15:42<01:09, 11.51s/it] 99%|█████████▉| 395/400 [1:15:53<00:57, 11.51s/it] 99%|█████████▉| 396/400 [1:16:05<00:46, 11.51s/it] 99%|█████████▉| 397/400 [1:16:17<00:34, 11.51s/it]100%|█████████▉| 398/400 [1:16:28<00:23, 11.51s/it]100%|█████████▉| 399/400 [1:16:40<00:11, 11.51s/it]100%|██████████| 400/400 [1:16:51<00:00, 11.51s/it]                                                   100%|██████████| 400/400 [1:16:51<00:00, 11.51s/it][INFO|configuration_utils.py:458] 2023-08-10 05:41:00,305 >> Configuration saved in ../../model/table_qa/checkpoint-400/config.json
+[INFO|configuration_utils.py:375] 2023-08-10 05:41:00,330 >> Configuration saved in ../../model/table_qa/checkpoint-400/generation_config.json
+[INFO|modeling_utils.py:1851] 2023-08-10 05:41:00,365 >> Model weights saved in ../../model/table_qa/checkpoint-400/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2210] 2023-08-10 05:41:00,376 >> tokenizer config file saved in ../../model/table_qa/checkpoint-400/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2217] 2023-08-10 05:41:00,379 >> Special tokens file saved in ../../model/table_qa/checkpoint-400/special_tokens_map.json
+[INFO|trainer.py:1934] 2023-08-10 05:41:00,556 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                                   100%|██████████| 400/400 [1:16:51<00:00, 11.51s/it]100%|██████████| 400/400 [1:16:51<00:00, 11.53s/it]

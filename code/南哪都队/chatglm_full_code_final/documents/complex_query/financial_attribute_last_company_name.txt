@@ -1,0 +1,14 @@
+{year}年{attribute}最少的{top_num}家公司有哪些？
+哪些公司在{year}年中{attribute}最低，共有{top_num}家？
+列举在{year}这一年里，{attribute}最小的{top_num}家公司。
+查询在{year}这一年，{attribute}数值最低的{top_num}家公司有哪些？
+列出在{year}中，{attribute}最少的{top_num}家公司有哪些？
+请列举在{year}这一年中，{attribute}数值最少的{top_num}家公司。
+查询在{year}这一年里，{attribute}最少的{top_num}家公司是哪些？
+{year}年哪些公司的{attribute}最少，数量为{top_num}家？
+列举在{year}这一年中，{attribute}最小的{top_num}家公司有哪些？
+{year}年中，哪些公司的{attribute}最小，在数量上达到{top_num}家？
+请提供在{year}这一年中，{attribute}最少的{top_num}家公司名单。
+查询在{year}这一年，{attribute}值最少的{top_num}家公司是哪些？
+列出在{year}这年中，{attribute}最少的{top_num}家公司有哪些？
+查询在{year}这一年，{attribute}值最少的{top_num}家公司是哪些？

@@ -1,0 +1,6 @@
+告诉我{year}年度，有多少公司的{attribute}大于等于{threshold}？
+介绍一下{year}年度所有公司{attribute}大于等于{threshold}的具体数量？
+{year}年上市公司有多少{attribute}大于等于{threshold}？
+{year}年的市场，{attribute}大于等于{threshold}的公司有多少？
+在{year}年所有的上市公司中，{attribute}大于等于{threshold}的公司具体有多少？
+能介绍介绍{year}年{attribute}大于等于{threshold}的公司数量吗？

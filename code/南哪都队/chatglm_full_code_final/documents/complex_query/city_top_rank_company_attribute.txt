@@ -1,0 +1,11 @@
+{year}年注册地是{city_name}的上市公司中，{attribute}排名第{top_num}高的公司，其{company_attribute}是？
+{year}年成立于{city_name}的上市企业中，以{attribute}在排名第{top_num}高的企业，其{company_attribute}是什么？
+那些在{year}年在{city_name}注册并上市的公司中，哪家以{attribute}在排名第{top_num}高，并透露一下其{company_attribute}是什么？
+在{year}年注册地为{city_name}的上市公司中，哪一家以{attribute}在第{top_num}高，它的{company_attribute}是什么？
+在注册地点位于{city_name}、成立于{year}年的上市企业中，哪家公司以{attribute}在排行第{top_num}高，其{company_attribute}为何？
+针对在{year}年注册于{city_name}的上市公司，哪家在{attribute}方面排在第{top_num}高，你知道它的{company_attribute}是什么吗？
+那些{year}年在{city_name}注册地的上市公司中，哪个以{attribute}在排名第{top_num}高，并且它的{company_attribute}是什么？
+在{year}年以{city_name}为注册地的上市企业中，哪家以{attribute}排名第{top_num}高，它的{company_attribute}是怎样的？
+{year}年在{city_name}注册地的上市公司里，哪个在{attribute}方面名列第{top_num}高，并且揭示一下其{company_attribute}是什么？
+在{year}年注册于{city_name}的上市公司中，哪家以{attribute}排在第{top_num}高，请提供其{company_attribute}。
+针对在{year}年成立于{city_name}的上市企业，哪家在{attribute}方面排在第{top_num}高，能告诉我它的{company_attribute}吗？

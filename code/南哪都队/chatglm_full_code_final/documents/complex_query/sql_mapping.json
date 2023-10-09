@@ -1,0 +1,42 @@
+{
+    "city_top_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} DESC LIMIT {top_num}",
+    "city_top_rank_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} DESC LIMIT 1 OFFSET {top_num}-1",
+    "city_top_rank_company_attribute": "SELECT {company_attribute} FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} DESC LIMIT 1 OFFSET {top_num}-1",
+    "city_last_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} ASC LIMIT {top_num}",
+    "city_last_rank_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} ASC LIMIT 1 OFFSET {top_num}-1",
+    "city_last_rank_company_attribute": "SELECT {company_attribute} FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} ASC LIMIT 1 OFFSET {top_num}-1",
+    "financial_attribute_top_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} ORDER BY {attribute} DESC LIMIT {top_num}",
+    "financial_attribute_top_rank_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} ORDER BY {attribute} DESC LIMIT 1 OFFSET {top_num}-1",
+    "financial_attribute_last_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} ORDER BY {attribute} ASC LIMIT {top_num}",
+    "financial_attribute_last_rank_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} ORDER BY {attribute} ASC LIMIT 1 OFFSET {top_num}-1",
+    
+    "city_top_company_name_value": "SELECT 公司的中文名称,{attribute} FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} DESC LIMIT {top_num}",
+    "city_top_rank_company_name_value": "SELECT 公司的中文名称,{attribute} FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} DESC LIMIT 1 OFFSET {top_num}-1",
+    "city_top_rank_company_attribute_value": "SELECT {company_attribute},{attribute} FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} DESC LIMIT 1 OFFSET {top_num}-1",
+    "city_last_company_name_value": "SELECT 公司的中文名称,{attribute} FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} ASC LIMIT {top_num}",
+    "city_last_rank_company_name_value": "SELECT 公司的中文名称,{attribute} FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} ASC LIMIT 1 OFFSET {top_num}-1",
+    "city_last_rank_company_attribute_value": "SELECT {company_attribute},{attribute} FROM finance WHERE 年份={year} and (注册省份 in ({city_name}) or 注册城市 in ({city_name})) ORDER BY {attribute} ASC LIMIT 1 OFFSET {top_num}-1",
+    "financial_attribute_top_company_name_value": "SELECT 公司的中文名称,{attribute} FROM finance WHERE 年份={year} ORDER BY {attribute} DESC LIMIT {top_num}",
+    "financial_attribute_top_rank_company_name_value": "SELECT 公司的中文名称,{attribute} FROM finance WHERE 年份={year} ORDER BY {attribute} DESC LIMIT 1 OFFSET {top_num}-1",
+    "financial_attribute_last_company_name_value": "SELECT 公司的中文名称,{attribute} FROM finance WHERE 年份={year} ORDER BY {attribute} ASC LIMIT {top_num}",
+    "financial_attribute_last_rank_company_name_value": "SELECT 公司的中文名称,{attribute} FROM finance WHERE 年份={year} ORDER BY {attribute} ASC LIMIT 1 OFFSET {top_num}-1",
+    
+    "financial_attribute_max_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} ORDER BY {attribute} DESC LIMIT 1",
+    "financial_attribute_min_company_name": "SELECT 公司的中文名称 FROM finance WHERE 年份={year} ORDER BY {attribute} ASC LIMIT 1",
+    "cross_year_top_company_name_2019_2021": "SELECT 公司的中文名称 FROM ( SELECT 公司的中文名称 FROM finance WHERE 年份='2019' ORDER BY {attribute} DESC LIMIT {top_num}) AS subquery1 INTERSECT SELECT 公司的中文名称 FROM (SELECT 公司的中文名称 FROM finance WHERE 年份='2020' ORDER BY {attribute} DESC LIMIT {top_num}) AS subquery2 INTERSECT SELECT 公司的中文名称 FROM (SELECT 公司的中文名称 FROM finance WHERE 年份='2021' ORDER BY {attribute} DESC LIMIT {top_num} ) AS subquery3",
+    "cross_year_top_company_name_2020_2021": "SELECT 公司的中文名称 FROM ( SELECT 公司的中文名称 FROM finance WHERE 年份='2020' ORDER BY {attribute} DESC LIMIT {top_num}) AS subquery1 INTERSECT SELECT 公司的中文名称 FROM (SELECT 公司的中文名称 FROM finance WHERE 年份='2021' ORDER BY {attribute} DESC LIMIT {top_num}) AS subquery2",
+    "cross_year_top_company_name_2019_2020": "SELECT 公司的中文名称 FROM ( SELECT 公司的中文名称 FROM finance WHERE 年份='2019' ORDER BY {attribute} DESC LIMIT {top_num}) AS subquery1 INTERSECT SELECT 公司的中文名称 FROM (SELECT 公司的中文名称 FROM finance WHERE 年份='2020' ORDER BY {attribute} DESC LIMIT {top_num}) AS subquery2",
+    "cross_year_last_company_name_2019_2021": "SELECT 公司的中文名称 FROM ( SELECT 公司的中文名称 FROM finance WHERE 年份='2019' ORDER BY {attribute} ASC LIMIT {top_num}) AS subquery1 INTERSECT SELECT 公司的中文名称 FROM (SELECT 公司的中文名称 FROM finance WHERE 年份='2020' ORDER BY {attribute} ASC LIMIT {top_num}) AS subquery2 INTERSECT SELECT 公司的中文名称 FROM (SELECT 公司的中文名称 FROM finance WHERE 年份='2021' ORDER BY {attribute} ASC LIMIT {top_num} ) AS subquery3",
+    "cross_year_last_company_name_2020_2021": "SELECT 公司的中文名称 FROM ( SELECT 公司的中文名称 FROM finance WHERE 年份='2020' ORDER BY {attribute} ASC LIMIT {top_num}) AS subquery1 INTERSECT SELECT 公司的中文名称 FROM (SELECT 公司的中文名称 FROM finance WHERE 年份='2021' ORDER BY {attribute} ASC LIMIT {top_num}) AS subquery2",
+    "cross_year_last_company_name_2019_2020": "SELECT 公司的中文名称 FROM ( SELECT 公司的中文名称 FROM finance WHERE 年份='2019' ORDER BY {attribute} ASC LIMIT {top_num}) AS subquery1 INTERSECT SELECT 公司的中文名称 FROM (SELECT 公司的中文名称 FROM finance WHERE 年份='2020' ORDER BY {attribute} ASC LIMIT {top_num}) AS subquery2",
+
+    "attribute_greater_count": "SELECT count(公司的中文名称) FROM finance WHERE 年份={year} and {attribute} > {threshold}",
+    "attribute_lower_count": "SELECT count(公司的中文名称) FROM finance WHERE 年份={year} and {attribute} < {threshold}",
+    "attribute_greater_equal_count": "SELECT count(公司的中文名称) FROM finance WHERE 年份={year} and {attribute} >= {threshold}",
+    "attribute_lower_equal_count": "SELECT count(公司的中文名称) FROM finance WHERE 年份={year} and {attribute} <= {threshold}",
+    "city_attribute_greater_count": "SELECT count(公司的中文名称) FROM finance WHERE 年份={year} and {attribute} > {threshold} and (注册省份 in ({city_name}) or 注册城市 in ({city_name}))",
+    "city_attribute_lower_count": "SELECT count(公司的中文名称) FROM finance WHERE 年份={year} and {attribute} < {threshold} and (注册省份 in ({city_name}) or 注册城市 in ({city_name}))",
+    "city_attribute_greater_equal_count": "SELECT count(公司的中文名称) FROM finance WHERE 年份={year} and {attribute} >= {threshold} and (注册省份 in ({city_name}) or 注册城市 in ({city_name}))",
+    "city_attribute_lower_equal_count": "SELECT count(公司的中文名称) FROM finance WHERE 年份={year} and {attribute} <= {threshold} and (注册省份 in ({city_name}) or 注册城市 in ({city_name}))"
+
+}
