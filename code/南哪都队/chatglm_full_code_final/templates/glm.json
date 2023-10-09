@@ -1,5 +1,0 @@
-{
-    "description": "",
-    "prompt_input": "{instruction}:{input}\n答案:",
-    "prompt_no_input": "{instruction}\n答案:"
-}

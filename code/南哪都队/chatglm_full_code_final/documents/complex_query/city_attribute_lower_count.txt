@@ -1,6 +1,0 @@
-告诉我{year}年度，注册地在{city_name}有多少公司的{attribute}小于{threshold}？
-介绍一下{year}年度注册地在{city_name}的所有公司{attribute}小于{threshold}的具体数量？
-{year}年{city_name}上市公司有多少{attribute}小于{threshold}？
-{year}年的市场，{attribute}小于{threshold}的公司有多少？注册地在{city_name}
-在{year}年所有的上市公司中，注册地在{city_name}且{attribute}小于{threshold}的公司具体有多少？
-能介绍介绍{year}年{city_name}{attribute}小于{threshold}的公司数量吗？
