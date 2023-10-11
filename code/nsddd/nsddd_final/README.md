@@ -6,6 +6,8 @@ tasks:
 - text-generation
 ---
 
+note：由于文件太大，github限制无法上传，可以在魔搭社区查看本项目的完整代码：[https://modelscope.cn/models/finglm/FinGLM/files](https://modelscope.cn/models/finglm/FinGLM/files)
+
 ## 模型微调
 针对SQL生成的模型微调请参考
 [chatglm-sql-fine-tune](./模型finetuning+数据集制作/readme.md)
