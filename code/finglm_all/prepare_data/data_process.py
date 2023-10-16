@@ -5,13 +5,14 @@ import pandas as pd
 df1 = pd.read_excel("big_data1.xls", engine='openpyxl')
 df2 = pd.read_excel("big_data2.xls", engine='openpyxl')
 df3 = pd.read_excel("big_data3.xls", engine='openpyxl')
+df4 = pd.read_excel('industry.xlsx', engine='openpyxl')
 
 # 检查这三个文件中的"文件名"列是否都存在
 if "文件名" not in df1.columns or "文件名" not in df2.columns or "文件名" not in df3.columns:
     raise ValueError("One of the Excel files does not have the '文件名' column.")
 
 # 使用“文件名”列横向合并三个DataFrame
-df = df1.merge(df2, on="文件名", how='inner').merge(df3, on="文件名", how='inner')
+df = df1.merge(df2, on="文件名", how='inner').merge(df3, on="文件名", how='inner').merge(df4, on="文件名", how='inner')
 
 # 保存合并后的DataFrame到新的Excel文件
 df.to_excel("big_data_old.xlsx", engine='openpyxl', index=False)
