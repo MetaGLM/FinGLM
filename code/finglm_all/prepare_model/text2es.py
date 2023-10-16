@@ -180,6 +180,7 @@ class Text2ES:
             body['query']={}
             body['query']['bool']= {}
             body['query']['bool']['must'] = list1
+            body['_source'] = ['公司名称']
             body['sort'] = [dict2]
             body['size'] = num
             es = text + '####' + str(body)
@@ -219,6 +220,7 @@ class Text2ES:
             body['query']={}
             body['query']['bool']= {}
             body['query']['bool']['must'] = list1
+            body['_source'] = ['公司名称']
             body['sort'] = [dict2]
             body['size'] = num
             es = text + '####' + str(body)
@@ -246,6 +248,7 @@ class Text2ES:
             body['query']={}
             body['query']['bool']= {}
             body['query']['bool']['must'] = list1
+            body['_source'] = ['公司名称']
             body['sort'] = [dict2]
             body['size'] = 1
             es = text + '####' + str(body)
