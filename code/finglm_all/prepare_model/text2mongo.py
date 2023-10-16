@@ -124,7 +124,7 @@ class Text2Mongo:
         mongo = ''
         for q in re_dict:
             q_dict[q] = []
-            q_re = re.findall(re_dict[q].replace('*', '\*').replace('(', '\(').replace(')', '\)'), text)
+            q_re = re.findall(re_dict[q].replace('*', '\*'), text)
             if q_re:
                 q_dict[q] = q_re
         if q_dict['文件名']!= [] and len(q_dict['文件名'])==1 and len(q_dict['question']):
