@@ -176,8 +176,8 @@ class Text2Mongo:
             if mark != '':
                 dict2 = [(mark, -1)]
                 # newtext = text_to_mongo_syntax(text)
-                # mongo = newtext + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'' + mark + '\': 1, \'_id\': 0}).sort([' + str(dict2)+ ']).skip(' + str(num-1) +').limit(1)'
-                mongo = text + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'' + mark + '\': 1, \'_id\': 0}).sort([' + str(dict2)+ ']).skip(' + str(num-1) +').limit(1)'
+                # mongo = newtext + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'' + mark + '\': 1, \'_id\': 0}).sort(' + str(dict2)+ ').skip(' + str(num-1) +').limit(1)'
+                mongo = text + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'' + mark + '\': 1, \'_id\': 0}).sort(' + str(dict2)+ ').skip(' + str(num-1) +').limit(1)'
                 mongo = mongo.replace("'re", 're').replace(".pattern'", '.pattern').replace("'", '"')
 
         elif q_dict['文件名'] == [] and re.search('高.{0,5}(?:最|前)[一二三四五六七八九十俩两仨\d]{1,2}', text):
@@ -206,8 +206,8 @@ class Text2Mongo:
             if mark != '':
                 dict2 = [(mark, -1)]
                 # newtext = text_to_mongo_syntax(text)
-                # mongo = newtext + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'_id\': 0}).sort([' + str(dict2)+ ']).limit(' + str(num) +')'
-                mongo = text + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'' + mark + '\': 1, \'_id\': 0}).sort([' + str(dict2)+ ']).limit(' + str(num) +')'
+                # mongo = newtext + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'_id\': 0}).sort(' + str(dict2)+ ').limit(' + str(num) +')'
+                mongo = text + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'' + mark + '\': 1, \'_id\': 0}).sort(' + str(dict2)+ ').limit(' + str(num) +')'
                 mongo = mongo.replace("'re", 're').replace(".pattern'", '.pattern').replace("'", '"')
 
         elif q_dict['文件名'] == [] and re.search('最高', text):

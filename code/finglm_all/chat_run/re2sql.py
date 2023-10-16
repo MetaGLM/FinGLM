@@ -192,8 +192,8 @@ class Text2Mongo:
                         mark = q
             if mark != '':
                 dict2 = [(mark, -1)]
-                mongo = text + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'' + mark + '\': 1, \'_id\': 0}).sort([' + str(
-                    dict2) + ']).skip(' + str(num - 1) + ').limit(1)'
+                mongo = text + '####collection.find(' + str(dict1) + ',{\'公司名称\': 1, \'' + mark + '\': 1, \'_id\': 0}).sort(' + str(
+                    dict2) + ').skip(' + str(num - 1) + ').limit(1)'
                 mongo = mongo.replace("'re", 're').replace(".pattern'", '.pattern').replace("'", '"')
                 # db = client["testdb"]
                 # collection = db["test"]
