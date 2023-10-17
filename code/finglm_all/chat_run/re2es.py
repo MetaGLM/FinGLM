@@ -17,12 +17,6 @@ class Text2ES:
     def __init__(self, host="localhost", port=9200):
         self.es = Elasticsearch([{'host': host, 'port': port}])
 
-
-    def query_collection(self, collection_name, body):
-        response = es.search(index="collection_name", body=body)
-        answer = response['hits']['total']['value']
-        return answer
-
     def prepare_re_dict(self, list1, list2, list3, company_list):
         re_dict = {}
         re_dict['question'] = '(?:' + '|'.join(list1) + '|' + '|'.join(list3) + '|' + '增长率|'.join(list2) + '增长率' + '|' + '|'.join(list2) +')'
@@ -176,7 +170,8 @@ class Text2ES:
             body['query']['bool']['must'] = list1
             body['_source'] = ['公司名称']
             body['sort'] = [dict2]
-            body['size'] = num
+            body['from'] = num-1
+            body['size'] = 1
             es = text + '####' + str(body)
             response = es.search(index="test", body=body)
             answer = response['hits']['hits'][0]['_source']

@@ -98,7 +98,6 @@ class Text2ES:
                     else:
                         lt_re = float(lt_re.replace('百', '').replace('千', '').replace('万', '').replace('亿', ''))
                     dict1[q]['range'][q]['lt'] = lt_re
-
         return dict1
 
     def text_to_es_syntax(self, text):
@@ -117,7 +116,7 @@ class Text2ES:
 
     def prepare_es(self, text, re_dict):
         q_dict = {}
-        mongo = ''
+        es = ''
         for q in re_dict:
             q_dict[q] = []
             q_re = re.findall(re_dict[q].replace('*', '\*'), text.replace('(', '').replace(')', ''))
@@ -182,7 +181,8 @@ class Text2ES:
             body['query']['bool']['must'] = list1
             body['_source'] = ['公司名称']
             body['sort'] = [dict2]
-            body['size'] = num
+            body['from'] = num-1
+            body['size'] = 1
             es = text + '####' + str(body)
             # newtext = text_to_mongo_syntax(text)
             # es = es.replace(text, newtext)
