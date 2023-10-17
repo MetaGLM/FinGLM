@@ -175,7 +175,7 @@ class Text2ES:
                         min_len = check_len
                         mark = q
             if mark != '':
-                dict2 = {mark: {"order": "order"}}
+                dict2 = {mark: {"order": "desc"}}
             body = {}
             body['query']={}
             body['query']['bool']= {}
@@ -214,7 +214,7 @@ class Text2ES:
                         min_len = check_len
                         mark = q
             if mark != '':
-                dict2 = {mark: {"order": "order"}}
+                dict2 = {mark: {"order": "desc"}}
 
             body = {}
             body['query']={}
@@ -243,7 +243,7 @@ class Text2ES:
                         min_len = check_len
                         mark = q
             if mark != '':
-                dict2 = {mark: {"order": "order"}}
+                dict2 = {mark: {"order": "desc"}}
             body = {}
             body['query']={}
             body['query']['bool']= {}

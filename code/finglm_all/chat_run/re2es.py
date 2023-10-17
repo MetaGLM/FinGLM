@@ -169,7 +169,7 @@ class Text2ES:
                         min_len = check_len
                         mark = q
             if mark != '':
-                dict2 = {mark: {"order": "order"}}
+                dict2 = {mark: {"order": "desc"}}
             body = {}
             body['query']={}
             body['query']['bool']= {}
@@ -208,7 +208,7 @@ class Text2ES:
                         min_len = check_len
                         mark = q
             if mark != '':
-                dict2 = {mark: {"order": "order"}}
+                dict2 = {mark: {"order": "desc"}}
 
             body = {}
             body['query']={}
@@ -235,7 +235,7 @@ class Text2ES:
                         min_len = check_len
                         mark = q
             if mark != '':
-                dict2 = {mark: {"order": "order"}}
+                dict2 = {mark: {"order": "desc"}}
             body = {}
             body['query']={}
             body['query']['bool']= {}
@@ -308,7 +308,7 @@ if __name__=="__main__":
             .replace('硕士员工人数', '硕士人员')
         re_dict = tool.prepare_re_dict(list1, list2, list3, company_list)
         results_es, results_es_answer = tool.prepare_es(query_text, re_dict)
-        if results_es == '' and not re.search('2019|2020|2021', query_text):
+        if results_es == '' and not re.search('20\d\d', query_text):
             # 直接走chatglm2-6b
             print('question1', query_text, results_es)
         elif results_es == '':
