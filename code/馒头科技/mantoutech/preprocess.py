@@ -19,7 +19,7 @@ from file import load_pdf_info
 # from pdf2txt import PDFProcessor
 from pdf_util import PdfExtractor
 from financial_state import (extract_basic_info, extract_employee_info,
-    extract_cbs_info, extract_cscf_info, extract_cis_info, merge_info)
+    extract_cbs_info, extract_cscf_info, extract_cis_info, extract_dev_info, merge_info)
 
 
 def setup_xpdf():
@@ -102,6 +102,10 @@ def extract_pdf_tables():
     with Pool(processes=cfg.NUM_PROCESSES) as pool:
         results = pool.map(extract_cis_info, pdf_keys)
     merge_info('cis_info')
+    # dev_info
+    with Pool(processes=cfg.NUM_PROCESSES) as pool:
+        results = pool.map(extract_dev_info, pdf_keys)
+    merge_info('dev_info')
 
 
 # def generate_embedding_vector(key, embedding):
