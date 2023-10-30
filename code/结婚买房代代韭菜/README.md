@@ -38,3 +38,6 @@ cp -r xxx prefix_encoder
 ```
 bash run.sh
 ```
+
+# Tuned models weights
+[modelscope](https://modelscope.cn/models/getmarried_buyahouse_beingleeks4ever/SMP2023_gbb4/files)
