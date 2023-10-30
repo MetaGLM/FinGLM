@@ -9,4 +9,4 @@ if [[ $? -ne 0 ]]; then
 fi
 
 # 预估
-python predict.py
+python predict.py --mode all_model
