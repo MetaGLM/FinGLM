@@ -1,1 +1,0 @@
-TABLE_NAME = "big"

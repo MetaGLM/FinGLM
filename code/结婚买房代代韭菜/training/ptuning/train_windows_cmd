@@ -1,0 +1,22 @@
+torchrun --standalone --nnodes=1 --nproc-per-node=1 main.py \
+    --do_train \
+    --train_file ..\\nl2sql\\train.jsonl \
+    --validation_file ..\\nl2sql\\test.jsonl \
+    --preprocessing_num_workers 10 \
+    --prompt_column prompt \
+    --response_column sql \
+    --overwrite_cache \
+    --model_name_or_path D:\\LLM\\SMP2023_docker\\app \
+    --output_dir output\\nl2sql-chatglm2-6b-pt-180-2e-2 \
+    --overwrite_output_dir \
+    --max_source_length 64 \
+    --max_target_length 128 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 16 \
+    --predict_with_generate \
+    --max_steps 3000 \
+    --logging_steps 10 \
+    --save_steps 1000 \
+    --learning_rate 2e-2 \
+    --pre_seq_len 180
