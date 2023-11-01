@@ -83,9 +83,11 @@ def normalize(args, input_path, output_path):
                 exe_sql = translate_sql(sql)
                 sql_res = cursor.execute(exe_sql).fetchall()
 
+                # print(f"\n# query:{query}\ntype:{type_}\nexe_sql:{exe_sql}\nsql_res:{sql_res}")
+
                 if args.mode == "listC_final":
                     # 法定代表人使用规则生成答案
-                    res = pack_normalize_res(type_, sql, gen_sql_res_json(cursor.description, sql_res))
+                    res = pack_sql_res(sql, query, query_analyze_result, type_, sql_res)
                     if "法定代表人" in query and len(sql_res) > 1:
                         
                         line["norm_prompt"] = str(res)
@@ -111,6 +113,7 @@ def normalize(args, input_path, output_path):
                         line["answer"] = gen_ans
             except Exception as e:
                 print(query)
+                print(exe_sql)
                 print(sql_res)
                 print("ERR: ", e)
                 line["type"] = "type3"

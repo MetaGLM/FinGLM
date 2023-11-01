@@ -30,6 +30,8 @@ def pack_sql_res(sql, query, query_analyze_result, type_, res):
     res_T = [[res[j][i] for j in range(len(res))] for i in range(len(res[0]))]
     res_dic = {s: r for s, r in zip(selects, res_T)}
 
+    # print(f"\n\n\n res: {res}\n res_dic: {res_dic}")
+
     # TODO：处理小数位数问题，比较复杂，这个问题应该在建库时作一个原始字符串段可能好一点
     # 拿到所有年份所有公司的年报小数位数
     # dot_bits = {}
