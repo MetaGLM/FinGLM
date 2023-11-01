@@ -83,9 +83,11 @@ def normalize(args, input_path, output_path):
                 exe_sql = translate_sql(sql)
                 sql_res = cursor.execute(exe_sql).fetchall()
 
+                # print(f"\n# query:{query}\ntype:{type_}\nexe_sql:{exe_sql}\nsql_res:{sql_res}")
+
                 if args.mode == "listC_final":
                     # 法定代表人使用规则生成答案
-                    res = pack_normalize_res(type_, sql, gen_sql_res_json(cursor.description, sql_res))
+                    res = pack_sql_res(sql, query, query_analyze_result, type_, sql_res)
                     if "法定代表人" in query and len(sql_res) > 1:
                         
                         line["norm_prompt"] = str(res)
@@ -111,6 +113,7 @@ def normalize(args, input_path, output_path):
                         line["answer"] = gen_ans
             except Exception as e:
                 print(query)
+                print(exe_sql)
                 print(sql_res)
                 print("ERR: ", e)
                 line["type"] = "type3"
@@ -144,12 +147,12 @@ def solve_type3(args, input_path):
 def predict(args):
     # 一共加载四次模型
 
-    # 1. 路由问题类型
-    router(args, ROUTER_FILE_PATH)
+    # # 1. 路由问题类型
+    # router(args, ROUTER_FILE_PATH)
 
-    # 2. 对部分问题作nl2sql
-    reset_transformer_chatglm2(pre_seq_len=NL2SQL_PRE_SEQ_LEN, checkpoint_path=NL2SQL_CHECKPOINT_PATH)
-    nl2sql(args, ROUTER_FILE_PATH, SQL_FILE_PATH)
+    # # 2. 对部分问题作nl2sql
+    # reset_transformer_chatglm2(pre_seq_len=NL2SQL_PRE_SEQ_LEN, checkpoint_path=NL2SQL_CHECKPOINT_PATH)
+    # nl2sql(args, ROUTER_FILE_PATH, SQL_FILE_PATH)
 
     # 3. 对于使用sql进行查询的结果进行回答问题
     reset_transformer_chatglm2(pre_seq_len=NORMALIZE_PRE_SEQ_LEN, checkpoint_path=NORMALIZE_CHECKPOINT_PATH)

@@ -17,10 +17,10 @@ if os.name == "nt":
     # data
     HTML_PATH = "./test_data/allhtml"
     PDF_PATH = "D:\\data\\chatglm_llm_fintech_raw_dataset\\allpdf"
-    PDF_IDX_PATH = "./test_data/pdf_name.txt"
+    PDF_IDX_PATH = "./test_data/C-list-pdf-name.txt"
     TXT_PATH = "D:\\data\\chatglm_llm_fintech_raw_dataset\\alltxt"
     STOPWORDS_PATH = "fin_qa/resources/stopwords.txt"
-    QUESTION_PATH = "./test_data/queries.json"
+    QUESTION_PATH = "./test_data/C-list-question.json"
     OUTPUT_PATH = "result.json"
 
     # DB

@@ -1,6 +1,8 @@
 import re
 
 from .keywords import comp_short_dict
+from .query_analyze import query_analyze
+from .utils import lcs_sub
 
 
 '''
