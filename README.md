@@ -170,6 +170,11 @@
 
 ## 🏆 开源项目
 
+项目介绍博客：
+
+- [一张图读懂ChatGLM金融大模型](https://zhuanlan.zhihu.com/p/665902638)
+- [ChatGLM金融开源FinGLM学习笔记](https://zhuanlan.zhihu.com/p/659585193)
+
 ### 0. FinGLM_all 
 [[PPT]](./slides/安硕硕眼探企分享及FinGLM开源发布.pdf) [[视频]](https://www.bilibili.com/video/BV1ip4y1F7Gw/)[[代码]](./code/finglm_all)
 
