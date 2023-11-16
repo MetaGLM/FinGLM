@@ -1,0 +1,22 @@
+{
+  
+  "example": {
+    "script_url": "example_dataset",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output",
+      "history": "history"
+    }
+  },
+  "SMP": {
+    "file_name": "smp2023/dataset.json",
+    "script_url": "smp2023",
+    "columns": {
+      "prompt": "prompt",
+      "query": "question",
+      "response": "target",
+      "history": ""
+    }
+  }
+}

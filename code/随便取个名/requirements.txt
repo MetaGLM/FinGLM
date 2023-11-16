@@ -1,0 +1,26 @@
+pymupdf
+pdfplumber
+trl
+jieba
+python-Levenshtein
+fuzzywuzzy
+
+langchain>=0.0.325
+transformers==4.30.1
+unstructured[local-inference]
+layoutparser[layoutmodels,tesseract]
+nltk~=3.8.1
+sentence-transformers
+beautifulsoup4
+cpm_kernels
+faiss-cpu
+icetk
+azure-core
+datasets==2.12.0
+peft==0.4.0
+accelerate==0.21.0
+#bitsandbytes; platform_system != "Windows"
+tqdm~=4.65.0
+requests~=2.28.2
+pydantic~=1.10.7
+starlette~=0.26.1
