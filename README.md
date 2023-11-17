@@ -10,6 +10,8 @@
 
 📃 **FinGLM**:  致力于构建一个开放的、公益的、持久的金融大模型项目，利用开源开放来促进「AI+金融」。
 
+【🔥 2023/11/17 Update】新增一个解决方案「[随便取个名](./code/随便取个名)」
+
 ---
 
 ## 🚀 目录
@@ -33,6 +35,7 @@
   - [7. TabIsabaopilong](README.md#TabIsabaopilong)
   - [8. 饺子研究院](README.md#饺子研究院)
   - [9. 流宝真人](README.md#流宝真人)
+  - [10. 随便取个名](README.md#随便取个名)
 - [数据集描述](README.md#数据集描述)
     - [1. 年报数据集](README.md#年报数据集)
         - [PDF下载](README.md#PDF下载)
@@ -104,7 +107,7 @@
 * 后续我们也将根据项目需求，持续迭代更新数据。
 
 **3) 方案/代码/模型开源**
-* 经同意，[结婚买房代代韭菜](./code/结婚买房代代韭菜)、[Chatglm反卷总局](./code/Chatglm反卷总局)、[nsddd](./code/nsddd)、[馒头科技](./code/馒头科技)、[南哪都队](./code/南哪都队)、[龙盈战队](./code/龙盈战队)、[安硕硕眼探企](./code/finglm_all)等团队的方案、代码、模型完全开源，纳入FinGLM项目。
+* 经同意，[结婚买房代代韭菜](./code/结婚买房代代韭菜)、[Chatglm反卷总局](./code/Chatglm反卷总局)、[nsddd](./code/nsddd)、[馒头科技](./code/馒头科技)、[南哪都队](./code/南哪都队)、[龙盈战队](./code/龙盈战队)、[安硕硕眼探企](./code/finglm_all)、[随便取个名](./code/随便取个名)等团队的方案、代码、模型完全开源，纳入FinGLM项目。
 * 我们将长期维护优化 [FinGLM 项目](./code/finglm_all)，提供便捷解决方案。
 
 **4) 开放交流**
@@ -147,7 +150,8 @@
     - [x] [龙盈战队](./code/龙盈战队)
     - [x] [结婚买房代代韭菜](./code/结婚买房代代韭菜)
     - [x] [安硕硕眼探企](.code/finglm_all)
-
+- [X] 新增项目开源：
+    - [x] [随便取个名](.code/随便取个名)
 
 **第二期：**
 - [ ] 微调Fintune
@@ -238,6 +242,9 @@
 
 ![liubao](./img/liubao.jpg)
 
+
+### 10. 随便取个名 
+[PPT] [视频][[代码]](./code/随便取个名)
 
  
 
@@ -437,8 +444,6 @@ most similar sentences:
 
 
 
-
-
 ## 📊 项目问答演示
 ```python
 {"id": 0, "question": "2021年其他流动资产第12高的是哪家上市公司？", "answer": "2021年其他流动资产第12高的公司是苏美达股份有限公司。"}
@@ -470,6 +475,7 @@ most similar sentences:
 - 🌟 结婚买房代代韭菜
 - 🌟 小打小闹
 - 🌟 东北大土豆
+- 🌟 随便取个名
 - 🌟 ... 更多贡献者
 
 FinGLM 开源项目出于完全公益目的，欢迎所有开发者申请加入，当然我们会进行严格审核。如有意向，请填写 [表单](https://lslfd0slxc.feishu.cn/share/base/form/shrcncipvYdAVitiTqNqxwIjglc) 。
