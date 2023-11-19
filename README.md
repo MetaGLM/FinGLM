@@ -481,8 +481,6 @@ most similar sentences:
 FinGLM 开源项目出于完全公益目的，欢迎所有开发者申请加入，当然我们会进行严格审核。如有意向，请填写 [表单](https://lslfd0slxc.feishu.cn/share/base/form/shrcncipvYdAVitiTqNqxwIjglc) 。
 
 
-
-
 ## 免责声明
 
 本项目相关资源仅供研究、交流使用，一般不建议用于商业用途；如用于商业用途，由此所带来的法律风险，请自行承担。
@@ -504,4 +502,8 @@ FinGLM 开源项目出于完全公益目的，欢迎所有开发者申请加入�
 
 <img src="./img/jl.png" alt="开源贡献联系人" width="200" height="200" title="开源贡献联系人">
 
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=MetaGLM/FinGLM&type=Date)](https://star-history.com/#MetaGLM/FinGLM&Date)
 
