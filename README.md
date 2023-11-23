@@ -46,6 +46,8 @@
         - [使用建议](README.md#使用建议)
     - [2. 标注数据](README.md#标注数据)
 - [项目问答演示](README.md#项目问答演示)
+- [课程](README.md#课程)
+  - [GLM的使用教程](README.md#GLM课程) 
 - [贡献者](README.md#贡献者)
 - [免责声明](README.md#免责声明)
 - [项目联系](README.md#项目联系)
