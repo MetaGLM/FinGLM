@@ -159,7 +159,7 @@
 - [ ] 增加学习教程
     - [ ] 数据预处理教程
     - [ ] 数据库使用教程
-    - [ ] GLM的使用教程
+    - [x] GLM的使用教程
     - [ ] Prompt编写教程
     - [ ] 模型微调数据准备
     - [ ] 模型微调技巧和步骤
@@ -462,6 +462,26 @@ most similar sentences:
 {"id": 13, "question": "请具体描述一下2020年仲景食品控股股东是否发生变更。", "answer": "2020年，仲景食品控股股东没有发生变更。"}
 {"id": 14, "question": "什么是其他债权投资？", "answer": "其他债权投资是指企业或机构投资者通过购买债券、贷款、定期存款等金融产品获得的固定收益。这些金融产品通常由政府、公司或其他机构发行，具有一定的信用等级和风险。\n\n其他债权投资是企业或机构投资组合中的一部分，通常用于稳定收益和分散风险。与股票投资相比，其他债权投资的风险较低，但收益也相对较低。\n\n其他债权投资的管理和投资策略与其他资产类别类似，包括分散投资、风险控制、收益最大化等。然而，由于其他债权投资的种类繁多，其投资和管理也存在一定的特殊性。"}
 ```
+
+
+## 课程
+
+### GLM的使用教程
+
+#### 1. 一代 ChatGLM-6B
+
+[[PPT]](./slides/chatglm-6B.pdf) [[视频]](https://www.bilibili.com/video/BV1fd4y1Z7Y5)[技术文档]
+
+#### 2. 二代模型：ChatGLM2-6B
+
+[[PPT]](./slides/chatglm2-6b.pdf) [[视频]](https://www.bilibili.com/video/BV1D94y1i7Qp)[技术文档]
+
+#### 3. 三代模型：ChatGLM3-6B
+
+[[PPT]](./slides/chatglm3-6b.pdf) [[视频]](https://www.bilibili.com/video/BV1uC4y1J7yA)[[技术文档]](https://lslfd0slxc.feishu.cn/wiki/WvQbwIJ9tiPAxGk8ywDck6yfnof)
+
+
+
 
 ## 🤝 贡献者
 以下是为本项目做出贡献的团队和个人：
