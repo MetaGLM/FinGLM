@@ -10,6 +10,8 @@
 
 📃 **FinGLM**:  致力于构建一个开放的、公益的、持久的金融大模型项目，利用开源开放来促进「AI+金融」。
 
+【🔥 2023/11/23 Update】新增了1、2、3代 ChatGLM-6B 模型的课程内容，包括 [PPT](./slides/)、[视频](https://space.bilibili.com/3493270982232856)和[技术文档](https://lslfd0slxc.feishu.cn/wiki/WvQbwIJ9tiPAxGk8ywDck6yfnof)。
+
 【🔥 2023/11/17 Update】新增一个解决方案「[随便取个名](./code/随便取个名)」
 
 ---
